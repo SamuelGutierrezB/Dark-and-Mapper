@@ -1,12 +1,40 @@
 import { Image, StyleSheet, TextInput, TouchableOpacity, Text, View } from "react-native";
+import { BlurView } from 'expo-blur'
+import {useState} from "react";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { initializeApp} from 'firebase/app';
+
+import { firebaseConfig } from '../../firebase-config';
+
+
 
 export default function LoginScreen() {
+  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  
+  const handleSighIn = () => {
+    signInWithEmailAndPassword(auth, email, password)
+    .then(() => { 
+      console.log('Sesion iniciada')
+      const user = userCredenctial.user; //se ocupa el crear cuenta
+      console.log(user)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
+  
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Inicia sesión</Text>
       
       <Text style={styles.label}>USUARIO:</Text>
-      <TextInput
+      <TextInput 
+        onChangeText={(text)=> setEmail(text)}
         style={styles.input}
         placeholder="Ingresa tu nombre de usuario"
         placeholderTextColor={"#AE9D7F"}
@@ -14,20 +42,22 @@ export default function LoginScreen() {
 
       <Text style={styles.label}>CONTRASEÑA:</Text>
       <TextInput
+        onChangeText={(text)=> setPassword(text)}
         style={styles.input}
         placeholder="Ingresa tu contraseña"
         placeholderTextColor="#AE9D7F"
         secureTextEntry
       />
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={handleSighIn} style={styles.button}>
         <Text style={styles.buttonText}>Ingresar</Text>
       </TouchableOpacity>
 
       <Text style={styles.footerText}>¿No tienes cuenta? Crea una aquí </Text>
     </View>
-  );
-}
+  )
+};
+
 
 const styles = StyleSheet.create({
   container: {
@@ -76,7 +106,7 @@ const styles = StyleSheet.create({
     marginTop:50,
     textAlign: "center",
     color: "#A1CEDC",
-    fontWeight: "bold",
+    fontSize: 17,
   },
   
 });
