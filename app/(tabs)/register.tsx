@@ -1,62 +1,37 @@
-import { Image, StyleSheet, TextInput, TouchableOpacity, Text, View,} from "react-native";
+import { Image, StyleSheet, TextInput, TouchableOpacity, Text, View, Alert } from "react-native";
 import { BlurView } from 'expo-blur'
-import {useState, useEffect} from "react";
+import {useState, } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { initializeApp} from 'firebase/app';
+
 import { firebaseConfig } from '../../firebase-config';
-import * as Font from 'expo-font'
 
 
-export default function LoginScreen() {
 
-  
-
-//inicio de agregación de fuente cormorantinfant
-  const [fonstsLoaded, setFontsLoaded] = useState(false);
-
-  useEffect(() => {
-    if (!fonstsLoaded){
-      loadFonts();
-    }
-  });
-
-  const loadFonts = async () => {
-
-    Font.loadAsync({
-      'cormorantinfant': require('../../assets/fonts/CormorantInfant-Medium.ttf')
-    });
-
-    setFontsLoaded(true);
-  }
-//Termino de sección de agregación de fuente cormorantinfant
-
+export default function RegisterScreen() {
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
   
-  const handleSignIn = () => {
-    signInWithEmailAndPassword(auth, email, password)
+  const handleCreateAccount = () => {
+    createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => { 
-      console.log('Sesion iniciada')
-      const user = userCredential.user; //se ocupa el crear cuenta
+      console.log('Cuenta creada')
+      const user = userCredential.user;
       console.log(user)
     })
     .catch(error => {
       console.log(error)
+      Alert.alert(error.message)
     })
   }
   
   
   return (
     <View style={styles.container}>
-      <Image
-      style={styles.image}
-      source={require('../../assets/images/DarkAndMapper.png')}
-      />
-
-      <Text style={styles.title}>Inicia sesión</Text>
+      <Text style={styles.title}>Crear cuenta</Text>
       
       <Text style={styles.label}>USUARIO:</Text>
       <TextInput 
@@ -70,16 +45,15 @@ export default function LoginScreen() {
       <TextInput
         onChangeText={(text)=> setPassword(text)}
         style={styles.input}
-        placeholder="Ingresa tu contraseña"
+        placeholder="Ingresa contraseña"
         placeholderTextColor="#AE9D7F"
         secureTextEntry
       />
 
-      <TouchableOpacity onPress={handleSignIn} style={styles.button}>
-        <Text style={styles.buttonText}>Ingresar</Text>
+      <TouchableOpacity onPress={handleCreateAccount} style={styles.button}>
+        <Text style={styles.buttonText}>Crear ingresar</Text>
       </TouchableOpacity>
 
-      <Text style={styles.footerText}>¿No tienes cuenta? Crea una aquí </Text>
     </View>
   )
 };
@@ -90,7 +64,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     paddingHorizontal: 30,
-    paddingVertical:30,
     backgroundColor: "#121212",
   },
   title: {
@@ -98,13 +71,11 @@ const styles = StyleSheet.create({
     color: "#AE9D7F",
     marginBottom: 30,
     textAlign: "center",
-    fontFamily: 'cormorantinfant',
   },
   label: {
     fontSize: 20,
     color: "#AE9D7F",
     marginBottom: 20,
-    fontFamily: 'cormorantinfant',
   },
   input: {
     backgroundColor: "#2A2A2A",
@@ -115,8 +86,6 @@ const styles = StyleSheet.create({
     marginLeft:10,
     marginRight:10,
     fontSize:17,
-    fontFamily: 'cormorantinfant',
-
   },
   button: {
     backgroundColor: "#2A2A2A",
@@ -126,14 +95,11 @@ const styles = StyleSheet.create({
     marginLeft:100,
     marginRight:100,
     marginTop:15,
-
   },
   buttonText: {
     color: "#AE9D7F",
     fontSize: 16,
     fontWeight: "bold",
-    fontFamily: 'cormorantinfant',
-
   },
   footerText: {
     marginBottom: 0,
@@ -141,16 +107,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#A1CEDC",
     fontSize: 17,
-    fontFamily: 'cormorantinfant',
-
   },
-  image:{
-    marginBottom:10,
-    marginLeft:80,
-    marginRight:80,
-    width: 170, 
-    height: 170, 
-  
-  }
   
 });
