@@ -50,7 +50,7 @@ export default function RegisterScreen() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        router.push("/explore");
+        router.push("/map");
       })
       .catch((error) => {
         setError(true);
