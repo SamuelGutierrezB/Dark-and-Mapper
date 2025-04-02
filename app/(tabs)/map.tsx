@@ -46,12 +46,27 @@ import {
   
     return (
         <View style={styles.container}>
-          <View style={{ alignItems: "center", marginBottom: 20 }}>
-          </View>
-    
+          
+        <View
+        style={styles.mapcontainer}
+        className="maps-contanier">
+
+        <View className="maps-buttons">
         
 
+        </View>
 
+        <View className="map">
+
+
+        </View>
+
+        </View>
+        
+        <View className="filters-markers">
+
+        </View>
+        <button className="route-recommended"></button>
         </View>
       );
     }
@@ -64,6 +79,9 @@ import {
       paddingHorizontal: 30,
       paddingVertical: 30,
       backgroundColor: "#121212",
+    },
+    mapcontainer:{
+      
     }
   });
   
