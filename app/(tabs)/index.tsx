@@ -15,7 +15,7 @@ import * as Font from "expo-font";
 
 export default function LoginScreen() {
   const router = useRouter();
-
+  
   const [fonstsLoaded, setFontsLoaded] = useState(false);
 
   useEffect(() => {
@@ -50,6 +50,7 @@ export default function LoginScreen() {
       });
   };
 
+  router.push("/map"); //abre 
   return (
     <View style={styles.container}>
       <View style={{ alignItems: "center", marginBottom: 20 }}>
