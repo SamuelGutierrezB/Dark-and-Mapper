@@ -7,6 +7,7 @@ import {
     View,
     Alert,
     ScrollView,
+    Dimensions,
   } from "react-native";
   import { BlurView } from "expo-blur";
   import { useState, useEffect } from "react";
@@ -44,6 +45,18 @@ import {
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
   
+    const images = {
+      img1: require("../../assets/images/GoblinCave.png"),
+      img2: require("../../assets/images/Crypts.png"),
+      img3: require("../../assets/images/IceAbyss.png"),
+      img4: require("../../assets/images/IceCaver.png"),
+      img5: require("../../assets/images/Infierno.png"),
+      img6: require("../../assets/images/Ruins.png"),
+
+    };
+  
+    const [imageSource, setImageSource] = useState(images.img1); // Establece img1 como imagen inicial
+  
   
     return (
         <View style={styles.container}>
@@ -53,6 +66,31 @@ import {
 
         <View className="maps-buttons"
         style={styles.mapsbuttons}>
+
+            <TouchableOpacity
+            onPress={()=> setImageSource(images.img1)}> Gobling
+            
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={()=> setImageSource(images.img2)}> Crypts
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={()=> setImageSource(images.img3)}> IceAbyss
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={()=> setImageSource(images.img4)}> IceCaver
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={()=> setImageSource(images.img5)}> Infierno
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={()=> setImageSource(images.img6)}> Ruins
+            </TouchableOpacity>
         </View>
 
 
@@ -64,13 +102,13 @@ import {
             maximumZoomScale={3}
             minimumZoomScale={1}
             showsHorizontalScrollIndicator={false}
+            
             >
               <ScrollView
               horizontal>
               <Image
                   style={styles.goblin}
-                  resizeMode="contain"
-                    source={require("../../assets/images/GoblinCave.png")}
+                    source={imageSource}
                   />
 
               </ScrollView>
@@ -85,8 +123,6 @@ import {
         <View className="filters-markers"
         style={styles.filters}>
         </View>
-
-
 
          <TouchableOpacity 
          onPress={() => router.push("/register")}
@@ -112,18 +148,18 @@ import {
     mapcontainer:{
       flexDirection:"row", //coloca todo lo de adentro en orden de izquierda a derecha
       flex:10,
-      backgroundColor: "white",
+      backgroundColor: "#121212",
       
     },
     mapsbuttons:{
       flexDirection:"column",
       backgroundColor: "red",
       margin:5,
-      width:80,
+      width:60,
       height:330,
     },
     map:{
-      backgroundColor:"blue",
+      backgroundColor: "#121212",
       margin: 5,
       borderRadius:30,
       
@@ -158,10 +194,10 @@ import {
     flexShrink: 1,
     },
     goblin:{
-      
       borderRadius:30,
-    
-    }
+      height:650,
+    },
+  
 
 
   });
