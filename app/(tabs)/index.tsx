@@ -50,7 +50,7 @@ export default function LoginScreen() {
       });
   };
 
-  router.push("/map"); //abre 
+
   return (
     <View style={styles.container}>
       <View style={{ alignItems: "center", marginBottom: 20 }}>

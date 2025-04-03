@@ -47,27 +47,35 @@ import {
     return (
         <View style={styles.container}>
           
-        <View
-        style={styles.mapcontainer}
-        className="maps-contanier">
+        <View className="maps-contanier"
+        style={styles.mapcontainer}>
 
-        <View className="maps-buttons">
+        <View className="maps-buttons"
+        style={styles.mapsbuttons}>
+        </View>
+
+        <View className="map"
+        style={styles.map}>
+        </View>
+
+        </View> 
         
 
+
+        <View className="filters-markers"
+        style={styles.filters}>
         </View>
 
-        <View className="map">
 
 
-        </View>
+         <TouchableOpacity 
+         onPress={() => router.push("/register")}
+         style={styles.button}>
+         <Text style={styles.textbutton}>Ruta recomendada</Text>
+         </TouchableOpacity>
 
-        </View>
-        
-        <View className="filters-markers">
 
-        </View>
-        <button className="route-recommended"></button>
-        </View>
+        </View> 
       );
     }
   
@@ -76,12 +84,54 @@ import {
     container: {
       flex: 1,
       justifyContent: "center",
-      paddingHorizontal: 30,
-      paddingVertical: 30,
+      paddingHorizontal: 10,
+      paddingVertical: 10,
       backgroundColor: "#121212",
+      
     },
     mapcontainer:{
+      flexDirection:"row", //coloca todo lo de adentro en orden de izquierda a derecha
+      flex:10,
+      backgroundColor: "white",
       
+    },
+    mapsbuttons:{
+      flexDirection:"column",
+      backgroundColor: "red",
+      margin:5,
+      width:80,
+      height:330,
+    },
+    map:{
+      backgroundColor:"blue",
+      margin: 5,
+      flex:1,
+    },
+    filters:{
+      backgroundColor: "yellow",
+      marginTop:20,
+      flex:1,
+      marginRight:70,
+      marginLeft:70,
+    },
+    button:{
+    backgroundColor: "#2A2A2A",
+    padding: 20,
+    borderRadius: 15,
+    alignItems: "center",
+    marginLeft: 100,
+    marginRight: 100,
+    marginTop: 15,
+    marginBottom:15,
+      
+    },
+    textbutton:{
+    color: "#AE9D7F",
+    fontSize: 16,
+    fontWeight: "bold",
+    fontFamily: "cormorantinfant",
     }
+
+
   });
   
