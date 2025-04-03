@@ -106,6 +106,7 @@ import {
       backgroundColor:"blue",
       margin: 5,
       flex:1,
+      borderRadius:30,
     },
     filters:{
       backgroundColor: "yellow",
@@ -113,6 +114,7 @@ import {
       flex:1,
       marginRight:70,
       marginLeft:70,
+      minWidth:159,
     },
     button:{
     backgroundColor: "#2A2A2A",
@@ -123,13 +125,17 @@ import {
     marginRight: 100,
     marginTop: 15,
     marginBottom:15,
+    minWidth: 90,
+    justifyContent: "center"
       
     },
     textbutton:{
     color: "#AE9D7F",
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
     fontFamily: "cormorantinfant",
+    textAlign: "center",
+    flexShrink: 1,
     }
 
 
