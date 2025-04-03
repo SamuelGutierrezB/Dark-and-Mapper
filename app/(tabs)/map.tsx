@@ -6,6 +6,7 @@ import {
     Text,
     View,
     Alert,
+    ScrollView,
   } from "react-native";
   import { BlurView } from "expo-blur";
   import { useState, useEffect } from "react";
@@ -54,10 +55,29 @@ import {
         style={styles.mapsbuttons}>
         </View>
 
-        <View className="map"
-        style={styles.map}>
-        </View>
 
+            <ScrollView
+            className="map"
+            style={styles.map}
+            
+            showsVerticalScrollIndicator={false}
+            maximumZoomScale={3}
+            minimumZoomScale={1}
+            showsHorizontalScrollIndicator={false}
+            >
+              <ScrollView
+              horizontal>
+              <Image
+                  style={styles.goblin}
+                  resizeMode="contain"
+                    source={require("../../assets/images/GoblinCave.png")}
+                  />
+
+              </ScrollView>
+                  
+            </ScrollView>
+
+        
         </View> 
         
 
@@ -105,8 +125,8 @@ import {
     map:{
       backgroundColor:"blue",
       margin: 5,
-      flex:1,
       borderRadius:30,
+      
     },
     filters:{
       backgroundColor: "yellow",
@@ -136,6 +156,11 @@ import {
     fontFamily: "cormorantinfant",
     textAlign: "center",
     flexShrink: 1,
+    },
+    goblin:{
+      
+      borderRadius:30,
+    
     }
 
 
