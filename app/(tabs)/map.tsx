@@ -157,7 +157,6 @@ import {
         style={styles.filters}>
 
           <TouchableOpacity
-            onPress={()=> setImageSource(images.img5)}
             style={styles.buttonfilters}> 
 
             <Image
@@ -168,7 +167,6 @@ import {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={()=> setImageSource(images.img5)}
             style={styles.buttonfilters}> 
 
             <Image
@@ -179,7 +177,6 @@ import {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={()=> setImageSource(images.img5)}
             style={styles.buttonfilters}> 
 
             <Image
@@ -190,7 +187,6 @@ import {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={()=> setImageSource(images.img5)}
             style={styles.buttonfilters}> 
 
             <Image
