@@ -68,28 +68,61 @@ import {
         style={styles.mapsbuttons}>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img1)}> Gobling
+            onPress={()=> setImageSource(images.img1)}> 
+            <Image
+            source={require("../../assets/images/ButtonGoblin.png")}
+            style={{ width: 60, height: 50,}}
+            />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={()=> setImageSource(images.img2)}> 
+            
+            <Image
+            source={require("../../assets/images/ButtonCrypts.png")}
+            style={{ width: 60, height: 50,}}
+            />
             
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img2)}> Crypts
+            onPress={()=> setImageSource(images.img3)}> 
+
+            <Image
+            source={require("../../assets/images/ButtonIceAbyss.png")}
+            style={{ width: 60, height: 50,}}
+            />
+            
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img3)}> IceAbyss
+            onPress={()=> setImageSource(images.img4)}> 
+
+            <Image
+            source={require("../../assets/images/ButtonIceCaver.png")}
+            style={{ width: 60, height: 50,}}
+            />
+
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img4)}> IceCaver
+            onPress={()=> setImageSource(images.img5)}> 
+
+            <Image
+            source={require("../../assets/images/ButtonInfierno.png")}
+            style={{ width: 60, height: 50,}}
+            />
+
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img5)}> Infierno
-            </TouchableOpacity>
+            onPress={()=> setImageSource(images.img6)}> 
 
-            <TouchableOpacity
-            onPress={()=> setImageSource(images.img6)}> Ruins
+            <Image
+            source={require("../../assets/images/ButtonRuins.png")}
+            style={{ width: 60, height: 50,}}
+            />
+
             </TouchableOpacity>
         </View>
 
@@ -153,10 +186,11 @@ import {
     },
     mapsbuttons:{
       flexDirection:"column",
-      backgroundColor: "red",
+      backgroundColor: "#121212",
       margin:5,
       width:60,
       height:330,
+      justifyContent:"space-around"
     },
     map:{
       backgroundColor: "#121212",
@@ -168,8 +202,8 @@ import {
       backgroundColor: "yellow",
       marginTop:20,
       flex:1,
-      marginRight:70,
-      marginLeft:70,
+      marginRight:50,
+      marginLeft:110,
       minWidth:159,
     },
     button:{
@@ -177,8 +211,8 @@ import {
     padding: 20,
     borderRadius: 15,
     alignItems: "center",
-    marginLeft: 100,
-    marginRight: 100,
+    marginRight:50,
+    marginLeft:110,
     marginTop: 15,
     marginBottom:15,
     minWidth: 90,
