@@ -155,6 +155,51 @@ import {
 
         <View className="filters-markers"
         style={styles.filters}>
+
+          <TouchableOpacity
+            onPress={()=> setImageSource(images.img5)}
+            style={styles.buttonfilters}> 
+
+            <Image
+            source={require("../../assets/images/RedPortal.png")}
+            style={{ width: 45, height: 45,}}
+            />
+
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={()=> setImageSource(images.img5)}
+            style={styles.buttonfilters}> 
+
+            <Image
+            source={require("../../assets/images/BluePortal.png")}
+            style={{ width: 45, height: 45,}}
+            />
+
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={()=> setImageSource(images.img5)}
+            style={styles.buttonfilters}> 
+
+            <Image
+            source={require("../../assets/images/BossesIcon.png")}
+            style={{ width: 47, height: 47,}}
+            />
+
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={()=> setImageSource(images.img5)}
+            style={styles.buttonfilters}> 
+
+            <Image
+            source={require("../../assets/images/SantuaryIcon.png")}
+            style={{ width: 42, height: 42,}}
+            />
+
+          </TouchableOpacity>
+
         </View>
 
          <TouchableOpacity 
@@ -199,12 +244,16 @@ import {
       
     },
     filters:{
-      backgroundColor: "yellow",
+      backgroundColor: "#121212",
       marginTop:20,
       flex:1,
       marginRight:50,
       marginLeft:110,
       minWidth:159,
+      flexDirection: "row",
+      justifyContent:"space-around",
+      alignItems:"center",
+
     },
     button:{
     backgroundColor: "#2A2A2A",
@@ -231,6 +280,15 @@ import {
       borderRadius:30,
       height:650,
     },
+    buttonfilters:{
+       width: 60,
+       height: 60,
+       backgroundColor:"#2A2A2A",
+       borderRadius:30,
+       justifyContent:"space-around",
+       alignItems:"center"
+      
+    }
   
 
 
