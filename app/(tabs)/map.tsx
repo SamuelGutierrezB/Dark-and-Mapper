@@ -57,7 +57,9 @@ import {
   
     const [imageSource, setImageSource] = useState(images.img1); // Establece img1 como imagen inicial
     const [isBluePortalVisible, setIsBluePortalVisible] = useState(true); // Función para desactivar y activar el BluePortal
-    
+    const [isBossesVisible, setIsBossesVisible]= useState(false);
+   
+    //RECORDATORIO DE CREAR UNA FUNCIÓN QUE CONTROLE TODOS LOS FILTROS PARA PODER ASIGNARLES FALSE Y SE BORREN AL SELECCIONAR OTRO MAPA
     return (
         <View style={styles.container}>
           
@@ -69,7 +71,8 @@ import {
 
             <TouchableOpacity
             onPress={()=> setImageSource(images.img1)}
-            onPressIn={()=> setIsBluePortalVisible(false)}
+            onPressIn={()=> setIsBluePortalVisible(false)} //función para borrar el filtro al presionar, se tiene que cambiar proximamente a una función que tenga en conjunto todas las funciones
+            
             > 
             <Image
             source={require("../../assets/images/ButtonGoblin.png")}
@@ -151,8 +154,11 @@ import {
             >
               <ScrollView
               horizontal>
-              <View>
-                  <Image style={styles.goblin} source={imageSource} />
+              <View
+              //RECORDATORIO PARA EL MAPA DE GOBLINS QUE NO TIENE REDPORTALS, PARA PONER SOLO UN TOAST 
+              >
+                  <Image style={styles.goblin} source={imageSource} /> 
+                
                   {isBluePortalVisible && (<Image source={require("../../assets/images/BluePortal.png")} 
                   style={{ 
                     position: "absolute",
@@ -160,6 +166,8 @@ import {
                     left: 20, // Coordenada X
                     width: 50, 
                     height: 50,}} />)}
+                
+                  
                   {isBluePortalVisible && (<Image source={require("../../assets/images/BluePortal.png")} 
                   style={{ 
                     position: "absolute",
@@ -210,6 +218,20 @@ import {
                     width: 50, 
                     height: 50,}} />)}
                     
+                    {isBossesVisible && (<Image source={require("../../assets/images/BossesIcon.png")}
+                    style={{ 
+                      position: "absolute",
+                      top: 420, // Coordenada Y
+                      left: 390, // Coordenada X
+                      width: 50, 
+                      height: 50,}}/>)}
+                           {isBossesVisible && (<Image source={require("../../assets/images/BossesIcon.png")}
+                    style={{ 
+                      position: "absolute",
+                      top: 175, // Coordenada Y
+                      left: 140, // Coordenada X
+                      width: 50, 
+                      height: 50,}}/>)}
               </View>
               </ScrollView>
                   
@@ -245,7 +267,10 @@ import {
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.buttonfilters}> 
+            style={styles.buttonfilters}
+            onPress={() => setIsBossesVisible(!isBossesVisible)}
+            
+            > 
 
             <Image
             source={require("../../assets/images/BossesIcon.png")}
