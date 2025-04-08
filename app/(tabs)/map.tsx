@@ -56,8 +56,8 @@ import {
     };
   
     const [imageSource, setImageSource] = useState(images.img1); // Establece img1 como imagen inicial
-  
-  
+    const [isBluePortalVisible, setIsBluePortalVisible] = useState(true); // Función para desactivar y activar el BluePortal
+    
     return (
         <View style={styles.container}>
           
@@ -68,7 +68,9 @@ import {
         style={styles.mapsbuttons}>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img1)}> 
+            onPress={()=> setImageSource(images.img1)}
+            onPressIn={()=> setIsBluePortalVisible(false)}
+            > 
             <Image
             source={require("../../assets/images/ButtonGoblin.png")}
             style={{ width: 60, height: 50,}}
@@ -76,7 +78,9 @@ import {
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img2)}> 
+            onPress={()=> setImageSource(images.img2)}
+            onPressIn={()=> setIsBluePortalVisible(false)}
+            > 
             
             <Image
             source={require("../../assets/images/ButtonCrypts.png")}
@@ -86,7 +90,9 @@ import {
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img3)}> 
+            onPress={()=> setImageSource(images.img3)}
+            onPressIn={()=> setIsBluePortalVisible(false)}
+            > 
 
             <Image
             source={require("../../assets/images/ButtonIceAbyss.png")}
@@ -96,7 +102,9 @@ import {
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img4)}> 
+            onPress={()=> setImageSource(images.img4)}
+            onPressIn={()=> setIsBluePortalVisible(false)}
+            > 
 
             <Image
             source={require("../../assets/images/ButtonIceCaver.png")}
@@ -106,7 +114,9 @@ import {
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img5)}> 
+            onPress={()=> setImageSource(images.img5)}
+            onPressIn={()=> setIsBluePortalVisible(false)}
+            > 
 
             <Image
             source={require("../../assets/images/ButtonInfierno.png")}
@@ -116,7 +126,9 @@ import {
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={()=> setImageSource(images.img6)}> 
+            onPress={()=> setImageSource(images.img6)}
+            onPressIn={()=> setIsBluePortalVisible(false)}
+            > 
 
             <Image
             source={require("../../assets/images/ButtonRuins.png")}
@@ -139,11 +151,66 @@ import {
             >
               <ScrollView
               horizontal>
-              <Image
-                  style={styles.goblin}
-                    source={imageSource}
-                  />
-
+              <View>
+                  <Image style={styles.goblin} source={imageSource} />
+                  {isBluePortalVisible && (<Image source={require("../../assets/images/BluePortal.png")} 
+                  style={{ 
+                    position: "absolute",
+                    top: 190, // Coordenada Y
+                    left: 20, // Coordenada X
+                    width: 50, 
+                    height: 50,}} />)}
+                  {isBluePortalVisible && (<Image source={require("../../assets/images/BluePortal.png")} 
+                  style={{ 
+                    position: "absolute",
+                    top: 250, // Coordenada Y
+                    left: 145, // Coordenada X
+                    width: 50, 
+                    height: 50,}} />)}
+                     {isBluePortalVisible && (<Image source={require("../../assets/images/BluePortal.png")} 
+                  style={{ 
+                    position: "absolute",
+                    top: 300, // Coordenada Y
+                    left: 267, // Coordenada X
+                    width: 50, 
+                    height: 50,}} />)}
+                     {isBluePortalVisible && (<Image source={require("../../assets/images/BluePortal.png")} 
+                  style={{ 
+                    position: "absolute",
+                    top: 490, // Coordenada Y
+                    left: 200, // Coordenada X
+                    width: 50, 
+                    height: 50,}} />)}
+                     {isBluePortalVisible && (<Image source={require("../../assets/images/BluePortal.png")} 
+                  style={{ 
+                    position: "absolute",
+                    top: 15, // Coordenada Y
+                    left: 190, // Coordenada X
+                    width: 50, 
+                    height: 50,}} />)}
+                     {isBluePortalVisible && (<Image source={require("../../assets/images/BluePortal.png")} 
+                  style={{ 
+                    position: "absolute",
+                    top: 90, // Coordenada Y
+                    left: 385, // Coordenada X
+                    width: 50, 
+                    height: 50,}} />)}
+                    {isBluePortalVisible && (<Image source={require("../../assets/images/BluePortal.png")} 
+                  style={{ 
+                    position: "absolute",
+                    top: 200, // Coordenada Y
+                    left: 390, // Coordenada X
+                    width: 50, 
+                    height: 50,}} />)}
+                    {isBluePortalVisible && (<Image source={require("../../assets/images/BluePortal.png")} 
+                  style={{ 
+                    position: "absolute",
+                    top: 245, // Coordenada Y
+                    left: 550, // Coordenada X
+                    width: 50, 
+                    height: 50,}} />)}
+                    
+              </View>
               </ScrollView>
                   
             </ScrollView>
@@ -167,7 +234,8 @@ import {
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.buttonfilters}> 
+            style={styles.buttonfilters}
+            onPress={() => setIsBluePortalVisible(!isBluePortalVisible)}> 
 
             <Image
             source={require("../../assets/images/BluePortal.png")}
@@ -284,8 +352,8 @@ import {
        justifyContent:"space-around",
        alignItems:"center"
       
-    }
-  
+    },
+    
 
 
   });
