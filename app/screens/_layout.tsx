@@ -40,7 +40,7 @@ export default function Layout() {
           drawerActiveTintColor: "#AE9D7F",
           drawerInactiveTintColor: "#ccc",
           drawerItemStyle: {
-            marginBottom: 15,
+            marginBottom: 5,
           },
           drawerLabelStyle: {
             fontFamily: "cormorantinfant",

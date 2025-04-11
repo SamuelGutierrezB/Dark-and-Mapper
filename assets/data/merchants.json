@@ -3,7 +3,7 @@
     "id": "alchemist",
     "name": "Alchemist",
     "imageUrl": "https://darkanddarker.wiki.spellsandguns.com/images/5/5b/Alchemist.png",
-    "frase": "Why don't you try out one of my concoctions. It's a blast!",
+    "phrase": "Why don't you try out one of my concoctions. It's a blast!",
     "misiones": [
       {
         "numeroDeMision": 1,
@@ -22,7 +22,7 @@
     "id": "goblin-merchant",
     "name": "Goblin Merchant",
     "imageUrl": "https://darkanddarker.wiki.spellsandguns.com/images/9/9e/GoblinM.png",
-    "frase": "Ah, a fine, fine fleshy like you! Just the one to deal with me kin.",
+    "phrase": "Ah, a fine, fine fleshy like you! Just the one to deal with me kin.",
     "misiones": [
       {
         "numeroDeMision": 1,
