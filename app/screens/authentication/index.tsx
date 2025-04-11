@@ -87,7 +87,7 @@ export default function LoginScreen() {
 
       <Text
         style={styles.footerText}
-        onPress={() => router.push("/authentication/register")}
+        onPress={() => router.push("/screens/authentication/register")}
       >
         ¿No tienes cuenta? Crea una aquí{" "}
       </Text>
