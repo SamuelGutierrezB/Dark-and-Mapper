@@ -21,7 +21,7 @@ import * as Font from "expo-font";
 
 import { initializeApp } from "firebase/app";
 
-import { firebaseConfig } from "../../firebase-config";
+import { firebaseConfig } from "../../../firebase-config";
 
 export default function PrincipalMapScreen() {
   const router = useRouter();
@@ -36,7 +36,7 @@ export default function PrincipalMapScreen() {
 
   const loadFonts = async () => {
     Font.loadAsync({
-      cormorantinfant: require("../../assets/fonts/CormorantInfant-Medium.ttf"),
+      cormorantinfant: require("../../../assets/fonts/CormorantInfant-Medium.ttf"),
     });
 
     setFontsLoaded(true);
@@ -46,12 +46,12 @@ export default function PrincipalMapScreen() {
   const auth = getAuth(app);
 
   const images = {
-    img1: require("../../assets/images/GoblinCave.png"),
-    img2: require("../../assets/images/Crypts.png"),
-    img3: require("../../assets/images/IceAbyss.png"),
-    img4: require("../../assets/images/IceCaver.png"),
-    img5: require("../../assets/images/Infierno.png"),
-    img6: require("../../assets/images/Ruins.png"),
+    img1: require("../../../assets/images/GoblinCave.png"),
+    img2: require("../../../assets/images/Crypts.png"),
+    img3: require("../../../assets/images/IceAbyss.png"),
+    img4: require("../../../assets/images/IceCaver.png"),
+    img5: require("../../../assets/images/Infierno.png"),
+    img6: require("../../../assets/images/Ruins.png"),
   };
 
   const [imageSource, setImageSource] = useState(images.img1); // Establece img1 como imagen inicial
@@ -68,7 +68,7 @@ export default function PrincipalMapScreen() {
             onPressIn={() => setIsBluePortalVisible(false)} //función para borrar el filtro al presionar, se tiene que cambiar proximamente a una función que tenga en conjunto todas las funciones
           >
             <Image
-              source={require("../../assets/images/ButtonGoblin.png")}
+              source={require("../../../assets/images/ButtonGoblin.png")}
               style={{ width: 60, height: 50 }}
             />
           </TouchableOpacity>
@@ -78,7 +78,7 @@ export default function PrincipalMapScreen() {
             onPressIn={() => setIsBluePortalVisible(false)}
           >
             <Image
-              source={require("../../assets/images/ButtonCrypts.png")}
+              source={require("../../../assets/images/ButtonCrypts.png")}
               style={{ width: 60, height: 50 }}
             />
           </TouchableOpacity>
@@ -88,7 +88,7 @@ export default function PrincipalMapScreen() {
             onPressIn={() => setIsBluePortalVisible(false)}
           >
             <Image
-              source={require("../../assets/images/ButtonIceAbyss.png")}
+              source={require("../../../assets/images/ButtonIceAbyss.png")}
               style={{ width: 60, height: 50 }}
             />
           </TouchableOpacity>
@@ -98,7 +98,7 @@ export default function PrincipalMapScreen() {
             onPressIn={() => setIsBluePortalVisible(false)}
           >
             <Image
-              source={require("../../assets/images/ButtonIceCaver.png")}
+              source={require("../../../assets/images/ButtonIceCaver.png")}
               style={{ width: 60, height: 50 }}
             />
           </TouchableOpacity>
@@ -108,7 +108,7 @@ export default function PrincipalMapScreen() {
             onPressIn={() => setIsBluePortalVisible(false)}
           >
             <Image
-              source={require("../../assets/images/ButtonInfierno.png")}
+              source={require("../../../assets/images/ButtonInfierno.png")}
               style={{ width: 60, height: 50 }}
             />
           </TouchableOpacity>
@@ -118,7 +118,7 @@ export default function PrincipalMapScreen() {
             onPressIn={() => setIsBluePortalVisible(false)}
           >
             <Image
-              source={require("../../assets/images/ButtonRuins.png")}
+              source={require("../../../assets/images/ButtonRuins.png")}
               style={{ width: 60, height: 50 }}
             />
           </TouchableOpacity>
@@ -140,7 +140,7 @@ export default function PrincipalMapScreen() {
 
               {isBluePortalVisible && (
                 <Image
-                  source={require("../../assets/images/BluePortal.png")}
+                  source={require("../../../assets/images/BluePortal.png")}
                   style={{
                     position: "absolute",
                     top: 190, // Coordenada Y
@@ -153,7 +153,7 @@ export default function PrincipalMapScreen() {
 
               {isBluePortalVisible && (
                 <Image
-                  source={require("../../assets/images/BluePortal.png")}
+                  source={require("../../../assets/images/BluePortal.png")}
                   style={{
                     position: "absolute",
                     top: 250, // Coordenada Y
@@ -165,7 +165,7 @@ export default function PrincipalMapScreen() {
               )}
               {isBluePortalVisible && (
                 <Image
-                  source={require("../../assets/images/BluePortal.png")}
+                  source={require("../../../assets/images/BluePortal.png")}
                   style={{
                     position: "absolute",
                     top: 300, // Coordenada Y
@@ -177,7 +177,7 @@ export default function PrincipalMapScreen() {
               )}
               {isBluePortalVisible && (
                 <Image
-                  source={require("../../assets/images/BluePortal.png")}
+                  source={require("../../../assets/images/BluePortal.png")}
                   style={{
                     position: "absolute",
                     top: 490, // Coordenada Y
@@ -189,7 +189,7 @@ export default function PrincipalMapScreen() {
               )}
               {isBluePortalVisible && (
                 <Image
-                  source={require("../../assets/images/BluePortal.png")}
+                  source={require("../../../assets/images/BluePortal.png")}
                   style={{
                     position: "absolute",
                     top: 15, // Coordenada Y
@@ -201,7 +201,7 @@ export default function PrincipalMapScreen() {
               )}
               {isBluePortalVisible && (
                 <Image
-                  source={require("../../assets/images/BluePortal.png")}
+                  source={require("../../../assets/images/BluePortal.png")}
                   style={{
                     position: "absolute",
                     top: 90, // Coordenada Y
@@ -213,7 +213,7 @@ export default function PrincipalMapScreen() {
               )}
               {isBluePortalVisible && (
                 <Image
-                  source={require("../../assets/images/BluePortal.png")}
+                  source={require("../../../assets/images/BluePortal.png")}
                   style={{
                     position: "absolute",
                     top: 200, // Coordenada Y
@@ -225,7 +225,7 @@ export default function PrincipalMapScreen() {
               )}
               {isBluePortalVisible && (
                 <Image
-                  source={require("../../assets/images/BluePortal.png")}
+                  source={require("../../../assets/images/BluePortal.png")}
                   style={{
                     position: "absolute",
                     top: 245, // Coordenada Y
@@ -238,7 +238,7 @@ export default function PrincipalMapScreen() {
 
               {isBossesVisible && (
                 <Image
-                  source={require("../../assets/images/BossesIcon.png")}
+                  source={require("../../../assets/images/BossesIcon.png")}
                   style={{
                     position: "absolute",
                     top: 420, // Coordenada Y
@@ -250,7 +250,7 @@ export default function PrincipalMapScreen() {
               )}
               {isBossesVisible && (
                 <Image
-                  source={require("../../assets/images/BossesIcon.png")}
+                  source={require("../../../assets/images/BossesIcon.png")}
                   style={{
                     position: "absolute",
                     top: 175, // Coordenada Y
@@ -268,7 +268,7 @@ export default function PrincipalMapScreen() {
       <View className="filters-markers" style={styles.filters}>
         <TouchableOpacity style={styles.buttonfilters}>
           <Image
-            source={require("../../assets/images/RedPortal.png")}
+            source={require("../../../assets/images/RedPortal.png")}
             style={{ width: 45, height: 45 }}
           />
         </TouchableOpacity>
@@ -278,7 +278,7 @@ export default function PrincipalMapScreen() {
           onPress={() => setIsBluePortalVisible(!isBluePortalVisible)}
         >
           <Image
-            source={require("../../assets/images/BluePortal.png")}
+            source={require("../../../assets/images/BluePortal.png")}
             style={{ width: 45, height: 45 }}
           />
         </TouchableOpacity>
@@ -288,14 +288,14 @@ export default function PrincipalMapScreen() {
           onPress={() => setIsBossesVisible(!isBossesVisible)}
         >
           <Image
-            source={require("../../assets/images/BossesIcon.png")}
+            source={require("../../../assets/images/BossesIcon.png")}
             style={{ width: 47, height: 47 }}
           />
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.buttonfilters}>
           <Image
-            source={require("../../assets/images/SantuaryIcon.png")}
+            source={require("../../../assets/images/SantuaryIcon.png")}
             style={{ width: 42, height: 42 }}
           />
         </TouchableOpacity>
