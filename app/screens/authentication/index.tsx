@@ -5,23 +5,15 @@ import {
   TouchableOpacity,
   Text,
   View,
-  Alert,
 } from "react-native";
-import { BlurView } from "expo-blur";
-import { useState, useEffect } from "react";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
 import { useRouter } from "expo-router";
+import { useState, useEffect } from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "../../../firebase-config";
 import * as Font from "expo-font";
 
-import { initializeApp } from "firebase/app";
-
-import { firebaseConfig } from "../../firebase-config";
-
-export default function RegisterScreen() {
+export default function LoginScreen() {
   const router = useRouter();
 
   const [fonstsLoaded, setFontsLoaded] = useState(false);
@@ -31,9 +23,10 @@ export default function RegisterScreen() {
       loadFonts();
     }
   });
+
   const loadFonts = async () => {
     Font.loadAsync({
-      cormorantinfant: require("../../assets/fonts/CormorantInfant-Medium.ttf"),
+      cormorantinfant: require("../../../assets/fonts/CormorantInfant-Medium.ttf"),
     });
 
     setFontsLoaded(true);
@@ -46,11 +39,11 @@ export default function RegisterScreen() {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  const handleCreateAccount = () => {
-    createUserWithEmailAndPassword(auth, email, password)
+  const handleSignIn = () => {
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        router.push("/map");
+        router.push("../map");
       })
       .catch((error) => {
         setError(true);
@@ -62,35 +55,42 @@ export default function RegisterScreen() {
       <View style={{ alignItems: "center", marginBottom: 20 }}>
         <Image
           style={styles.image}
-          source={require("../../assets/images/DarkAndMapper.png")}
+          source={require("../../../assets/images/DarkAndMapper.png")}
         />
       </View>
-      <Text style={styles.title}>Crear cuenta</Text>
+
+      <Text style={styles.title}>Inicia sesión</Text>
+
       {error && (
-        <label style={styles.error}>
-          Correo o contraseña no validos para el registro
-        </label>
+        <label style={styles.error}>Usuario o contraseña erroneos</label>
       )}
-      <Text style={styles.label}>Correo:</Text>
+      <Text style={styles.label}>USUARIO:</Text>
       <TextInput
         onChangeText={(text) => setEmail(text)}
         style={styles.input}
-        placeholder="Ingresa tu correo"
+        placeholder="Ingresa tu nombre de usuario"
         placeholderTextColor={"#AE9D7F"}
       />
 
-      <Text style={styles.label}>Contraseña</Text>
+      <Text style={styles.label}>CONTRASEÑA:</Text>
       <TextInput
         onChangeText={(text) => setPassword(text)}
         style={styles.input}
-        placeholder="Ingresa contraseña"
+        placeholder="Ingresa tu contraseña"
         placeholderTextColor="#AE9D7F"
         secureTextEntry
       />
 
-      <TouchableOpacity onPress={handleCreateAccount} style={styles.button}>
-        <Text style={styles.buttonText}>Crear ingresar</Text>
+      <TouchableOpacity onPress={handleSignIn} style={styles.button}>
+        <Text style={styles.buttonText}>Ingresar</Text>
       </TouchableOpacity>
+
+      <Text
+        style={styles.footerText}
+        onPress={() => router.push("/authentication/register")}
+      >
+        ¿No tienes cuenta? Crea una aquí{" "}
+      </Text>
     </View>
   );
 }
