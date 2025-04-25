@@ -1,59 +1,111 @@
 [
   {
     "id": "alchemist",
-    "name": "Alchemist",
+    "name": "Alquimista",
     "imageUrl": "https://darkanddarker.wiki.spellsandguns.com/images/5/5b/Alchemist.png",
     "phrase": "Why don't you try out one of my concoctions. It's a blast!",
-    "misiones": [
-      {
-        "numeroDeMision": 1,
-        "nombre": "Concoction Collection",
-        "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
-        "recompensas": [
-          {
-            "nombreDeItem": "Poción de curación",
-            "cantidad": 3
-          }
-        ]
-      }
-    ]
+    "missions": {
+      "phase1": [
+        {
+          "missionID": 1,
+          "nombre": "Concoctions Collection",
+          "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
+          "recompensas": [
+            {
+              "nombreDeItem": "Poción de curación",
+              "cantidad": 3
+            }
+          ]
+        },
+        {
+          "missionID": 2,
+          "nombre": "Concoction Collection",
+          "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
+          "recompensas": [
+            {
+              "nombreDeItem": "Poción de curación",
+              "cantidad": 3
+            }
+          ]
+        },
+        {
+          "missionID": 3,
+          "nombre": "Concoction Collection",
+          "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
+          "recompensas": [
+            {
+              "nombreDeItem": "Poción de curación",
+              "cantidad": 3
+            }
+          ]
+        }
+      ],
+      "phase2": [
+        {
+          "missionID": 4,
+          "nombre": "Concoction Collection",
+          "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
+          "recompensas": [
+            {
+              "nombreDeItem": "Poción de curación",
+              "cantidad": 3
+            }
+          ]
+        }
+      ],
+      "phase3": [
+        {
+          "missionID": 5,
+          "nombre": "Concoction Collection",
+          "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
+          "recompensas": [
+            {
+              "nombreDeItem": "Poción de curación",
+              "cantidad": 3
+            }
+          ]
+        }
+      ]
+    }
   },
   {
-    "id": "goblin-merchant",
-    "name": "Goblin Merchant",
+    "id": "goblin",
+    "name": "Goblin Marcader",
     "imageUrl": "https://darkanddarker.wiki.spellsandguns.com/images/9/9e/GoblinM.png",
     "phrase": "Ah, a fine, fine fleshy like you! Just the one to deal with me kin.",
-    "misiones": [
-      {
-        "numeroDeMision": 1,
-        "nombre": "Away With The Green Skins",
-        "descripcion": "Elimina a un Goblin Axeman, un Goblin Warrior y un Goblin Archer en el dungeon Goblin Cave.",
-        "recompensas": [
-          {
-            "nombreDeItem": "Moneda de oro única",
-            "cantidad": 50
-          },
-          {
-            "nombreDeItem": "Vendaje común",
-            "cantidad": 3
-          }
-        ]
-      },
-      {
-        "numeroDeMision": 2,
-        "nombre": "Gobbo's Favorite Fleshy",
-        "descripcion": "Explora el módulo 'Cave Altar A' en el dungeon Goblin Cave y escapa con vida.",
-        "recompensas": [
-          {
-            "nombreDeItem": "Moneda de oro única",
-            "cantidad": 100
-          },
-          {
-            "nombreDeItem": "Accesorio épico aleatorio",
-            "cantidad": 1
-          }
-        ]
-      }
-    ]
+    "missions": {
+      "phase1": [
+        {
+          "missionID": 1,
+          "nombre": "Away With The Green Skins",
+          "descripcion": "Elimina a un Goblin Axeman, un Goblin Warrior y un Goblin Archer en el dungeon Goblin Cave.",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Vendaje común",
+              "cantidad": 3
+            }
+          ]
+        },
+        {
+          "missionID": 2,
+          "nombre": "Gobbo's Favorite Fleshy",
+          "descripcion": "Explora el módulo 'Cave Altar A' en el dungeon Goblin Cave y escapa con vida.",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Accesorio épico aleatorio",
+              "cantidad": 1
+            }
+          ]
+        }
+      ]
+    }
   }
 ]

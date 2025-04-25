@@ -1,15 +1,71 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+  Image,
+  CheckBox,
+} from "react-native";
+import React, { useState, useEffect } from "react";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { RootStackParamList } from "../../App";
+import { useNavigation } from "@react-navigation/native";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db } from "../../../firebase-config";
 
 type RouteProps = RouteProp<RootStackParamList, "Quests">;
 
 export default function MerchantQuests() {
+  const navigation = useNavigation();
   const route = useRoute<RouteProps>();
   const { merchantId } = route.params;
 
+  const [completedMissions, setCompletedMissions] = useState<{
+    [key: number]: boolean;
+  }>({});
+
   const merchants = require("../../../assets/data/merchants.json");
   const merchant = merchants.find((m: any) => m.id === merchantId);
+
+  // Cargar misiones completadas
+  useEffect(() => {
+    const loadCompletedMissions = async () => {
+      try {
+        const userId = "usuario123";
+        const docRef = doc(db, "missionsCompleted", userId);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          if (data[merchantId]) {
+            setCompletedMissions(data[merchantId]);
+          }
+        }
+      } catch (error) {
+        console.error("Error al cargar misiones:", error);
+      }
+    };
+
+    loadCompletedMissions();
+  }, [merchantId]);
+
+  const saveCompletedMissions = async () => {
+    try {
+      const userId = "usuario123";
+      await setDoc(
+        doc(db, "missionsCompleted", userId),
+        {
+          [merchantId]: completedMissions,
+        },
+        { merge: true }
+      );
+      console.log("Guardado exitoso", completedMissions);
+    } catch (error) {
+      console.error("Error al guardar:", error);
+    }
+  };
 
   if (!merchant) {
     return (
@@ -20,27 +76,74 @@ export default function MerchantQuests() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Misiones de {merchant.name}</Text>
+    <View
+      style={{
+        borderWidth: 1,
+        backgroundColor: "#121212",
+        borderColor: "#7F7A74",
+        padding: 20,
+        borderRadius: 25,
+        height: "99%",
+      }}
+    >
+      <TouchableOpacity
+        style={{
+          marginTop: -10,
+          display: "flex",
+          flexDirection: "row-reverse",
+        }}
+        onPress={() => navigation.navigate("index")}
+      >
+        <AntDesign name="back" size={24} color="#AE9D7F" />
+      </TouchableOpacity>
+      <View style={styles.merchantItem}>
+        <Image source={{ uri: merchant.imageUrl }} style={styles.image} />
+        <View style={{ width: "75%" }}>
+          <Text style={styles.name}>Misiones de {merchant.name}</Text>
+          <Text style={styles.phrase}>{merchant.phrase}</Text>
+        </View>
+      </View>
+      <Text style={styles.title}>Fase 1</Text>
+      <View
+        style={{
+          height: 1,
+          backgroundColor: "#ccc",
+          width: "100%",
+          marginBottom: 20,
+        }}
+      />
       <FlatList
-        data={merchant.misiones}
-        keyExtractor={(item) => item.numeroDeMision.toString()}
+        data={merchant.missions.phase1}
+        keyExtractor={(item) => item.missionID.toString()}
         renderItem={({ item }) => (
           <View style={styles.missionCard}>
-            <Text style={styles.missionTitle}>
-              Misión {item.numeroDeMision}: {item.nombre}
-            </Text>
-            <Text style={styles.description}>{item.descripcion}</Text>
-            <Text style={styles.rewardTitle}>Recompensas:</Text>
-            {item.recompensas.map((reward: any, index: number) => (
-              <Text key={index} style={styles.reward}>
-                • {reward.nombreDeItem} x{reward.cantidad}
+            <View>
+              <Text style={styles.missionTitle}>
+                Misión {item.missionID}: {item.nombre}
               </Text>
-            ))}
+              <Text style={styles.description}>{item.descripcion}</Text>
+            </View>
+            <CheckBox
+              value={!!completedMissions[item.missionID]}
+              onValueChange={(newValue) => {
+                setCompletedMissions((prev) => ({
+                  ...prev,
+                  [item.missionID]: newValue,
+                }));
+              }}
+              style={{ width: 20, height: 20 }}
+            />
           </View>
         )}
         contentContainerStyle={{ gap: 10 }}
       />
+
+      <TouchableOpacity
+        style={{ marginTop: 30, alignSelf: "center" }}
+        onPress={saveCompletedMissions}
+      >
+        <Text style={{ color: "#AE9D7F", fontSize: 16 }}>Guardar progreso</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -61,8 +164,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#2A2A2A",
     padding: 15,
     borderRadius: 20,
-    borderColor: "#7F7A74",
-    borderWidth: 1,
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   missionTitle: {
     fontSize: 18,
@@ -71,7 +177,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16,
-    color: "#ddd",
+    color: "#AE9D7F",
     marginVertical: 5,
   },
   rewardTitle: {
@@ -90,5 +196,31 @@ const styles = StyleSheet.create({
     color: "red",
     textAlign: "center",
     marginTop: 40,
+  },
+  merchantItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    padding: 10,
+    borderRadius: 25,
+    backgroundColor: "#2A2A2A",
+    marginBottom: 20,
+  },
+  image: {
+    width: 80,
+    height: 70,
+    borderRadius: 25,
+    backgroundColor: "#eee",
+  },
+  name: {
+    fontSize: 25,
+    fontWeight: "500",
+    color: "#AE9D7F",
+    fontFamily: "cormorantinfant",
+  },
+  phrase: {
+    fontSize: 16,
+    fontWeight: "100",
+    color: "#AE9D7F",
   },
 });
