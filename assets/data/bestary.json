@@ -1,0 +1,72 @@
+{
+  "monsters": [
+    {
+      "id": "kobold_hydro_luchon",
+      "name": "Kôbold de hidro con luchón",
+      "stats": {
+        "health": {
+          "normal": 154,
+          "elite": 210,
+          "nightmare": 276
+        },
+        "run_state": 150,
+        "move_speed": "150 (valor base, puede variar por dificultad)",
+        "defenses": {
+          "physical": "22%",
+          "magic": "17.2%",
+          "projectile": "15%"
+        }
+      },
+      "attacks": [
+        {
+          "name": "Atuek1",
+          "damage": "36(03)/43.5(3) (51.02)",
+          "type": "Physical",
+          "description": "Corte vertical. Se puede esquivar con ametrallamiento o espactamiento.",
+          "dodge_notes": {
+            "normal": "ametrallamiento o espactamiento",
+            "elite": "mayor velocidad",
+            "nightmare": "mayor velocidad"
+          }
+        },
+        {
+          "name": "Atuek2",
+          "damage": "36.0(01) 35.5(3)/63.0(3)",
+          "type": "Physical",
+          "description": "Corte diagonal (alto derecha -> bajo izquierdo desde perspectiva del monstruo). Se puede esquivar con cebo y castigo con espactamiento.",
+          "dodge_notes": {
+            "normal": "cebo y castigo con espactamiento",
+            "elite": "mayor velocidad",
+            "nightmare": "mayor velocidad"
+          }
+        },
+        {
+          "name": "Atuek3",
+          "damage": "Sheikl.51.0(3)",
+          "type": "Physical",
+          "description": "Golpe de escudo frontal (solo en pesadilla). Se combina con otros ataques normales y puede activarse tras impactar el escudo.",
+          "dodge_notes": {
+            "nightmare": "desplazamiento lateral derecho o retroceso con espacio"
+          }
+        }
+      ],
+      "strategies": {
+        "normal": "El kôbold de hidro con luchón tiene dos ataques. El primero es un corte vertical. El segundo es un corte diagonal (alto (derecha) -> bajo (izquierdo) (punto de vista del monstruo).",
+        "elite": "Igual que lo normal, pero con mayor daño, mayor velocidad de acción y mayor salud.",
+        "nightmare": "La variante pesadilla tiene mayor daño, velocidad de acción y movimiento, y mayor salud que la versión élite. Además, obtiene un ataque de golpe de escudo frontal que se combina con uno de los otros ataques normales."
+      },
+      "image": "https://darkanddarker.wiki.spellsandguns.com/images/4/4b/Ice_Kobold_Axeman.png",
+      "difficulty_scaling": {
+        "damage_multiplier": {
+          "elite": 1.3,
+          "nightmare": 1.6
+        },
+        "speed_multiplier": {
+          "elite": 1.2,
+          "nightmare": 1.5
+        }
+      }
+    }
+    // Puedes añadir más monstruos aquí
+  ]
+}

@@ -65,6 +65,14 @@ export default function Layout() {
           }}
         />
         <Drawer.Screen
+          name="bestiary"
+          options={{
+            title: "Bestiário",
+            drawerLabel: "Bestiário",
+            headerShown: true,
+          }}
+        />
+        <Drawer.Screen
           name="authentication"
           options={{
             title: "Login",
