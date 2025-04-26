@@ -9,17 +9,14 @@ import {
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { RouteProp, useRoute } from "@react-navigation/native";
-import { RootStackParamList } from "../../App";
 import { useNavigation } from "@react-navigation/native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../../firebase-config";
 
-type RouteProps = RouteProp<RootStackParamList, "Quests">;
-
 export default function MerchantQuests() {
   const navigation = useNavigation();
-  const route = useRoute<RouteProps>();
+  const route = useRoute();
   const { merchantId } = route.params;
 
   const [completedMissions, setCompletedMissions] = useState<{
@@ -117,12 +114,20 @@ export default function MerchantQuests() {
         keyExtractor={(item) => item.missionID.toString()}
         renderItem={({ item }) => (
           <View style={styles.missionCard}>
-            <View>
+            <TouchableOpacity
+              style={{ flex: 1 }}
+              onPress={() =>
+                navigation.navigate("MissionDetails", {
+                  mission: item,
+                  merchant: merchant,
+                })
+              }
+            >
               <Text style={styles.missionTitle}>
                 Misión {item.missionID}: {item.nombre}
               </Text>
               <Text style={styles.description}>{item.descripcion}</Text>
-            </View>
+            </TouchableOpacity>
             <CheckBox
               value={!!completedMissions[item.missionID]}
               onValueChange={(newValue) => {
