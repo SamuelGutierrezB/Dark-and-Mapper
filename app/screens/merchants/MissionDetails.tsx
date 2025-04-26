@@ -10,9 +10,6 @@ export default function MissionDetails() {
   const route = useRoute();
   const { mission, merchant } = route.params;
 
-  console.log("Merchant:", merchant);
-  console.log("Mission:", mission);
-
   return (
     <View
       style={{

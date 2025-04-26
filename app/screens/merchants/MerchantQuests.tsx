@@ -13,6 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../../firebase-config";
+import Toast from "react-native-toast-message";
 
 export default function MerchantQuests() {
   const navigation = useNavigation();
@@ -58,19 +59,20 @@ export default function MerchantQuests() {
         },
         { merge: true }
       );
-      console.log("Guardado exitoso", completedMissions);
+      Toast.show({
+        type: "success",
+        text1: "Progreso guardado",
+        position: "bottom",
+        visibilityTime: 2000,
+      });
     } catch (error) {
       console.error("Error al guardar:", error);
+      Toast.show({
+        type: "error",
+        text1: "Error al guardar",
+      });
     }
   };
-
-  if (!merchant) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.errorText}>Comerciante no encontrado.</Text>
-      </View>
-    );
-  }
 
   return (
     <View
@@ -149,6 +151,40 @@ export default function MerchantQuests() {
       >
         <Text style={{ color: "#AE9D7F", fontSize: 16 }}>Guardar progreso</Text>
       </TouchableOpacity>
+      <Toast
+        config={{
+          success: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "#AE9D7F",
+              }}
+            >
+              <Text style={{ color: "#AE9D7F", fontSize: 16 }}>
+                {props.text1}
+              </Text>
+            </View>
+          ),
+          error: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "red",
+              }}
+            >
+              <Text style={{ color: "red", fontSize: 16 }}>{props.text1}</Text>
+            </View>
+          ),
+        }}
+      />
     </View>
   );
 }
