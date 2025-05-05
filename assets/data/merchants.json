@@ -3,39 +3,71 @@
     "id": "alchemist",
     "name": "Alquimista",
     "imageUrl": "https://darkanddarker.wiki.spellsandguns.com/images/5/5b/Alchemist.png",
-    "phrase": "Why don't you try out one of my concoctions. It's a blast!",
+    "phrase": "Cada frasco es una promesa… o una maldición. Solo el destino sabrá cuál bebiste",
     "missions": {
       "phase1": [
         {
           "missionID": 1,
-          "nombre": "Concoctions Collection",
-          "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
+          "nombre": "Oh hermano",
+          "descripcion": "Obtener poción de curación (cualquier rareza) (1x) \nObtener poción de protección (cualquier rareza) (1x) \nObtener poción de invisibilidad (cualquier rareza) (1x)",
           "recompensas": [
             {
-              "nombreDeItem": "Poción de curación",
-              "cantidad": 3
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Accesorio raro aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
             }
           ]
         },
         {
           "missionID": 2,
-          "nombre": "Concoction Collection",
-          "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
+          "nombre": "La química del Kobold",
+          "descripcion": "Mata al Kobold de Hielo Axeman en la mazmorra de la Caverna de Hielo (5x).\nMata al Kobold de Hielo Archer en la mazmorra de la Caverna de Hielo (5x).",
           "recompensas": [
             {
-              "nombreDeItem": "Poción de curación",
+              "nombreDeItem": "Monedas de oro",
               "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Arma rara aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
             }
           ]
         },
         {
           "missionID": 3,
-          "nombre": "Concoction Collection",
-          "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
+          "nombre": "Más de lo que se ve a simple vista",
+          "descripcion": "Explora el módulo Cueva del Lobo de la Caverna de Hielo (1x) (debes escapar)",
           "recompensas": [
             {
-              "nombreDeItem": "Poción de curación",
-              "cantidad": 3
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
             }
           ]
         }
@@ -43,25 +75,922 @@
       "phase2": [
         {
           "missionID": 4,
-          "nombre": "Concoction Collection",
-          "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
+          "nombre": "Oculto entre las líneas",
+          "descripcion": "Módulo Biblioteca de Magia Oscura Explora la Cripta (1x) (debe escapar)",
           "recompensas": [
             {
-              "nombreDeItem": "Poción de curación",
-              "cantidad": 3
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Accesorio raro aleatorio",
+              "cantidad": 25
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 125
+            }
+          ]
+        },
+        {
+          "missionID": 5,
+          "nombre": "Oculto entre las líneas",
+          "descripcion": "Obtener Flor fantasma (cualquier rareza) (1x)\nObtener Wardweed (cualquier rareza) (1x)\nObtener Lifeleaf (cualquier rareza) (1x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 150
+            }
+          ]
+        },
+        {
+          "missionID": 6,
+          "nombre": "Abracadabra",
+          "descripcion": "Obtener Cráneo roto (cualquier rareza) (3x)\nObtener Esencia de tumba (cualquier rareza) (3x)\nObtener Gusanos (cualquier rareza) (3x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Arma rara aleatorio",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
             }
           ]
         }
       ],
       "phase3": [
         {
-          "missionID": 5,
-          "nombre": "Concoction Collection",
-          "descripcion": "Recoge 5 ingredientes raros en el dungeon.",
+          "missionID": 7,
+          "nombre": "Mezclando las cosas",
+          "descripcion": "Usar Poción de curación (cualquier rareza) en la mazmorra de la Cripta (1x) (debe escapar) (sesión única)\nUsar Poción de protección (cualquier rareza) en la mazmorra de la Cripta (1x) (debe escapar) (sesión única)\nUsar Poción de invisibilidad (cualquier rareza) en la mazmorra de la Cripta (1x) (debe escapar) (sesión única)\nUsar Poción de protección mágica (cualquier rareza) en la mazmorra de la Cripta (1x) (debe escapar) (sesión única)",
           "recompensas": [
             {
-              "nombreDeItem": "Poción de curación",
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 125
+            },
+            {
+              "nombreDeItem": "Accesorio épico aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 8,
+          "nombre": "Muerte en el aire",
+          "descripcion": "Mata a Death Skull en la mazmorra de la Cripta (7x) (sesión única)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 125
+            },
+            {
+              "nombreDeItem": "Arma epicas aleatorias",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 250
+            }
+          ]
+        },
+        {
+          "missionID": 9,
+          "nombre": "La muerte despierta",
+          "descripcion": "Mata al Espadachín Esqueleto en la mazmorra de la Cripta (10x).\nMata al Hachero Esqueleto en la mazmorra de la Cripta (10x).\nMata al Arquero Esqueleto en la mazmorra de la Cripta(10x). \nMata al Espectro en la mazmorra de la Cripta (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 125
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 250
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase4": [
+        {
+          "missionID": 10,
+          "nombre": "Secretos y alimañas",
+          "descripcion": "Interactúa con la palanca de la estatua oculta en la mazmorra de la cripta (1x)\nMata al gusano gigante en la mazmorra de la cripta (3x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 11,
+          "nombre": "Viales y veneno",
+          "descripcion": "Destruye la Olla Araña en la mazmorra de la Cripta (15x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            }
+          ]
+        },
+        {
+          "missionID": 12,
+          "nombre": "Resistir y prevalecer",
+          "descripcion": "Sobrevivir a la mazmorra de la cripta (6x)\nMatar a un esqueleto no muerto en la mazmorra de la cripta (44x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase5": [
+        {
+          "missionID": 10,
+          "nombre": "Expedición al Infierno",
+          "descripcion": "Explora el módulo Crypt Bloody Falls (1x)\nExplora el módulo Crypt Hellcross Bridge (1x)\nExplora el módulo Crypt Doom Cage (1x)\nExplora el módulo Crypt Drain (1x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 500
+            }
+          ]
+        },
+        {
+          "missionID": 11,
+          "nombre": "Obstructores del Infierno",
+          "descripcion": "Mata a Demon Berserker en la mazmorra de la Cripta (3x) (debes escapar) (sesión única)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 500
+            }
+          ]
+        },
+        {
+          "missionID": 12,
+          "nombre": "Un rey que una vez pasó",
+          "descripcion": "Mata al Rey Fantasma en la mazmorra de la Cripta (1x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "Armorer",
+    "name": "Armero",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo8_PPOzNzMiBauZl10o4xg5GxgvYv2MPA6w&s",
+    "phrase": "La muerte no pregunta, pero una buena armadura puede darte tiempo para responder.",
+    "missions": {
+      "phase1": [
+        {
+          "missionID": 1,
+          "nombre": "Forjado a partir de la ruina",
+          "descripcion": "Obtener mineral de cobalto (cualquier rareza) (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Accesorio raro aleatorio",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 2,
+          "nombre": "Maldito superviviente",
+          "descripcion": "Mata a un zombi en la mazmorra de la cripta (5x)\nMata a una libélula gigante en la mazmorra de la cripta (5x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 50
+            }
+          ]
+        },        
+        {
+          "missionID": 3,
+          "nombre": "Escabullirse",
+          "descripcion": "Consigue una armadura rara (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase2": [
+        {
+          "missionID": 4,
+          "nombre": "Langosta roja",
+          "descripcion": "Obtener mineral de rubí plateado (cualquier rareza) (6x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 175
+            }
+          ]
+        },
+        {
+          "missionID": 5,
+          "nombre": "Turno de noche",
+          "descripcion": "Explora el módulo Cementerio de la Cripta (1x) (debes escapar).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Arma epicas aleatorias",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            }
+          ]
+        },        
+        {
+          "missionID": 6,
+          "nombre": "Algo sobrenatural",
+          "descripcion": "Mata a Wisp en la mazmorra de la Cripta (7x)\nMata a Slime en la mazmorra de la Cripta (7x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 175
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase3": [
+        {
+          "missionID": 7,
+          "nombre": "Recursos arruinados",
+          "descripcion": "Consigue ojos azules (cualquier rareza) (2x)\nConsigue piel de lobo (cualquier rareza) (4x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 8,
+          "nombre": "Perspectivas empapadas de cerveza",
+          "descripcion": "Módulo Explorar establos de la cripta (1x) (debe escapar).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            }
+          ]
+        },        
+        {
+          "missionID": 9,
+          "nombre": "Caballero de la Muerte",
+          "descripcion": "Mata al Caballero Espectral en la mazmorra de la Cripta (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 50
+            }
+          ]
+        }
+      ],
+      "phase4": [
+        {
+          "missionID": 10,
+          "nombre": "Inspección infecciosa",
+          "descripcion": "Obtener carne infectada (cualquier rareza) (10x)\nObtener vendaje sangriento viejo (cualquier rareza) (10x)\nMatar zombi en la mazmorra de la cripta (25x)\nMatar momia en la mazmorra de la cripta (25x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 11,
+          "nombre": "Monstruos y trampas",
+          "descripcion": "Interactúa con la Trampa de Hacha en la mazmorra de la Cripta (15x).\nInteractúa con la Púa de Pared en la mazmorra de la Cripta (15x).\nInteractúa con las Púas de Suelo en la mazmorra de la Cripta (15x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            }
+          ]
+        },        
+        {
+          "missionID": 12,
+          "nombre": "Profundización de la sospecha",
+          "descripcion": "Explora el módulo de la Sala del Admirador de la Cripta (1x).\nExplora el módulo de los Cuarteles de la Cripta ( 1x ).\nExplora el módulo de las Catacumbas de la Cripta (1x).\nExplora el módulo de la Rueda de la Cripta (1x).\nExplora el módulo de las Cuatro Salas de la Cripta (1x) .\nExplora el módulo del Altar Central de la Cripta (1x).\nExplora el módulo de los Pasillos de la Cripta (1x).\nExplora el módulo de la Pirámide de la Cripta (1x) .\nExplora el módulo del Laberinto de la Cripta (1x).\nExplora el módulo de la Tumba Antigua de la Cripta (1x).\nExplora el módulo de los Puestos de Guardia de la Cripta (1x).\nExplora el módulo de las Salas de los Esqueletos de la Cripta (1x).\nExplora el módulo del Almacén de la Cripta (1x).\nExplora el módulo de las Prisiones B de la Cripta (1x).\nExplora el módulo de la Jaula de la Cripta (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 50
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "Fortune",
+    "name": "Adivino",
+    "imageUrl": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/8/8b/Fortune_Teller.png/200px-Fortune_Teller.png",
+    "phrase": "Las sombras susurran tu destino… pero cuidado, a veces el futuro muerde.",
+    "missions": {
+      "phase1": [
+        {
+          "missionID": 1,
+          "nombre": "Trabalenguas",
+          "descripcion": "Obtener Lengua Mímica (cualquier rareza) (1x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Accesorio raro aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 40
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 2,
+          "nombre": "Premoniciones de lo desconocido",
+          "descripcion": "Consigue globos oculares azules (cualquier rareza) (1x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
+            }
+          ]
+        },        
+        {
+          "missionID": 3,
+          "nombre": "Voces de los muertos",
+          "descripcion": "Consigue una oreja de murciélago gigante (cualquier rareza) (1x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 40
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase2": [
+        {
+          "missionID": 4,
+          "nombre": "Reflexiones de los malditos",
+          "descripcion": "Consigue una bola de cristal rara (1x)\nConsigue unos ojos de hielo azules brillantes (cualquier rareza) (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
               "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 150
+            }
+          ]
+        },
+        {
+          "missionID": 5,
+          "nombre": "Pulseras heladas",
+          "descripcion": "Explora el módulo Cueva de Carámbanos de la Caverna de Hielo (1x) (debes escapar)\nConsigue el Brazalete Primitivo (cualquier rareza) (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 125
+            }
+          ]
+        },        
+        {
+          "missionID": 6,
+          "nombre": "Sangre por la verdad",
+          "descripcion": "Interactuar con el Altar del Sacrificio (3x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase3": [
+        {
+          "missionID": 7,
+          "nombre": "Luces apagadas",
+          "descripcion": "Interactúa con la Antorcha en la mazmorra de la Cripta (15x) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 125
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            }
+          ]
+        },
+        {
+          "missionID": 8,
+          "nombre": "Redes del destino",
+          "descripcion": "Destruye la Olla Araña en la mazmorra de la Cripta (10x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 125
+            },
+            {
+              "nombreDeItem": "Accesorio épico aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            }
+          ]
+        },        
+        {
+          "missionID": 9,
+          "nombre": "Ese es Batty",
+          "descripcion": "Consigue el ala de murciélago rota (cualquier rareza) (2x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 125
+            },
+            {
+              "nombreDeItem": "Arma epicas aleatorias",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 250
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase4": [
+        {
+          "missionID": 10,
+          "nombre": "Atrapasueños",
+          "descripcion": "Consigue Ojos de hielo azul brillante (cualquier rareza) (2x)\nConsigue Pluma escarchada (cualquier rareza) (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma epicas aleatorias",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 11,
+          "nombre": "Suerte hecha a sí misma",
+          "descripcion": "Usar el objeto Poción épica de la suerte en la mazmorra de la Caverna de hielo (3x)\nObtener la Pezuña del Wendigo (cualquier rareza) (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            }
+          ]
+        },        
+        {
+          "missionID": 12,
+          "nombre": "Fortuna helada",
+          "descripcion": "Interactúa con el Tesoro en la mazmorra de la Caverna de Hielo (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 500
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase5": [
+        {
+          "missionID": 13,
+          "nombre": "Despejando el camino",
+          "descripcion": "Interactúa con el Muro de Púas en la mazmorra de la Cripta (8x).\nUsa el objeto Poción de la Suerte Poco Común en la mazmorra de la Cripta (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 14,
+          "nombre": "Las mascotas del infierno",
+          "descripcion": "Collar para perro Fetch (cualquier rareza) (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            }
+          ]
+        },        
+        {
+          "missionID": 15,
+          "nombre": "Fuente del mal",
+          "descripcion": "Obtener sangre de demonio (cualquier rareza) (1x) (Saqueado/Manejado)\nMata a un berserker demonio en la mazmorra de la cripta (3x)\nMata a un ballestero esqueleto en la mazmorra de la cripta (8x)\nMata a un lancero esqueleto en la mazmorra de la cripta (8x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 500
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
             }
           ]
         }
@@ -72,28 +1001,170 @@
     "id": "goblin",
     "name": "Goblin Marcader",
     "imageUrl": "https://darkanddarker.wiki.spellsandguns.com/images/9/9e/GoblinM.png",
-    "phrase": "Ah, a fine, fine fleshy like you! Just the one to deal with me kin.",
+    "phrase": "¡Brillar brillar! ¡Todo lo que brilla es mío, ¡mío! —hasta tus dientes si no corres!.",
     "missions": {
       "phase1": [
         {
           "missionID": 1,
-          "nombre": "Away With The Green Skins",
-          "descripcion": "Elimina a un Goblin Axeman, un Goblin Warrior y un Goblin Archer en el dungeon Goblin Cave.",
+          "nombre": "¡Fuera las pieles verdes!",
+          "descripcion": "Mata al Goblin Axeman en la mazmorra de la Cueva de los Goblins (3x).\nMata al Goblin Warrior en la mazmorra de la Cueva de los Goblins (3x).\nMata al Goblin Archer en la mazmorra de la Cueva de los Goblins (3x).",
           "recompensas": [
             {
-              "nombreDeItem": "Moneda de oro única",
-              "cantidad": 50
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 30
             },
             {
-              "nombreDeItem": "Vendaje común",
-              "cantidad": 3
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
             }
           ]
         },
         {
           "missionID": 2,
-          "nombre": "Gobbo's Favorite Fleshy",
-          "descripcion": "Explora el módulo 'Cave Altar A' en el dungeon Goblin Cave y escapa con vida.",
+          "nombre": "El carnoso favorito de Gobbo",
+          "descripcion": "Explorar Cueva de los Goblins Altar de la Cueva Módulo A (1x) (debe escapar)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
+            }
+          ]
+        },        
+        {
+          "missionID": 3,
+          "nombre": "El orgullo de un duende",
+          "descripcion": "Obtener oreja de duende (cualquier rareza) (8x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 40
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase2": [
+        {
+          "missionID": 4,
+          "nombre": "Ingredientes cuestionables",
+          "descripcion": "Obtener caparazón de insecto (cualquier rareza) (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Kits Quirúrgicos Comunes",
+              "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 75
+            }
+          ]
+        },
+        {
+          "missionID": 5,
+          "nombre": "Las famosas larvas de Gobbo",
+          "descripcion": "Mata al mago goblin en la mazmorra de la cueva de los goblins (3x).\nMata al ciempiés gigante en la mazmorra de la cueva de los goblins (2x).\nMata a la araña gigante en la mazmorra de la cueva de los goblins (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 50
+            }
+          ]
+        },        
+        {
+          "missionID": 6,
+          "nombre": "La salida",
+          "descripcion": "Sobrevivir a la mazmorra de la Cueva de los Goblins (3x)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase3": [
+        {
+          "missionID": 7,
+          "nombre": "Una nueva delicia",
+          "descripcion": "Mata al Escarabajo de la Muerte en la mazmorra de la Cueva de los Goblins (5x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Accesorio épico aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 175
+            }
+          ]
+        },
+        {
+          "missionID": 8,
+          "nombre": "Caos de cajas",
+          "descripcion": "Destruye una pequeña caja de madera en la mazmorra de la Cueva de los Goblins (15x).",
           "recompensas": [
             {
               "nombreDeItem": "Moneda de oro única",
@@ -101,11 +1172,1466 @@
             },
             {
               "nombreDeItem": "Accesorio épico aleatorio",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 175
+            }
+          ]
+        },        
+        {
+          "missionID": 9,
+          "nombre": "Pelea de gobos",
+          "descripcion": "Mata a un Goblin Bestia en la mazmorra de la Cueva de los Goblins (12x) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Kits Quirúrgicos epicos.",
               "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase4": [
+        {
+          "missionID": 10,
+          "nombre": "Secretos brillantes",
+          "descripcion": "Interactúa con el Cofre de Cabeza de León en la mazmorra de la Cueva de los Goblins (2x) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 11,
+          "nombre": "Gamba",
+          "descripcion": "Mata al ciempiés gigante en la mazmorra de la cueva de los duendes (2x).\nExplora el módulo del salón del pozo de la cueva de la cueva de los duendes (1x) (debes escapar).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            }
+          ]
+        },        
+        {
+          "missionID": 12,
+          "nombre": "Enemigo tuerto",
+          "descripcion": "Mata a Cíclope en la mazmorra de la Cueva de los Goblins (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 375
+            },
+            {
+              "nombreDeItem": "Bolsa de mondeas de oro",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 50
+            }
+          ]
+        }
+      ],
+      "phase5": [
+        {
+          "missionID": 13,
+          "nombre": "Fortuna emplumada",
+          "descripcion": "Consigue la Pluma de la Suerte de Cockatrice (cualquier rareza) (1x)\nMata a Cockatrice en la mazmorra de la Cripta (5x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 14,
+          "nombre": "Ajuar funerario",
+          "descripcion": "Interactúa con la Tumba de Piedra en la mazmorra de la Cripta (20x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            }
+          ]
+        },        
+        {
+          "missionID": 15,
+          "nombre": "Sacudiendo la desgracia",
+          "descripcion": "Sobrevivir a la mazmorra de la cripta (8x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 50
             }
           ]
         }
       ]
+    }
+  },
+  {
+    "id": "leathersmith",
+    "name": "Marroquin",
+    "imageUrl": "https://darkanddarker.wiki.spellsandguns.com/images/9/9e/GoblinM.png",
+    "phrase": "Piel curtida, sangre seca… si tu armadura habla, que no sea con tu último aliento.",
+    "missions": {
+      "phase1": [
+        {
+          "missionID": 1,
+          "nombre": "Aventuras cautivadoras",
+          "descripcion": "Consigue una gorra de cuero (cualquier rareza) (2x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 2,
+          "nombre": "Es hora de sanar",
+          "descripcion": "Interactúa con el Santuario de la Salud en la mazmorra de la Cripta (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 50
+            }
+          ]
+        },        
+        {
+          "missionID": 3,
+          "nombre": "Cuentos de fogata",
+          "descripcion": "Explora el módulo Crypt Bandit Camp (1x) (debes escapar).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase2": [
+        {
+          "missionID": 4,
+          "nombre": "Enroble",
+          "descripcion": "Interactúa con el Cofre de Roble en la mazmorra de la Caverna de Hielo (10x) (debes escapar) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 175
+            }
+          ]
+        },
+        {
+          "missionID": 5,
+          "nombre": "Encuentros helados",
+          "descripcion": "Obtener oreja de kobold (cualquier rareza) (4x)\nObtener hueso (cualquier rareza) (4x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            }
+          ]
+        },        
+        {
+          "missionID": 6,
+          "nombre": "Hacia el abismo",
+          "descripcion": "Mata al Sabueso de Hielo en la mazmorra de la Caverna de Hielo (3x).\nMata al Centinela de Hielo en la mazmorra de la Caverna de Hielo (2x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase3": [
+        {
+          "missionID": 7,
+          "nombre": "Susurros en las ruinas",
+          "descripcion": "Mata a un esqueleto no muerto en la mazmorra de la Cripta (10x) (sesión única).\nMata a un fuego fatuo en la mazmorra de la Cripta (2x) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 8,
+          "nombre": "Duques de los muertos",
+          "descripcion": "Mata a Wraith en la mazmorra de la Cripta (1x) (sesión única)\nMata a Skeleton Champion en la mazmorra de la Cripta (1x) (sesión única)\nMata a Demon Centaur en la mazmorra de la Cripta (1x) (sesión única)\nMata a Demon Berserker en la mazmorra de la Cripta (1x) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            }
+          ]
+        },        
+        {
+          "missionID": 9,
+          "nombre": "La perdición del señor de la guerra",
+          "descripcion": "Mata al Señor de la Guerra Esqueleto en la mazmorra de la Cripta (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 50
+            }
+          ]
+        }
+      ],
+      "phase4": [
+        {
+          "missionID": 10,
+          "nombre": "Ecos de la memoria",
+          "descripcion": "Obtener Tela oscura encantada (cualquier rareza) (3x)\nObtener Seda de araña (cualquier rareza) (3x)\nObtener Traje de guardián épico (1x)\nObtener Traje de trovador épico (1x)\nObtener Traje de merodeador épico (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 11,
+          "nombre": "Fe y preocupación",
+          "descripcion": "Mata a un esqueleto no muerto en la mazmorra de la Cripta (15x) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            }
+          ]
+        },        
+        {
+          "missionID": 12,
+          "nombre": "La sombra del sueño",
+          "descripcion": "Mata a un esqueleto no muerto en la mazmorra de la Cripta (15x) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 50
+            }
+          ]
+        }
+      ]    
+    }
+  },
+  {
+    "id": "Surgeon",
+    "name": "Cirujano",
+    "imageUrl": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/3/35/Surgeon.png/200px-Surgeon.png",
+    "phrase": "Si aún gritas, es que no he llegado al hueso… tranquilo, eso es buena señal.",
+    "missions": {
+      "phase1": [
+        {
+          "missionID": 1,
+          "nombre": "Marcas de malicia",
+          "descripcion": "Vendaje de búsqueda (cualquier rareza) (2x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Kits Quirúrgicos poco comunes",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Accesorio raro aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 2,
+          "nombre": "En nombre del progreso",
+          "descripcion": "Mata a Wisp en la mazmorra de la Cripta (5x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Accesorio raro aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
+            }
+          ]
+        },        
+        {
+          "missionID": 3,
+          "nombre": "Susurros del pasado",
+          "descripcion": "Explora el módulo Crypt Keep (1x) (debe escapar).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Botella explosiva poco comunes",
+              "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Vendajes poco comunes",
+              "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase2": [
+        {
+          "missionID": 4,
+          "nombre": "Órdenes del médico",
+          "descripcion": "Módulo Explora las Cuatro Salas de la Cripta (1x) (debe escapar).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Pociones de curacion raras",
+              "cantidad": 6
+            },
+            {
+              "nombreDeItem": "Vendajes raros",
+              "cantidad": 6
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 125
+            }
+          ]
+        },
+        {
+          "missionID": 5,
+          "nombre": "Erradicación de no muertos",
+          "descripcion": "Mata a la momia en la mazmorra de la cripta (10x)\nMata a la libélula gigante en la mazmorra de la cripta (5x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 125
+            }
+          ]
+        },        
+        {
+          "missionID": 6,
+          "nombre": "Preparado para lo inesperado",
+          "descripcion": "Usa el kit quirúrgico (de cualquier rareza) en la mazmorra de la Cripta (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase3": [
+        {
+          "missionID": 7,
+          "nombre": "Ayuda contra las heladas",
+          "descripcion": "Usar objeto Vendaje (cualquier rareza) en la mazmorra Caverna de Hielo (5x) (debe escapar) (sesión única)\nUsar objeto Kit Quirúrgico (cualquier rareza) en la mazmorra Caverna de Hielo (1x) (debe escapar) (sesión única)\nUsar objeto Poción de Curación (cualquier rareza) en la mazmorra Caverna de Hielo (3x) (debe escapar) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 125
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 250
+            }
+          ]
+        },
+        {
+          "missionID": 8,
+          "nombre": "Sanación Santificada",
+          "descripcion": "Interactúa con el Santuario de la Salud en la mazmorra de la Caverna de Hielo (2x) (debes escapar) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 125
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Accesorio épico aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            }
+          ]
+        },        
+        {
+          "missionID": 9,
+          "nombre": "Preciso como el hielo",
+          "descripcion": "Consigue el dedo gigante (cualquier rareza) (2x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 125
+            },
+            {
+              "nombreDeItem": "Accesorio épico aleatorio",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase4": [
+        {
+          "missionID": 10,
+          "nombre": "Cuidados críticos",
+          "descripcion": "Usar el kit quirúrgico (cualquier rareza) en la mazmorra de la cripta (1x)\nObtener gusanos (cualquier rareza) (5x)\nObtener pan mohoso (cualquier rareza) (5x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 11,
+          "nombre": "Purgando la oscuridad",
+          "descripcion": "Mata a Cockatrice en la mazmorra de la Cripta (3x).\nMata a Wisp en la mazmorra de la Cripta (6x).\nMata a Death Skull en la mazmorra de la Cripta (10x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            }
+          ]
+        },        
+        {
+          "missionID": 12,
+          "nombre": "Piedra y huesos",
+          "descripcion": "Matar a Lich en la mazmorra de la cripta (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ]    
+    }
+  },  
+  {
+    "id": "Tailer",
+    "name": "Sastre",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc0gCg97t4SXw3Nxi0ssCHNSswH691i8A2bQ&s",
+    "phrase": "Una buena capa no detiene una flecha… pero al menos morirás con estilo.",
+    "missions": {
+      "phase1": [
+        {
+          "missionID": 1,
+          "nombre": "Innovador",
+          "descripcion": "Mata al Espadachín Esqueleto en la mazmorra de la Cripta (5x).\nMata al Arquero Esqueleto en la mazmorra de la Cripta (5x)..",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 2,
+          "nombre": "Bendiciones para los quebrantados",
+          "descripcion": "Consigue Tela Oscura Encantada (cualquier rareza) (1x)\nConsigue Fluidos Podridos (cualquier rareza) (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Accesorio raro aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 75
+            }
+          ]
+        },        
+        {
+          "missionID": 3,
+          "nombre": "Sangre en el altar",
+          "descripcion": "Módulo Explorar Plataformas de Sangre de la Cripta (1x) (debe escapar).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase2": [
+        {
+          "missionID": 4,
+          "nombre": "Bestias de carga",
+          "descripcion": "Mata al Gólem de las Ruinas en la mazmorra de la Cripta (1x)\nMata al Lobo Temible en la mazmorra de la Cripta (5x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Arma epicas aleatorias",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            }
+          ]
+        },
+        {
+          "missionID": 5,
+          "nombre": "Bienestar a medida",
+          "descripcion": "Interactúa con el Santuario de la Salud en la mazmorra de la Cripta (3x) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Accesorio épico aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 175
+            }
+          ]
+        },        
+        {
+          "missionID": 6,
+          "nombre": "En ruinas",
+          "descripcion": "Obtener seda de araña (cualquier rareza) (1x)\nObtener vendaje sangriento viejo (cualquier rareza) (2x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Arma epicas aleatorias",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase3": [
+        {
+          "missionID": 7,
+          "nombre": "Hombro frío",
+          "descripcion": "Sobrevive en la mazmorra de la Caverna de Hielo (2x)\nMata a un Fantasma Congelado en la mazmorra de la Caverna de Hielo (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 8,
+          "nombre": "Murmullos entre la aristocracia",
+          "descripcion": "Mata a Wendigo en la mazmorra de la Caverna de Hielo (3x).\nMata a Demonio de Escarcha en la mazmorra de la Caverna de Hielo (3x).\nMata a Sabueso de Hielo en la mazmorra de la Caverna de Hielo (5x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            }
+          ]
+        },        
+        {
+          "missionID": 9,
+          "nombre": "Infiltrándose con accesorios",
+          "descripcion": "Consigue las Garras Afiladas del Wendigo (cualquier rareza) (1x)\nConsigue la Tela Oscura Encantada (cualquier rareza) (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 50
+            }
+          ]
+        }
+      ],
+      "phase4": [
+        {
+          "missionID": 10,
+          "nombre": "Una petición incómoda",
+          "descripcion": "Mata al Soldado Esqueleto de Hielo en la mazmorra de la Caverna de Hielo (15x).\nMata al Guardia Esqueleto de Hielo en la mazmorra de la Caverna de Hielo (15x).\nMata al Arquero Esqueleto de Hielo en la mazmorra de la Caverna de Hielo (15x).\nMata al Hombre con Hacha Esqueleto de Hielo en la mazmorra de la Caverna de Hielo (10x).\nMata al Hombre con Maza Esqueleto de Hielo en la mazmorra de la Caverna de Hielo (10x).\nMata al Ballestero Esqueleto de Hielo en la mazmorra de la Caverna de Hielo (10x).\nMata al Alabardero Esqueleto de Hielo en la mazmorra de la Caverna de Hielo (10x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 500
+            }
+          ]
+        },
+        {
+          "missionID": 11,
+          "nombre": "Cuentos de la expedición a la Montaña Helada",
+          "descripcion": "Tipo de objetivo no controlado (WIP)",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 500
+            }
+          ]
+        },        
+        {
+          "missionID": 12,
+          "nombre": "Fantasía y realidad",
+          "descripcion": "Obtener cuerda de arco (cualquier rareza) (1x)\nObtener oreja de kóbold (cualquier rareza) (25x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Arma legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            }
+          ]
+        }
+      ]    
+    }
+  }, 
+  {
+    "id": "Tavern",
+    "name": "Maestro de taberna",
+    "imageUrl": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/5/53/Tavernmaster.png/150px-Tavernmaster.png",
+    "phrase": "Las copas no mienten, forastero… si bebes lo suficiente, verás quién te apuñalará mañana.",
+    "missions": {
+      "phase1": [
+        {
+          "missionID": 1,
+          "nombre": "¿Eres tú?",
+          "descripcion": "Mata al lacayo esqueleto en la mazmorra de la cripta (5x).\nMata al guardia esqueleto en la mazmorra de la cripta (5x).\nMata al ballestero esqueleto en la mazmorra de la cripta (5x)..",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Pociones de proteccion poco comunes",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Pociones de curacion poco comunes",
+              "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 2,
+          "nombre": "La corriente de aires de terror",
+          "descripcion": "Obtener cerveza (cualquier rareza) (1x)\nObtener botella explosiva (cualquier rareza) (1x)\nObtener cuerda de arco (cualquier rareza) (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Vendajes comunes",
+              "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 25
+            }
+          ]
+        },        
+        {
+          "missionID": 3,
+          "nombre": "Papel y tinta",
+          "descripcion": "Módulo Explorar Cuarteles de la Cripta (1x) (debe escapar).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 30
+            },
+            {
+              "nombreDeItem": "Cervezas raras",
+              "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 40
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase2": [
+        {
+          "missionID": 4,
+          "nombre": "El primer juicio",
+          "descripcion": "Obtener Cráneo intacto (cualquier rareza) (1x)\nObtener Espada rota oxidada (cualquier rareza) (1x)\nObtener Esencia de tumba (cualquier rareza) (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Vendajes poco comunes",
+              "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 75
+            }
+          ]
+        },
+        {
+          "missionID": 5,
+          "nombre": "Dedos ensangrentados",
+          "descripcion": "ata al mago esqueleto en la mazmorra de la cripta (3x).\nMata al campeón esqueleto en la mazmorra de la cripta (2x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Pociones de invisibilidad poco comunes",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 50
+            }
+          ]
+        },        
+        {
+          "missionID": 6,
+          "nombre": "Sin moza",
+          "descripcion": "Sobrevivir a la mazmorra de la cripta (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Kits Quirúrgicos poco comunes",
+              "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Vendajes poco comunes",
+              "cantidad": 6
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 75
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 10
+            }
+          ]
+        }
+      ],
+      "phase3": [
+        {
+          "missionID": 7,
+          "nombre": "Bastardos helados",
+          "descripcion": "Mata a Caminante de Escarcha en la mazmorra de la Caverna de Hielo (5x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Accesorio raro aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 50
+            }
+          ]
+        },
+        {
+          "missionID": 8,
+          "nombre": "Escapes helados",
+          "descripcion": "Sobrevivir a la mazmorra de la Caverna de Hielo (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "kit de fogata raro",
+              "cantidad": 3
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 75
+            }
+          ]
+        },        
+        {
+          "missionID": 9,
+          "nombre": "Un problema gigante",
+          "descripcion": "Mata al berserker gigante de hielo en la mazmorra de la caverna de hielo (3x).\nMata al escudo gigante de hielo en la mazmorra de la caverna de hielo (3x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro única",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Arma rara aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 50
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 20
+            }
+          ]
+        }
+      ],
+      "phase4": [
+        {
+          "missionID": 10,
+          "nombre": "El desenredo",
+          "descripcion": "Mata a la Calavera de la Muerte en la mazmorra de la Cripta (12x)\nMata a la Momia en la mazmorra de la Cripta (7x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 175
+            }
+          ]
+        },
+        {
+          "missionID": 11,
+          "nombre": "Conexiones malditas",
+          "descripcion": "Mata al Esqueleto del Hacha en la mazmorra de la Cripta (7x).\nMata al Esqueleto del Lancero en la mazmorra de la Cripta (7x).\nMata al Esqueleto del Guardián en la mazmorra de la Cripta (7x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Armadura epica aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 175
+            }
+          ]
+        },        
+        {
+          "missionID": 12,
+          "nombre": "Asesor oscuro",
+          "descripcion": "Módulo de la Sala Ritual Oscura de la Cripta (1x) (debe escapar).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ],
+      "phase5": [
+        {
+          "missionID": 13,
+          "nombre": "Que las bendiciones sean",
+          "descripcion": "Interactúa con el Santuario de la Salud en la mazmorra de la Cripta (1x) (debes escapar) (sesión única).\nInteractúa con el Santuario de la Protección en la mazmorra de la Cripta (1x) (debes escapar) (sesión única) .\nInteractúa con el Santuario del Poder en la mazmorra de la Cripta (1x) (debes escapar) (sesión única) .\nInteractúa con la Fuente de la Velocidad en la mazmorra de la Cripta (1x) (debes escapar) (sesión única).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 20
+            }
+          ]
+        },
+        {
+          "missionID": 14,
+          "nombre": "La ira del protector",
+          "descripcion": "Mata a un perro demonio en la mazmorra de la cripta (10x).\nMata a un centauro demonio en la mazmorra de la cripta (5x).\nConsigue una pezuña de centauro (cualquier rareza) (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 150
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 350
+            }
+          ]
+        },        
+        {
+          "missionID": 15,
+          "nombre": "Enfrentando la oscuridad",
+          "descripcion": "Mata al campeón esqueleto en la mazmorra de la cripta (5x)\nMata al hachero esqueleto en la mazmorra de la cripta (8x)\nMata al lancero esqueleto en la mazmorra de la cripta\n(8x) Mata al ballestero esqueleto en la mazmorra de la cripta (8x)\nConsigue una ficha de honor (cualquier rareza) (1x) (Saqueada/Manejada).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 225
+            },
+            {
+              "nombreDeItem": "Alijo",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 50
+            }
+          ]
+        }
+      ],
+      "phase6": [
+        {
+          "missionID": 16,
+          "nombre": "Conflicto a sangre fría",
+          "descripcion": "Mata al Esqueleto de Escarcha con Hacha en la mazmorra de la Caverna de Hielo (10x).\nMata al Esqueleto de Escarcha con Maceman en la mazmorra de la Caverna de Hielo (10x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Monedas de oro",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Accesorio legendario aleatorio",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 1
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        },
+        {
+          "missionID": 17,
+          "nombre": "Coleccionista de baratijas",
+          "descripcion": "Mata al Esqueleto de Escarcha con Hacha en la mazmorra de la Caverna de Hielo (10x).\nMata al Esqueleto de Escarcha con Maceman en la mazmorra de la Caverna de Hielo (10x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 100
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 300
+            }
+          ]
+        },        
+        {
+          "missionID": 18,
+          "nombre": "Terror congelado",
+          "descripcion": "Mata al Diablillo de Hielo en la mazmorra de la Caverna de Hielo (5x).\nMata al Demonio de Hielo en la mazmorra de la Caverna de Hielo (3x).\nMata al Wyvern de Hielo en la mazmorra de la Caverna de Hielo (1x).",
+          "recompensas": [
+            {
+              "nombreDeItem": "Moneda de oro ",
+              "cantidad": 200
+            },
+            {
+              "nombreDeItem": "Armadura legendaria aleatoria",
+              "cantidad": 2
+            },
+            {
+              "nombreDeItem": "Experiencia",
+              "cantidad": 1000
+            },
+            {
+              "nombreDeItem": "Afinidad",
+              "cantidad": 25
+            }
+          ]
+        }
+      ]    
     }
   }
 ]
