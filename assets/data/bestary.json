@@ -66,7 +66,2102 @@
           "nightmare": 1.5
         }
       }
+    },
+    {
+      "id": "Death_Skull",
+      "name": "Cráneo de la muerte",
+      "stats": {
+        "health": {
+          "normal": 36,
+          "elite": 55,
+          "nightmare": 90
+        },
+        "run_state": 200,
+        "move_speed": "200 (valor base, puede variar por dificultad)",
+        "defenses": {
+          "physical": "26.2%",
+          "magic": "17.2%",
+          "projectile": "25%"
+        }
+      },
+      "attacks": [
+        {
+          "name": "Atuek1",
+          "damage": "20.0(3)/30.0(3)/40.0(3)",
+          "type": "Physical",
+          "dodge_notes": {
+            "normal": "Dash",
+            "elite": "Multiples ataques",
+            "nightmare": "mayor velocidad"
+          }
+        }
+      ],
+      "strategies": {
+        "normal": "La calavera mortal tiene un solo ataque: una carrera voladora que se puede esquivar con un movimiento lateral.",
+        "elite": "Igual que lo normal, pero con mayor daño, mayor velocidad de acción y mayor salud.",
+        "nightmare": "La variante pesadilla tiene mayor daño, velocidad de acción, velocidad de movimiento y mayor salud que la versión élite. La calavera de la muerte pesadilla puede encadenar dos embestidas voladoras. Esto se puede esquivar haciendo un movimiento lateral en la primera embestida mientras se sigue a la calavera de la muerte, y luego haciendo un movimiento lateral de nuevo."
+      },
+      "image": "https://darkanddarker.wiki.spellsandguns.com/images/7/73/Death_Skull.png?20240815215801",
+      "difficulty_scaling": {
+        "damage_multiplier": {
+          "elite": 1.3,
+          "nightmare": 1.6
+        },
+        "speed_multiplier": {
+          "elite": 1.2,
+          "nightmare": 1.5
+        }
+      }
+    },
+    {
+      "id": "Demon_Dog",
+      "name": "Perro demonio",
+      "stats": {
+        "health": {
+          "normal": 170,
+          "elite": 220,
+          "nightmare": 275
+        },
+        "run_state": 350,
+        "move_speed": "350 (valor base, puede variar por dificultad)",
+        "defenses": {
+          "physical": "26,2%",
+          "magic": "17.2%",
+          "projectile": "15%"
+        }
+      },
+      "attacks": [
+        {
+          "name": "Atuek1",
+          "damage": "24.0(4)/ 33.0(4) / 42.0(4)",
+          "type": "Physical",
+          "description": "Mordida rápida tras una embestida.",
+          "dodge_notes": {
+            "normal": " Puedes esquivarlo con un movimiento lateral (strafe o paso hacia un lado justo antes del impacto).",
+            "elite": "Más rápida, requiere mejor timing.",
+            "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+          }
+        },
+        {
+          "name": "Atuek2",
+          "damage": "35.2(5)/48.4(5)/61.6(5)",
+          "type": "Physical",
+          "description": "Ataque cuerpo a cuerpo donde el Perro Demonio da un zarpazo en diagonal de su parte superior derecha hacia su parte inferior izquierda (desde su perspectiva), buscando golpear al jugador de cerca.",
+          "dodge_notes": {
+            "normal": " Se recomienda provocar el ataque (hacer de cebo) y esquivar hacia atrás o lateral justo cuando el golpe comienza.",
+            "elite": "El ataque es más veloz, requiere reacción rápida tras provocar.",
+            "nightmare": "Velocidad máxima, casi instantáneo; anticipación y buen timing son clave."
+          }
+        }
+      ],
+      "strategies": {
+        "normal": "El perro demonio tiene dos ataques. El primero es un mordisco de embestida. El segundo es un mordisco a corta distancia. El mordisco de embestida se puede esquivar con un movimiento lateral a la derecha o a la izquierda. El mordisco a corta distancia se puede esquivar con un movimiento lateral para provocar y castigar.",
+        "elite": "Igual que lo normal, pero con mayor daño, mayor velocidad de acción y mayor salud.",
+        "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Además, incluye un collar electrificado que inflige daño al impactar."
+      },
+      "image": "https://darkanddarker.wiki.spellsandguns.com/images/c/ca/Demon_Dog.png?20240816101129",
+      "difficulty_scaling": {
+        "damage_multiplier": {
+          "elite": 1.3,
+          "nightmare": 1.6
+        },
+        "speed_multiplier": {
+          "elite": 1.2,
+          "nightmare": 1.5
+        }
+      }
+    },
+    {
+      "id": "Frost_Skeleton_Footman",
+      "name": "Lacayo esqueleto de escarcha",
+      "stats": {
+        "health": {
+          "normal": 177,
+          "elite": 260,
+          "nightmare": 330
+        },
+        "run_state": 100,
+        "move_speed": "100 (valor base, puede variar por dificultad)",
+        "defenses": {
+          "physical": "26,2%",
+          "magic": "17.2%",
+          "projectile": "15%"
+        }
+      },
+"attacks": [
+    {
+      "name": "Estocada Helada",
+      "damage": "24.0(4) / 33.0(4) / 42.0(4)",
+      "type": "Physical",
+      "description": "Ataque lineal con su espada/lanza apuntando al centro del cuerpo del jugador. Aplica efecto de congelación.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente hacia la derecha al momento en que el esqueleto retrae su brazo.",
+        "elite": "Más rápida, requiere esquive anticipado justo antes del impulso.",
+        "nightmare": "Muy veloz, se recomienda mantenerse en movimiento constante y esquivar hacia su espalda."
+      }
+    },
+    {
+      "name": "Corte Diagonal Congelante",
+      "damage": "35.2(4) / 48.0(4) / 60.8(4)",
+      "type": "Physical",
+      "description": "Corte diagonal de izquierda a derecha (desde el punto de vista del esqueleto), dejando una estela de escarcha en el suelo. Aplica congelación si impacta.",
+      "dodge_notes": {
+        "normal": "Agacharse y moverse hacia la derecha en el momento en que el ataque inicia.",
+        "elite": "El ataque se ejecuta más rápido. Requiere predecir la animación de carga.",
+        "nightmare": "Puede encadenarse con otro corte. Rodar hacia la espalda del enemigo es lo más seguro."
+      }
     }
-    // Puedes añadir más monstruos aquí
+   ],
+    "strategies": {
+     "normal": "El lacayo esqueleto de escarcha realiza una estocada directa y un corte diagonal. La estocada se esquiva moviéndote lateralmente, y el corte diagonal agachándote y desplazándote hacia su lado derecho. Ambos ataques aplican congelación al impactar.",
+     "elite": "Versión más rápida y fuerte del normal. Sus ataques tienen menor tiempo de reacción. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+     "nightmare": "Además de mayor velocidad y daño, puede encadenar ambos ataques en rápida sucesión. Usar ataques a distancia o mantenerlo controlado con ralentización o desvío es clave para sobrevivir."
+   },
+      "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/3/33/Frost_Skeleton_Footman.png/200px-Frost_Skeleton_Footman.png",
+      "difficulty_scaling": {
+        "damage_multiplier": {
+          "elite": 1.3,
+          "nightmare": 1.6
+        },
+        "speed_multiplier": {
+          "elite": 1.2,
+          "nightmare": 1.5
+        }
+      }
+    },
+    {
+  "id": "Frost_Walker",
+  "name": "Caminante de Escarcha",
+  "stats": {
+    "health": {
+      "normal": 250,
+      "elite": 360,
+      "nightmare": 460
+    },
+    "run_state": 50,
+    "move_speed": "50 (valor base, puede variar por dificultad)",
+    "defenses": {
+      "physical": "26.2%",
+      "magic": "17.2%",
+      "fire": "-200%",
+      "ice": "25%",
+      "divine": "-200%",
+      "spirit": "-400%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Golpe Congelante",
+      "damage": "33.8(4) / 41.2(4) / 48.8(4)",
+      "type": "Físico + Congelación",
+      "description": "Ataque básico que inflige daño físico y aplica el efecto de congelación.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Estocada Gélida",
+      "damage": "35.1(4) / 42.9(4) / 50.7(4)",
+      "type": "Físico + Congelación",
+      "description": "Estocada directa que inflige daño físico y aplica congelación.",
+      "dodge_notes": {
+        "normal": "Esquivar hacia un lado al iniciar la animación.",
+        "elite": "Requiere esquive anticipado justo antes del impulso.",
+        "nightmare": "Muy veloz, se recomienda mantenerse en movimiento constante y esquivar hacia su espalda."
+      }
+    },
+    {
+      "name": "Corte Diagonal Congelante",
+      "damage": "48.6(4) / 59.4(4) / 70.2(4)",
+      "type": "Físico + Congelación",
+      "description": "Corte diagonal que inflige daño físico y aplica congelación.",
+      "dodge_notes": {
+        "normal": "Agacharse y moverse hacia la derecha en el momento en que el ataque inicia.",
+        "elite": "El ataque se ejecuta más rápido. Requiere predecir la animación de carga.",
+        "nightmare": "Puede encadenarse con otro corte. Rodar hacia la espalda del enemigo es lo más seguro."
+      }
+    },
+    {
+      "name": "Explosión de Escarcha",
+      "damage": "Área de efecto",
+      "type": "Mágico + Congelación",
+      "description": "Crea una nube de escarcha que inflige daño mágico y aplica congelación en un área.",
+      "dodge_notes": {
+        "normal": "Alejarse del área afectada al ver la animación.",
+        "elite": "Área más amplia y activación más rápida.",
+        "nightmare": "Difícil de evitar sin predecirlo con antelación; mantener distancia es clave."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Caminante de Escarcha utiliza ataques físicos que aplican congelación. Es crucial esquivar lateralmente y mantenerse en movimiento para evitar ser afectado por el estado de congelación.",
+    "elite": "Además de mayor daño y velocidad, sus ataques tienen menor tiempo de reacción. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Además, deja charcos de aura de congelación donde camina, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/5/56/Frost_Walker.png/200px-Frost_Walker.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},{
+  "id": "Frost_Wolf",
+  "name": "Lobo de Escarcha",
+  "stats": {
+    "health": {
+      "normal": 170,
+      "elite": 260,
+      "nightmare": 350
+    },
+    "run_state": 100,
+    "move_speed": "100 (valor base, puede variar por dificultad)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "ice": "25%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Mordida de Embestida",
+      "damage": "37.8(2)",
+      "type": "Físico",
+      "description": "El lobo realiza una embestida rápida hacia el jugador, intentando morderlo con fuerza.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Mordida Cercana",
+      "damage": "20.4(2) / 26.4(2) / 32.4(2)",
+      "type": "Físico",
+      "description": "Ataque de mordida a corta distancia, utilizado cuando el jugador está muy cerca.",
+      "dodge_notes": {
+        "normal": "Retroceder o esquivar lateralmente al iniciar la animación.",
+        "elite": "Requiere esquive anticipado justo antes del impulso.",
+        "nightmare": "Muy veloz, se recomienda mantenerse en movimiento constante y esquivar hacia su espalda."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Lobo de Escarcha utiliza ataques físicos rápidos. Es crucial esquivar lateralmente y mantenerse en movimiento para evitar ser alcanzado.",
+    "elite": "Además de mayor daño y velocidad, sus ataques tienen menor tiempo de reacción. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Además, puede encadenar ataques en rápida sucesión, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/46/Frost_Wolf.png/200px-Frost_Wolf.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Goblin_Warrior",
+  "name": "Guerrero Goblin",
+  "stats": {
+    "health": {
+      "normal": 154,
+      "elite": 224,
+      "nightmare": 294
+    },
+    "run_state": 200,
+    "move_speed": "200 (valor base, puede variar por dificultad)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "fire": "25%",
+      "ice": "25%",
+      "lightning": "25%",
+      "dark": "25%",
+      "arcane": "-300%",
+      "spirit": "-400%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Corte Vertical",
+      "damage": "36.0(3)/46.5(3)/57.0(3)",
+      "type": "Físico + Veneno",
+      "description": "El guerrero goblin realiza un corte vertical con su espada envenenada.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Corte Horizontal",
+      "damage": "36.0(3)/46.5(3)/57.0(3)",
+      "type": "Físico + Veneno",
+      "description": "El guerrero goblin realiza un corte horizontal de derecha a izquierda (desde su perspectiva).",
+      "dodge_notes": {
+        "normal": "Retroceder o esquivar lateralmente al iniciar la animación.",
+        "elite": "Requiere esquive anticipado justo antes del impulso.",
+        "nightmare": "Muy veloz, se recomienda mantenerse en movimiento constante y esquivar hacia su espalda."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Guerrero Goblin utiliza ataques físicos que aplican veneno. Es crucial esquivar lateralmente y mantenerse en movimiento para evitar ser alcanzado.",
+    "elite": "Además de mayor daño y velocidad, sus ataques tienen menor tiempo de reacción. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Además, puede encadenar ataques en rápida sucesión, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/b/b4/Goblin_Warrior.png/200px-Goblin_Warrior.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Goblin_Mage",
+  "name": "Goblin Mago",
+  "stats": {
+    "health": {
+      "normal": 120,
+      "elite": 160,
+      "nightmare": 220
+    },
+    "run_state": 100,
+    "move_speed": "100 (valor base, puede variar por dificultad)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Proyectil Mágico Rastreador",
+      "damage": "Variable según dificultad",
+      "type": "Mágico",
+      "description": "Dispara un proyectil mágico que rastrea al jugador, inflige daño y aplica un efecto de ralentización que elimina todas las formas de curación.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Dispara 10 proyectiles rastreadores; esquivar en círculo constante es clave."
+      }
+    },
+    {
+      "name": "Hechizo de Mejora de Aliados",
+      "damage": "N/A",
+      "type": "Mágico",
+      "description": "Lanza un hechizo de área que aumenta la velocidad de acción, velocidad de movimiento y cura a los goblins aliados cercanos.",
+      "dodge_notes": {
+        "normal": "Interrumpir durante la larga preparación del hechizo.",
+        "elite": "Tiempo de preparación reducido; requiere interrupción rápida.",
+        "nightmare": "Activación casi instantánea; eliminar al mago rápidamente es esencial."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Goblin Mago utiliza ataques mágicos a distancia. Es crucial esquivar lateralmente y mantenerse en movimiento para evitar ser alcanzado por los proyectiles rastreadores.",
+    "elite": "Además de mayor daño y velocidad, sus ataques tienen menor tiempo de reacción. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Además, dispara múltiples proyectiles rastreadores simultáneamente, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/f/ff/Goblin_Mage.png/200px-Goblin_Mage.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Goblin_Archer",
+  "name": "Goblin Arquero",
+  "stats": {
+    "health": {
+      "normal": 154,
+      "elite": 224,
+      "nightmare": 294
+    },
+    "run_state": 200,
+    "move_speed": "200 (valor base, puede variar por dificultad)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "fire": "25%",
+      "ice": "25%",
+      "lightning": "25%",
+      "dark": "25%",
+      "arcane": "-300%",
+      "spirit": "-400%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Disparo Envenenado",
+      "damage": "18.0(3)/30.0(3)/42.0(3)",
+      "type": "Físico + Veneno",
+      "description": "Dispara una flecha envenenada que inflige daño físico y aplica un efecto de veneno que causa daño adicional con el tiempo.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Disparo Rápido",
+      "damage": "42.0(3)",
+      "type": "Físico + Veneno",
+      "description": "Disparo rápido que inflige daño físico y aplica un efecto de veneno.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Goblin Arquero utiliza ataques a distancia con flechas envenenadas. Es crucial esquivar lateralmente y mantenerse en movimiento para evitar ser alcanzado.",
+    "elite": "Además de mayor daño y velocidad, sus ataques tienen menor tiempo de reacción. Mantente en constante movimiento y evita luchar en espacios abiertos.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Además, puede disparar múltiples flechas en rápida sucesión, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d4/Goblin_Archer.png/200px-Goblin_Archer.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Harpy",
+  "name": "Harpía",
+  "stats": {
+    "health": {
+      "normal": 210,
+      "elite": 260,
+      "nightmare": 310
+    },
+    "run_state": 200,
+    "move_speed": "150 / 180 / 210 (según dificultad)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "lightning": "-200%",
+      "air": "-400%",
+      "projectile": "-25%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Patada Voladora",
+      "damage": "29.4(4) / 39.2(4) / 49.0(4)",
+      "type": "Físico",
+      "description": "Ataque en el que la harpía se lanza hacia adelante con una patada mientras está volando.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Patada Terrestre",
+      "damage": "29.4(4) / 39.2(4) / 49.0(4)",
+      "type": "Físico",
+      "description": "Ataque en el que la harpía realiza una patada mientras está en el suelo.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Lanzamiento de Plumas",
+      "damage": "12.6(3) / 16.8(3) / 21.0(3)",
+      "type": "Físico",
+      "description": "La harpía lanza una ráfaga de plumas afiladas en forma de abanico mientras está en el suelo.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente o agacharse para evitar las plumas.",
+        "elite": "Mayor velocidad y número de plumas, requiere mejor timing.",
+        "nightmare": "Ataque muy rápido y amplio, difícil de evitar sin predecirlo con antelación."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "La harpía comienza volando y utiliza su patada voladora. Al recibir suficiente daño, aterriza y cambia a ataques terrestres. Es crucial esquivar lateralmente y mantenerse en movimiento para evitar sus ataques.",
+    "elite": "Además de mayor daño y velocidad, sus ataques tienen menor tiempo de reacción. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Además, sus ataques son más impredecibles y difíciles de esquivar, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/1b/Harpy.png/173px-Harpy.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Skeleton_Mage",
+  "name": "Esqueleto Mago",
+  "stats": {
+    "health": {
+      "normal": 160,
+      "elite": 260,
+      "nightmare": 360
+    },
+    "run_state": 100,
+    "move_speed": "100 (valor base, constante en todas las dificultades)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "fire": "-250%",
+      "earth": "-300%",
+      "divine": "-200%",
+      "evil": "25%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Bola de Fuego",
+      "damage": "15(4) / 25(4) / 35(4)",
+      "type": "Mágico",
+      "description": "Lanza una bola de fuego en un arco hacia el jugador, causando daño en área al impactar.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Escudo de Invulnerabilidad",
+      "damage": "N/A",
+      "type": "Mágico",
+      "description": "Aplica un escudo de invulnerabilidad a sí mismo o a un aliado cercano, haciéndolos inmunes al daño durante 7 segundos.",
+      "dodge_notes": {
+        "normal": "Esperar a que el efecto termine antes de atacar.",
+        "elite": "Duración similar, pero se aplica más rápidamente.",
+        "nightmare": "Activación casi instantánea; eliminar al mago rápidamente es esencial."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Esqueleto Mago utiliza ataques mágicos a distancia. Es crucial esquivar lateralmente y mantenerse en movimiento para evitar ser alcanzado por las bolas de fuego.",
+    "elite": "Además de mayor daño y velocidad, sus ataques tienen menor tiempo de reacción. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Además, sus ataques son más impredecibles y difíciles de esquivar, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/d3/Skeleton_Mage.png/200px-Skeleton_Mage.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Skeleton_Footman",
+  "name": "Skeleton Footman",
+  "stats": {
+    "health": {
+      "normal": 177,
+      "elite": 260,
+      "nightmare": 330
+    },
+    "run_state": 100,
+    "move_speed": "100 (valor base, puede variar por dificultad)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Diagonal Slash",
+      "damage": "24.0(4)/33.0(4)/42.0(4)",
+      "type": "Físico",
+      "description": "Corte diagonal (alto derecha -> bajo izquierda desde perspectiva del monstruo).",
+      "dodge_notes": {
+        "normal": "Esquivar agachándose hacia la derecha del monstruo.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Vertical Slash",
+      "damage": "35.2(5)/48.4(5)/61.6(5)",
+      "type": "Físico",
+      "description": "Corte vertical hacia abajo.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente hacia la izquierda o derecha.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Skeleton Footman tiene dos ataques: un corte diagonal y un corte vertical. El corte diagonal se puede esquivar agachándose hacia la derecha del monstruo, mientras que el corte vertical se puede esquivar lateralmente hacia la izquierda o derecha.",
+    "elite": "Igual que lo normal, pero con mayor daño, mayor velocidad de acción y mayor salud.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Además, puede combinar un corte diagonal con un corte vertical."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/a/a7/Skeleton_Footman.png/200px-Skeleton_Footman.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Skeleton_Archer",
+  "name": "Skeleton Archer",
+  "stats": {
+    "health": {
+      "normal": 160,
+      "elite": 240,
+      "nightmare": 320
+    },
+    "run_state": 100,
+    "move_speed": "100 (valor base, constante en todas las dificultades)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Headshot",
+      "damage": "20(4) / 30(4) / 40(4)",
+      "type": "Físico",
+      "description": "Disparo de flecha dirigido a la cabeza del jugador.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente o agacharse justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Leg Shot",
+      "damage": "15(4) / 22.5(4) / 30(4)",
+      "type": "Físico",
+      "description": "Disparo de flecha dirigido a las piernas del jugador.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente o agacharse justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Skeleton Archer tiene dos ataques: un disparo a la cabeza y un disparo a las piernas. El disparo a la cabeza puede ser esquivado lateralmente o agachándose justo antes del impacto. El disparo a las piernas puede ser esquivado de la misma manera.",
+    "elite": "Igual que lo normal, pero con mayor daño, mayor velocidad de acción y mayor salud.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Además, puede encadenar el combo de dos ataques en un tercer disparo dirigido a la cabeza, que puede ser esquivado lateralmente o agachándose, agachándose y luego saltando, o agachándose nuevamente."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/d/da/Skeleton_Archer.png/200px-Skeleton_Archer.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Skeleton_Axeman",
+  "name": "Skeleton Axeman",
+  "stats": {
+    "health": {
+      "normal": 180,
+      "elite": 275,
+      "nightmare": 360
+    },
+    "run_state": 100,
+    "move_speed": "100 (valor base, puede variar por dificultad)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Vertical Chop",
+      "damage": "36.0(5)/52.5(5)/69.0(5)",
+      "type": "Físico",
+      "description": "Corte vertical hacia abajo.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente hacia la izquierda o derecha.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Horizontal Chop",
+      "damage": "40.8(5)/59.5(5)/78.2(5)",
+      "type": "Físico",
+      "description": "Corte horizontal de izquierda a derecha (desde la perspectiva del monstruo).",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente hacia la izquierda o derecha.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Skeleton Axeman tiene dos ataques: un corte vertical y un corte horizontal. Ambos pueden ser esquivados lateralmente hacia la izquierda o derecha. Es recomendable mantener una distancia segura y atacar después de que el enemigo haya fallado su golpe.",
+    "elite": "Además de mayor daño y velocidad, sus ataques tienen menor tiempo de reacción. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Sus ataques son más impredecibles y difíciles de esquivar, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/18/Skeleton_Axeman.png/200px-Skeleton_Axeman.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Skeleton_Crossbowman",
+  "name": "Skeleton Crossbowman",
+  "stats": {
+    "health": {
+      "normal": 110,
+      "elite": 160,
+      "nightmare": 230
+    },
+    "run_state": 100,
+    "move_speed": "100 (valor base, puede variar por dificultad)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "fire": "-250%",
+      "earth": "-300%",
+      "divine": "-200%",
+      "evil": "25%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Bolt Shot",
+      "damage": "45.0(4)/61.2(4)/77.4(4)",
+      "type": "Físico",
+      "description": "Disparo de ballesta con largo tiempo de preparación y recarga.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente o hacia atrás justo antes del disparo.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Skeleton Crossbowman tiene un solo ataque con largo tiempo de preparación y recarga. Se recomienda acercarse rápidamente para interrumpir su disparo o esquivar lateralmente para evitar el impacto.",
+    "elite": "Además de mayor daño y velocidad, su ataque tiene menor tiempo de recarga. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Su ataque es más impredecible y difícil de esquivar, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/42/Skeleton_Crossbowman.png/200px-Skeleton_Crossbowman.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Slinkfoul",
+  "name": "Mimic",
+  "stats": {
+    "health": {
+      "normal": 110,
+      "elite": 110,
+      "nightmare": 110
+    },
+    "run_state": 0,
+    "move_speed": "0 (valor base, puede variar por dificultad)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "lightning": "-200%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Bite",
+      "damage": "50.0(4)/75.0(4)/100.0(4)",
+      "type": "Físico",
+      "description": "Mordida rápida con gran daño.",
+      "dodge_notes": {
+        "normal": "Esquivar lateralmente o hacia atrás justo antes del impacto.",
+        "elite": "Mayor velocidad, requiere mejor timing.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin predecirlo con antelación."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Slinkfoul es una variante única del Mimic. Se recomienda acercarse rápidamente para interrumpir su ataque o esquivar lateralmente para evitar el impacto.",
+    "elite": "Además de mayor daño y velocidad, su ataque tiene menor tiempo de recarga. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Su ataque es más impredecible y difícil de esquivar, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/7/7a/Slinkfoul.png/258px-Slinkfoul.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Zombie",
+  "name": "Zombie",
+  "stats": {
+    "health": {
+      "normal": 110,
+      "elite": 160,
+      "nightmare": 230
+    },
+    "run_state": 100,
+    "move_speed": "100 (valor base, puede variar por dificultad)",
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "-17.2%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Nube Venenosa",
+      "damage": "15.0(4)/22.5(4)/30.0(4)",
+      "type": "Mágico",
+      "description": "El zombie emite una nube de gas venenoso que causa daño por tiempo a los jugadores dentro de ella.",
+      "dodge_notes": {
+        "normal": "Evitar moviéndose lateralmente o hacia atrás antes de que se libere la nube.",
+        "elite": "Mayor velocidad, requiere mejor sincronización.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin anticipación."
+      }
+    },
+    {
+      "name": "Golpe con Mano Derecha",
+      "damage": "20.0(4)/30.0(4)/40.0(4)",
+      "type": "Físico",
+      "description": "Un golpe corto con la mano derecha del zombie.",
+      "dodge_notes": {
+        "normal": "Evitar retrocediendo rápidamente.",
+        "elite": "Mayor velocidad, requiere mejor sincronización.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin anticipación."
+      }
+    },
+    {
+      "name": "Golpe con Mano Izquierda",
+      "damage": "20.0(4)/30.0(4)/40.0(4)",
+      "type": "Físico",
+      "description": "Un golpe corto con la mano izquierda del zombie.",
+      "dodge_notes": {
+        "normal": "Evitar retrocediendo rápidamente.",
+        "elite": "Mayor velocidad, requiere mejor sincronización.",
+        "nightmare": "Velocidad aún mayor, difícil de evitar sin anticipación."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El zombie tiene tres ataques: una nube venenosa, un golpe con la mano derecha y un golpe con la mano izquierda. Se recomienda mantener una distancia segura y esquivar lateralmente o hacia atrás para evitar sus ataques.",
+    "elite": "Además de mayor daño y velocidad, sus ataques tienen menor tiempo de recarga. Mantente en constante movimiento y evita luchar en espacios cerrados.",
+    "nightmare": "La variante Pesadilla tiene mayor daño, velocidad de acción y de movimiento, y mayor salud que la versión élite. Sus ataques son más impredecibles y difíciles de esquivar, lo que requiere una gestión cuidadosa del posicionamiento."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/c/c3/Zombie.png/200px-Zombie.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Demon_Berserker",
+  "name": "Berserker Demoníaco",
+  "stats": {
+    "health": {
+      "normal": 800,
+      "elite": 1100,
+      "nightmare": 1350
+    },
+    "run_state": 180,
+    "move_speed": {
+      "normal": 210,
+      "elite": 240,
+      "nightmare": 270
+    },
+    "defenses": {
+      "physical": "30%",
+      "magic": "20%",
+      "fire": "25%",
+      "ice": "-50%",
+      "light": "-30%",
+      "dark": "+50%",
+      "divine": "-50%",
+      "evil": "+50%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Embiste Furia",
+      "damage": "65.0 (normal) / 98.0 (elite) / 120.0 (nightmare)",
+      "type": "Físico",
+      "description": "Un embiste rápido que cubre una gran distancia, causando daño al impactar.",
+      "dodge_notes": {
+        "normal": "Esquiva hacia un lado para evitar el embiste.",
+        "elite": "El embiste es más rápido y cubre una distancia mayor.",
+        "nightmare": "Muy difícil de evitar, requiere una anticipación perfecta para esquivar."
+      }
+    },
+    {
+      "name": "Golpe Vertical",
+      "damage": "80.0 (normal) / 120.0 (elite) / 140.0 (nightmare)",
+      "type": "Físico",
+      "description": "Un golpe vertical con su enorme espada, causando gran daño.",
+      "dodge_notes": {
+        "normal": "Esquiva hacia atrás o lateralmente justo antes del impacto.",
+        "elite": "El golpe es más rápido, esquivar a tiempo es esencial.",
+        "nightmare": "Golpe extremadamente rápido, requiere reflejos rápidos y anticipación."
+      }
+    },
+    {
+      "name": "Giro Destructor",
+      "damage": "60.0 (normal) / 90.0 (elite) / 105.0 (nightmare)",
+      "type": "Físico",
+      "description": "Un giro con su espada, golpeando a los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "Esquiva lateralmente para evitar el giro.",
+        "elite": "Esquiva rápidamente o usa un salto para evitar el ataque.",
+        "nightmare": "El giro es muy rápido, necesitarás tiempo de reacción casi instantáneo."
+      }
+    },
+    {
+      "name": "Furia Imparable",
+      "damage": "100.0 (normal) / 140.0 (elite) / 170.0 (nightmare)",
+      "type": "Físico",
+      "description": "El berserker desata su furia, aumentando la velocidad y daño durante un corto período.",
+      "dodge_notes": {
+        "normal": "Esquiva lateralmente y mantén tu distancia.",
+        "elite": "La velocidad de ataque es mayor, esquivar es más difícil.",
+        "nightmare": "Casi imposible de esquivar, la mejor opción es mantenerse a distancia y anticipar sus movimientos."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "Mantén la distancia, esquiva sus embistes y ataques rápidos. El berserker se vuelve vulnerable después de su embiste.",
+    "elite": "Los ataques son más rápidos y su furia imparable aumenta la dificultad. Usa la distancia a tu favor y contrarresta cuando se detenga después de su embiste.",
+    "nightmare": "El berserker es extremadamente rápido y sus ataques pueden hacer mucho daño. La clave es anticipar su movimiento y mantener la distancia."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/18/Demon_Berserker.png/211px-Demon_Berserker.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Demon_Centaur",
+  "name": "Centauro Demoníaco",
+  "stats": {
+    "health": {
+      "normal": 910,
+      "elite": 1160,
+      "nightmare": 1310
+    },
+    "run_state": 150,
+    "move_speed": {
+      "normal": 200,
+      "elite": 230,
+      "nightmare": 260
+    },
+    "defenses": {
+      "physical": "-26.2%",
+      "magic": "+36.8%",
+      "fire": "+25%",
+      "ice": "-300%",
+      "light": "-200%",
+      "dark": "+50%",
+      "divine": "-200%",
+      "evil": "+50%",
+      "projectile": "+20%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Carga con Lanza",
+      "damage": "42.0 (normal) / 63.0 (élite) / 63.0 (pesadilla)",
+      "type": "Físico",
+      "description": "Un ataque a largo alcance con su lanza, cargando hacia el jugador.",
+      "dodge_notes": {
+        "normal": "Esquiva lateralmente para evitar la carga.",
+        "elite": "Requiere un mejor tiempo de esquiva debido a la mayor velocidad.",
+        "nightmare": "Es difícil esquivar, anticipa su movimiento para evitarlo."
+      }
+    },
+    {
+      "name": "Corte Diagonal Descendente",
+      "damage": "50.4 (normal) / 75.6 (élite) / 75.6 (pesadilla)",
+      "type": "Físico",
+      "description": "Un corte rápido en diagonal de izquierda a derecha.",
+      "dodge_notes": {
+        "normal": "Esquiva moviéndote a la derecha o izquierda para evitar el corte.",
+        "elite": "Más rápido, requiere un tiempo de reacción preciso.",
+        "nightmare": "Mucho más rápido, difícil de esquivar sin una reacción rápida."
+      }
+    },
+    {
+      "name": "Barrido Horizontal",
+      "damage": "50.4 (normal) / 75.6 (élite) / 75.6 (pesadilla)",
+      "type": "Físico",
+      "description": "Un barrido amplio en horizontal, atacando en un arco.",
+      "dodge_notes": {
+        "normal": "Esquiva lateralmente para evitar el ataque.",
+        "elite": "Requiere un tiempo de reacción más rápido.",
+        "nightmare": "Muy rápido y difícil de esquivar, anticipa su movimiento."
+      }
+    },
+    {
+      "name": "Carga Corriendo",
+      "damage": "61.6 (normal) / 92.4 (élite) / 92.4 (pesadilla)",
+      "type": "Físico",
+      "description": "Un ataque de carga mientras corre hacia el jugador.",
+      "dodge_notes": {
+        "normal": "Esquiva hacia un lado para evitar la carga.",
+        "elite": "La velocidad aumenta, lo que hace que sea más difícil de evitar.",
+        "nightmare": "Se requiere anticipación y un tiempo de esquiva preciso."
+      }
+    },
+    {
+      "name": "Barrido Bajo",
+      "damage": "50.4 (normal) / 75.6 (élite) / 75.6 (pesadilla)",
+      "type": "Físico",
+      "description": "Un barrido bajo, dirigido a derribar al jugador.",
+      "dodge_notes": {
+        "normal": "Esquiva saltando o agachándote.",
+        "elite": "Más rápido, requiere reflejos rápidos.",
+        "nightmare": "Requiere un tiempo de esquiva perfecto y anticipación."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "Mantén la distancia y esquiva lateralmente para evitar los ataques de carga.",
+    "elite": "Los ataques son más rápidos y causan más daño. Usa el entorno a tu favor para bloquear su línea de visión y contraatacar cuando falle.",
+    "nightmare": "Mayor velocidad y daño. La clave es predecir sus movimientos y esquivar en el momento adecuado, especialmente durante su carga corriendo."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/8/8a/Demon_Centaur.png/200px-Demon_Centaur.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Frost_Giant_Berserker",
+  "name": "Berserker Gigante de Hielo",
+  "stats": {
+    "health": {
+      "normal": 1000,
+      "elite": 1300,
+      "nightmare": 1600
+    },
+    "run_state": 120,
+    "move_speed": {
+      "normal": 180,
+      "elite": 210,
+      "nightmare": 240
+    },
+    "defenses": {
+      "physical": "35%",
+      "magic": "20%",
+      "fire": "-10%",
+      "ice": "50%",
+      "light": "10%",
+      "dark": "-30%",
+      "divine": "-20%",
+      "evil": "25%",
+      "projectile": "20%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Golpe Congelante",
+      "damage": "90.0 (normal) / 135.0 (elite) / 170.0 (nightmare)",
+      "type": "Físico",
+      "description": "Un golpe masivo de su gran maza de hielo que puede congelar a los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "Esquiva lateralmente para evitar el impacto.",
+        "elite": "El ataque es más rápido y tiene un área de efecto mayor.",
+        "nightmare": "El ataque es mucho más rápido y el área de impacto se amplía, lo que hace difícil esquivarlo."
+      }
+    },
+    {
+      "name": "Embiste Hielado",
+      "damage": "120.0 (normal) / 170.0 (elite) / 210.0 (nightmare)",
+      "type": "Físico",
+      "description": "Un embiste con gran fuerza que congela parcialmente al enemigo al impactar.",
+      "dodge_notes": {
+        "normal": "Esquiva lateralmente o salta hacia atrás para evitar el impacto.",
+        "elite": "Esquivar es más difícil debido a la velocidad del ataque.",
+        "nightmare": "El embiste es extremadamente rápido, lo mejor es anticiparlo y moverse rápidamente."
+      }
+    },
+    {
+      "name": "Ola de Frío",
+      "damage": "60.0 (normal) / 90.0 (elite) / 120.0 (nightmare)",
+      "type": "Mágico/Ice",
+      "description": "Desata una onda de energía congelante hacia los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "Evita la onda moviéndote rápidamente a los costados.",
+        "elite": "La onda se extiende más lejos, lo que hace necesario un mayor tiempo de reacción.",
+        "nightmare": "La onda es casi instantánea, la única forma de evitarla es predecir el momento de activación."
+      }
+    },
+    {
+      "name": "Rugido Gélido",
+      "damage": "100.0 (normal) / 150.0 (elite) / 200.0 (nightmare)",
+      "type": "Mágico/Ice",
+      "description": "Emite un rugido gélido que reduce la velocidad de los enemigos cercanos y los congela parcialmente.",
+      "dodge_notes": {
+        "normal": "Evita quedar demasiado cerca del gigante para no ser afectado por el rugido.",
+        "elite": "El rugido tiene un alcance mayor y afecta más tiempo.",
+        "nightmare": "El rugido es casi imposible de evitar, lo mejor es mantener la distancia."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Berserker Gigante de Hielo tiene una combinación de ataques físicos y mágicos que lo hacen muy peligroso a corta distancia. Mantente a la distancia y utiliza movimientos rápidos para evitar su golpe congelante y embiste. Evita los ataques de área y ten cuidado con su rugido.",
+    "elite": "Sus ataques son mucho más rápidos y sus habilidades mágicas son más devastadoras. En este nivel, debes predecir mejor los ataques y esquivar con rapidez para evitar ser congelado o impactado por su fuerza.",
+    "nightmare": "En la dificultad pesadilla, el gigante es extremadamente rápido y poderoso. Es crucial mantener la distancia, anticipar cada uno de sus movimientos y estar preparado para esquivar cada ataque. Además, sus rugidos y ataques congelantes hacen que moverse sea aún más difícil, por lo que la anticipación y reflejos son clave."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/4/4a/Frost_Giant_Berserker.png/200px-Frost_Giant_Berserker.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Skeleton_Champion",
+  "name": "Campeón Esqueleto",
+  "stats": {
+    "health": {
+      "normal": 500,
+      "elite": 750,
+      "nightmare": 1000
+    },
+    "run_state": 110,
+    "move_speed": {
+      "normal": 180,
+      "elite": 200,
+      "nightmare": 220
+    },
+    "defenses": {
+      "physical": "30%",
+      "magic": "20%",
+      "fire": "-10%",
+      "ice": "10%",
+      "light": "5%",
+      "dark": "25%",
+      "divine": "5%",
+      "evil": "30%",
+      "projectile": "25%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Golpe del Campeón",
+      "damage": "50.0 (normal) / 75.0 (elite) / 100.0 (nightmare)",
+      "type": "Físico",
+      "description": "Un golpe fuerte con su espada de gran tamaño.",
+      "dodge_notes": {
+        "normal": "Puedes esquivar lateralmente para evitar el golpe.",
+        "elite": "El golpe es más rápido y se debe esquivar con mayor precisión.",
+        "nightmare": "El golpe es muy rápido y tiene un área más amplia; se recomienda anticipar y moverse rápidamente."
+      }
+    },
+    {
+      "name": "Estocada del Campeón",
+      "damage": "40.0 (normal) / 60.0 (elite) / 80.0 (nightmare)",
+      "type": "Físico",
+      "description": "Una rápida estocada hacia el enemigo que puede perforar la armadura.",
+      "dodge_notes": {
+        "normal": "Esquiva lateralmente o hacia atrás para evitar la estocada.",
+        "elite": "La estocada es más rápida y precisa, requiere una reacción más rápida.",
+        "nightmare": "La estocada es extremadamente rápida y casi ineludible; esquivar hacia los costados o atrás es clave."
+      }
+    },
+    {
+      "name": "Giro de Espada",
+      "damage": "60.0 (normal) / 90.0 (elite) / 120.0 (nightmare)",
+      "type": "Físico",
+      "description": "Realiza un giro con su espada en un amplio arco, golpeando a todos los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "Evita el giro alejándote o moviéndote hacia un lado.",
+        "elite": "El giro es más rápido y cubre un área más grande.",
+        "nightmare": "El giro es muy rápido y tiene un área extensa, la anticipación es esencial para evitarlo."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Campeón Esqueleto se caracteriza por su agresividad y sus poderosos golpes. En esta dificultad, su principal ataque es un golpe fuerte que puede ser esquivado moviéndose lateralmente. Utiliza ataques a distancia o mantente detrás de él para evitar los golpes.",
+    "elite": "El Campeón Esqueleto es más rápido y sus ataques son más contundentes. Se requiere un buen timing para esquivar sus estocadas y golpes. La estrategia principal es esquivar y golpear cuando sea seguro.",
+    "nightmare": "En la dificultad Pesadilla, el Campeón Esqueleto es extremadamente rápido y puede golpear con mayor alcance y velocidad. Se recomienda anticipar sus movimientos y mantener una distancia segura para evitar el daño masivo. Utiliza ataques a distancia y asegúrate de esquivar su giro de espada con precisión."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/7/7e/Skeleton_Champion.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Wraith",
+  "name": "Espectro",
+  "stats": {
+    "health": {
+      "normal": 350,
+      "elite": 500,
+      "nightmare": 650
+    },
+    "run_state": 150,
+    "move_speed": {
+      "normal": 230,
+      "elite": 250,
+      "nightmare": 270
+    },
+    "defenses": {
+      "physical": "10%",
+      "magic": "40%",
+      "fire": "20%",
+      "ice": "10%",
+      "light": "50%",
+      "dark": "-10%",
+      "projectile": "15%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Toque espectral",
+      "damage": "30.0 (normal) / 45.0 (elite) / 60.0 (nightmare)",
+      "type": "Mágico",
+      "description": "Un toque etéreo que inflige daño mágico a distancia.",
+      "dodge_notes": {
+        "normal": "El ataque se puede esquivar moviéndose lateralmente en el momento del toque.",
+        "elite": "Este ataque es más rápido, requiere anticipación.",
+        "nightmare": "El toque es rápido y tiene un área mayor, por lo que es difícil evitarlo sin saber su trayectoria."
+      }
+    },
+    {
+      "name": "Garra espectral",
+      "damage": "50.0 (normal) / 75.0 (elite) / 100.0 (nightmare)",
+      "type": "Físico",
+      "description": "El espectro lanza un zarpazo en un rango cercano, atravesando las defensas del jugador.",
+      "dodge_notes": {
+        "normal": "Esquiva lateralmente cuando el espectro se acerque.",
+        "elite": "El zarpazo es más rápido y puede atacar en un ángulo impredecible.",
+        "nightmare": "Este ataque es extremadamente rápido y cubre un rango más amplio, anticipar su movimiento es clave."
+      }
+    },
+    {
+      "name": "Aullido sombrío",
+      "damage": "70.0 (normal) / 105.0 (elite) / 140.0 (nightmare)",
+      "type": "Mágico",
+      "description": "Un aullido que aturde y debilita a los enemigos cercanos, infligiendo daño mágico y reduciendo su capacidad de defensa.",
+      "dodge_notes": {
+        "normal": "Este ataque puede evitarse con una buena distancia, ya que el rango de su efecto es limitado.",
+        "elite": "El aullido tiene un rango mayor y reduce más las defensas del objetivo.",
+        "nightmare": "En esta dificultad, el aullido afecta a un área mucho más grande, por lo que moverse rápidamente es crucial."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El espectro se destaca por su habilidad para atacar a distancia y desorientar con su aullido. Mantente en movimiento y evita el contacto cercano para no ser atrapado por su garra o su toque espectral.",
+    "elite": "En esta dificultad, el espectro se vuelve más impredecible y sus ataques son más veloces. Es esencial esquivar los ataques mágicos y mantenerse alejado para evitar que te acorrale.",
+    "nightmare": "En la dificultad Pesadilla, el espectro es mucho más rápido y sus ataques tienen un rango mucho mayor. Se recomienda usar ataques a distancia o mantener una distancia segura mientras se esquivan sus ataques mágicos y físicos."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/7/7c/Wraith.png/200px-Wraith.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Yeti",
+  "name": "Yeti",
+  "stats": {
+    "health": {
+      "normal": 700,
+      "elite": 1000,
+      "nightmare": 1300
+    },
+    "run_state": 130,
+    "move_speed": {
+      "normal": 200,
+      "elite": 220,
+      "nightmare": 240
+    },
+    "defenses": {
+      "physical": "40%",
+      "magic": "20%",
+      "fire": "10%",
+      "ice": "50%",
+      "light": "15%",
+      "dark": "10%",
+      "projectile": "30%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Golpe de Puño",
+      "damage": "80.0 (normal) / 120.0 (elite) / 160.0 (nightmare)",
+      "type": "Físico",
+      "description": "El Yeti lanza un potente golpe con su enorme puño.",
+      "dodge_notes": {
+        "normal": "Puedes esquivar el golpe moviéndote lateralmente en el momento del impacto.",
+        "elite": "El golpe es más rápido y cubre un área mayor; se recomienda esquivar hacia atrás.",
+        "nightmare": "El golpe es extremadamente rápido y tiene un área mucho más amplia, por lo que anticipar el movimiento es esencial."
+      }
+    },
+    {
+      "name": "Slam de Nieve",
+      "damage": "100.0 (normal) / 150.0 (elite) / 200.0 (nightmare)",
+      "type": "Físico",
+      "description": "El Yeti golpea el suelo, generando una onda de choque de nieve que daña a los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "Evita el ataque alejándote del área afectada por la onda de choque.",
+        "elite": "La onda de choque se extiende más lejos y es más rápida, por lo que se debe anticipar mejor.",
+        "nightmare": "La onda de choque se genera más rápidamente y cubre un área mucho mayor; se recomienda esquivar lo antes posible."
+      }
+    },
+    {
+      "name": "Aliento Congelante",
+      "damage": "50.0 (normal) / 75.0 (elite) / 100.0 (nightmare)",
+      "type": "Mágico",
+      "description": "El Yeti sopla un aliento congelante que ralentiza a los enemigos cercanos y les inflige daño de hielo.",
+      "dodge_notes": {
+        "normal": "Mantente alejado de la zona de impacto del aliento para evitar el daño.",
+        "elite": "El aliento se extiende más lejos y puede alcanzarte si no te mueves rápidamente.",
+        "nightmare": "El aliento tiene un alcance mucho mayor y su velocidad es impresionante; anticipación y esquivar rápidamente son clave."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Yeti tiene ataques poderosos, por lo que es importante mantener la distancia. Sus golpes son lentos pero devastadores. Aprovecha para golpear cuando se haya quedado sin ataques, pero siempre mantente alerta.",
+    "elite": "En esta dificultad, el Yeti se vuelve más rápido y sus ataques son más mortales. Su Slam de Nieve y su aliento congelante tienen un mayor alcance, así que es importante moverse constantemente para evitar ser alcanzado.",
+    "nightmare": "En la dificultad Pesadilla, el Yeti es extremadamente peligroso debido a su velocidad y la potencia de sus ataques. Mantén una distancia lo más larga posible y asegúrate de esquivar sus ataques con precisión. Los movimientos rápidos y anticipados son clave para sobrevivir."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/1/19/Yeti.png/200px-Yeti.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Banshee",
+  "name": "Banshee",
+  "stats": {
+    "health": {
+      "normal": 400,
+      "elite": 600,
+      "nightmare": 800
+    },
+    "run_state": 120,
+    "move_speed": {
+      "normal": 230,
+      "elite": 250,
+      "nightmare": 270
+    },
+    "defenses": {
+      "physical": "20%",
+      "magic": "50%",
+      "fire": "10%",
+      "ice": "20%",
+      "light": "60%",
+      "dark": "-10%",
+      "projectile": "30%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Grito Mortal",
+      "damage": "50.0 (normal) / 75.0 (elite) / 100.0 (nightmare)",
+      "type": "Mágico",
+      "description": "Un grito ensordecedor que inflige daño mágico a todos los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "Este ataque tiene un radio de acción limitado, así que mantente a distancia.",
+        "elite": "El grito es más rápido y afecta a un área mayor, por lo que anticiparse es clave.",
+        "nightmare": "El grito es extremadamente rápido y afecta un área aún mayor, requiere evasión rápida y precisa."
+      }
+    },
+    {
+      "name": "Toque Etéreo",
+      "damage": "60.0 (normal) / 90.0 (elite) / 120.0 (nightmare)",
+      "type": "Mágico",
+      "description": "Un toque espectral que atraviesa las defensas del objetivo, infligiendo daño mágico directo.",
+      "dodge_notes": {
+        "normal": "Puedes esquivarlo con un movimiento lateral rápido.",
+        "elite": "El toque es más rápido, y se recomienda anticiparse para evitar el daño.",
+        "nightmare": "El toque es extremadamente rápido, por lo que es difícil evitarlo sin predecirlo con antelación."
+      }
+    },
+    {
+      "name": "Lamento Sombrío",
+      "damage": "70.0 (normal) / 100.0 (elite) / 130.0 (nightmare)",
+      "type": "Mágico",
+      "description": "La Banshee emite un lamento aterrador que reduce la moral de los enemigos cercanos, disminuyendo su velocidad y defensa.",
+      "dodge_notes": {
+        "normal": "Este ataque puede evitarse al mantenerse fuera del rango de efecto.",
+        "elite": "El lamento afecta a un área mayor, así que es crucial alejarse rápidamente.",
+        "nightmare": "El lamento afecta a un área aún mayor y ralentiza considerablemente a los enemigos. Evitarlo a tiempo es esencial."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "La Banshee tiene ataques poderosos de área. Para sobrevivir, mantén una distancia segura y esquiva sus gritos. Presta atención al momento en que realiza el Lamento Sombrío para evitar ser alcanzado.",
+    "elite": "En esta dificultad, la Banshee será mucho más rápida y sus ataques tendrán un área de efecto más grande. Asegúrate de anticipar sus ataques y mantén una distancia constante para evitar ser atrapado por su Grito Mortal o su Toque Etéreo.",
+    "nightmare": "En la dificultad Pesadilla, la Banshee es una de las criaturas más peligrosas debido a su velocidad y la magnitud de sus ataques. Mantente en movimiento constante, usa cobertura cuando sea posible, y asegúrate de estar siempre un paso adelante para evitar sus ataques mágicos devastadores."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/d/d3/Banshee.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Cave_Troll",
+  "name": "Trol de la Cueva",
+  "stats": {
+    "health": {
+      "normal": 1200,
+      "elite": 1800,
+      "nightmare": 2400
+    },
+    "run_state": 100,
+    "move_speed": {
+      "normal": 220,
+      "elite": 240,
+      "nightmare": 260
+    },
+    "defenses": {
+      "physical": "35%",
+      "magic": "20%",
+      "fire": "30%",
+      "ice": "25%",
+      "light": "10%",
+      "dark": "15%",
+      "projectile": "40%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Golpe de Martillo",
+      "damage": "150.0 (normal) / 225.0 (elite) / 300.0 (nightmare)",
+      "type": "Físico",
+      "description": "El Trol lanza un poderoso golpe con su gran martillo, causando un daño significativo a los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "Puedes esquivar este ataque lateralmente o hacia atrás.",
+        "elite": "El ataque es más rápido y tiene un mayor alcance. Es recomendable esquivar justo antes de que el martillo impacte.",
+        "nightmare": "El ataque es extremadamente rápido y cubre un área aún mayor, por lo que esquivar con anticipación es crucial."
+      }
+    },
+    {
+      "name": "Trompazo",
+      "damage": "200.0 (normal) / 300.0 (elite) / 400.0 (nightmare)",
+      "type": "Físico",
+      "description": "El Trol embiste a su objetivo con una carga brutal, aplastando todo a su paso.",
+      "dodge_notes": {
+        "normal": "Puedes esquivar este ataque moviéndote a un lado en el momento justo.",
+        "elite": "La embestida es más rápida y tiene un mayor alcance, lo que requiere un mejor posicionamiento para evitarla.",
+        "nightmare": "La embestida es muy rápida y difícil de predecir, por lo que se requiere un gran control de los movimientos para esquivarla."
+      }
+    },
+    {
+      "name": "Lanzamiento de Roca",
+      "damage": "120.0 (normal) / 180.0 (elite) / 240.0 (nightmare)",
+      "type": "Proyectil",
+      "description": "El Trol recoge una roca gigante y la lanza contra los enemigos a larga distancia.",
+      "dodge_notes": {
+        "normal": "El proyectil es fácil de esquivar moviéndote lateralmente.",
+        "elite": "El proyectil es más rápido y puede cubrir una mayor distancia, pero sigue siendo posible esquivarlo con un movimiento adecuado.",
+        "nightmare": "El proyectil se lanza mucho más rápido y tiene un alcance impresionante. Anticipar el lanzamiento es clave para esquivarlo."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Trol de la Cueva es lento pero tiene ataques de gran alcance. Mantén la distancia y espera a que falle su golpe de martillo o su embestida antes de atacar. Si te acercas, asegúrate de esquivar sus movimientos con precisión.",
+    "elite": "En la dificultad elite, el Trol es más rápido y sus ataques son más peligrosos. Aprovecha los momentos en que falla sus ataques para atacar, pero mantente alerta para esquivar rápidamente sus poderosos golpes.",
+    "nightmare": "En la dificultad nightmare, el Trol es extremadamente peligroso debido a su velocidad, la potencia de sus ataques y su capacidad para lanzar rocas a larga distancia. Mantén la movilidad constante y anticípate a sus ataques, esquivando con precisión y buscando oportunidades para golpear cuando quede vulnerable."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e1/Cave_Troll.png/200px-Cave_Troll.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Cyclops",
+  "name": "Cíclope",
+  "stats": {
+    "health": {
+      "normal": 1600,
+      "elite": 2400,
+      "nightmare": 3200
+    },
+    "run_state": 120,
+    "move_speed": {
+      "normal": 180,
+      "elite": 200,
+      "nightmare": 220
+    },
+    "defenses": {
+      "physical": "40%",
+      "magic": "25%",
+      "fire": "35%",
+      "ice": "20%",
+      "light": "10%",
+      "dark": "15%",
+      "projectile": "50%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Golpe de Maza",
+      "damage": "250.0 (normal) / 375.0 (elite) / 500.0 (nightmare)",
+      "type": "Físico",
+      "description": "El Cíclope lanza un golpe devastador con su maza, aplastando a los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "Puedes esquivar el golpe moviéndote lateralmente o hacia atrás justo antes del impacto.",
+        "elite": "El golpe es más rápido y tiene un alcance mayor, lo que requiere un mejor timing para esquivarlo.",
+        "nightmare": "El golpe es extremadamente rápido y cubre una mayor área, lo que hace esencial anticipar y moverse con precisión."
+      }
+    },
+    {
+      "name": "Pisotón",
+      "damage": "300.0 (normal) / 450.0 (elite) / 600.0 (nightmare)",
+      "type": "Físico",
+      "description": "El Cíclope da un poderoso pisotón al suelo, causando daño a los enemigos a su alrededor.",
+      "dodge_notes": {
+        "normal": "Esquiva este ataque saltando o moviéndote rápidamente hacia un lado.",
+        "elite": "La velocidad de la animación es mayor, por lo que es necesario esquivar rápidamente con antelación.",
+        "nightmare": "El pisotón se realiza muy rápido y cubre un área aún mayor. La anticipación es clave para evitarlo."
+      }
+    },
+    {
+      "name": "Lanzamiento de Roca",
+      "damage": "200.0 (normal) / 300.0 (elite) / 400.0 (nightmare)",
+      "type": "Proyectil",
+      "description": "El Cíclope recoge una enorme roca y la lanza contra sus enemigos a gran distancia.",
+      "dodge_notes": {
+        "normal": "Esquiva lateralmente o avanza en diagonal para evitar el impacto.",
+        "elite": "El proyectil se lanza más rápido, por lo que necesitas esquivarlo con un buen timing.",
+        "nightmare": "El proyectil es extremadamente rápido y puede cubrir una gran distancia, por lo que deberás anticipar su trayectoria y moverte con rapidez."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Cíclope es un enemigo con ataques poderosos y de gran alcance. Aprovecha su lentitud para esquivar sus golpes y ataques a distancia. Mantén la distancia y ataca cuando falle en sus movimientos.",
+    "elite": "El Cíclope en dificultad elite es más rápido y sus ataques causan más daño. La clave es anticiparse a sus movimientos y esquivar con precisión, especialmente cuando lanza rocas o realiza el pisotón.",
+    "nightmare": "La variante nightmare del Cíclope es extremadamente peligrosa debido a su velocidad y la magnitud de su daño. Es esencial mantener la distancia y anticipar sus ataques para poder esquivarlos a tiempo. Los movimientos rápidos y los ataques oportunos son la mejor estrategia."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/a/a9/Cyclops.png/200px-Cyclops.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Frost_Wyvern",
+  "name": "Wyvern de Escarcha",
+  "stats": {
+    "health": {
+      "normal": 1300,
+      "elite": 1950,
+      "nightmare": 2600
+    },
+    "run_state": 150,
+    "move_speed": {
+      "normal": 220,
+      "elite": 240,
+      "nightmare": 270
+    },
+    "defenses": {
+      "physical": "35%",
+      "magic": "40%",
+      "fire": "50%",
+      "ice": "80%",
+      "light": "30%",
+      "dark": "25%",
+      "projectile": "45%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Aliento Congelante",
+      "damage": "150.0 (normal) / 225.0 (elite) / 300.0 (nightmare)",
+      "type": "Mágico (Hielo)",
+      "description": "El Wyvern de Escarcha escupe un aliento helado que congela a sus enemigos, causando daño en el tiempo.",
+      "dodge_notes": {
+        "normal": "Puedes esquivar moviéndote lateralmente o retrocediendo rápidamente.",
+        "elite": "El aliento es más rápido y abarca una mayor área, requiriendo esquivar con precisión.",
+        "nightmare": "El aliento es mucho más rápido y cubre un área aún mayor, lo que hace esencial anticiparse para evitarlo."
+      }
+    },
+    {
+      "name": "Rugido Congelante",
+      "damage": "200.0 (normal) / 300.0 (elite) / 400.0 (nightmare)",
+      "type": "Mágico (Hielo)",
+      "description": "El Wyvern lanza un rugido escalofriante que congela el aire a su alrededor, causando daño directo y ralentizando a los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "Este ataque se puede esquivar moviéndose rápidamente fuera del área del rugido.",
+        "elite": "El rugido tiene un área de efecto más grande y es más difícil de evitar.",
+        "nightmare": "El rugido es extremadamente rápido y cubre una gran área. Requiere moverse con mucha rapidez para esquivar."
+      }
+    },
+    {
+      "name": "Golpe de Cola Congelado",
+      "damage": "250.0 (normal) / 375.0 (elite) / 500.0 (nightmare)",
+      "type": "Físico (Hielo)",
+      "description": "El Wyvern da un golpe con su cola congelada que puede golpear a los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "Esquiva este ataque moviéndote lateralmente o saltando cuando la cola se levante.",
+        "elite": "El ataque es más rápido y tiene un mayor alcance, requiriendo mayor anticipación.",
+        "nightmare": "El golpe es extremadamente rápido, cubre una gran área y es muy difícil de evitar sin una buena anticipación."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Wyvern de Escarcha es un enemigo volador que usa su aliento congelante y rugido para mantener a los jugadores a distancia. La clave es moverse rápidamente para esquivar su aliento y golpe de cola, y aprovechar los momentos en los que no está usando estos ataques para golpear.",
+    "elite": "La versión elite del Wyvern de Escarcha tiene ataques más rápidos y potentes, y un área de efecto mayor con su rugido. Los jugadores deben anticipar el momento en que utiliza el aliento y moverse con más rapidez para esquivar sus ataques.",
+    "nightmare": "En la variante nightmare, el Wyvern de Escarcha es mucho más ágil y peligroso. Su rugido y aliento se vuelven casi imposibles de esquivar sin anticipación, por lo que se necesita mantener una movilidad constante y una gran precisión para esquivar sus ataques."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/0/04/Frost_Wyvern.png/200px-Frost_Wyvern.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Ghost_King",
+  "name": "Rey Fantasma",
+  "stats": {
+    "health": {
+      "normal": 1800,
+      "elite": 2700,
+      "nightmare": 3600
+    },
+    "run_state": 120,
+    "move_speed": {
+      "normal": 150,
+      "elite": 170,
+      "nightmare": 190
+    },
+    "defenses": {
+      "physical": "20%",
+      "magic": "60%",
+      "fire": "40%",
+      "ice": "40%",
+      "light": "90%",
+      "dark": "30%",
+      "projectile": "50%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Rugido Espectral",
+      "damage": "250.0 (normal) / 375.0 (elite) / 500.0 (nightmare)",
+      "type": "Mágico (Oscuro)",
+      "description": "El Rey Fantasma emite un rugido aterrador que inflige daño mágico en área y reduce la moral de los jugadores cercanos.",
+      "dodge_notes": {
+        "normal": "Este ataque tiene un área de efecto moderada, puedes esquivarlo moviéndote lateralmente.",
+        "elite": "El rugido se extiende más lejos y sufre menos tiempo de recuperación. Se debe esquivar con mayor rapidez.",
+        "nightmare": "El rugido es mucho más rápido y abarca una vasta área. Requiere esquivar rápidamente y anticipación."
+      }
+    },
+    {
+      "name": "Toque Oscuro",
+      "damage": "150.0 (normal) / 225.0 (elite) / 300.0 (nightmare)",
+      "type": "Mágico (Oscuro)",
+      "description": "El Rey Fantasma extiende su mano espectral para tocar a los enemigos a corta distancia, infligiendo daño y dejando una maldición que reduce su salud con el tiempo.",
+      "dodge_notes": {
+        "normal": "Este ataque puede ser esquivado moviéndote lateralmente antes de que te alcance.",
+        "elite": "El toque es más rápido y su área de efecto es mayor. Se recomienda anticiparse.",
+        "nightmare": "El toque se lanza con gran velocidad, casi instantáneo, y cubre una zona amplia."
+      }
+    },
+    {
+      "name": "Llamado a las Sombras",
+      "damage": "300.0 (normal) / 450.0 (elite) / 600.0 (nightmare)",
+      "type": "Mágico (Oscuro)",
+      "description": "El Rey Fantasma invoca sombras que atacan a los jugadores cercanos, causando daño continuo por un corto período.",
+      "dodge_notes": {
+        "normal": "Evita este ataque manteniendo distancia y moviéndote constantemente para no ser alcanzado por las sombras.",
+        "elite": "Las sombras invocadas se mueven más rápido y atacan más frecuentemente, lo que requiere estar en constante movimiento.",
+        "nightmare": "Las sombras son casi imposibles de esquivar sin una gran anticipación debido a su velocidad y frecuencia."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Rey Fantasma es un enemigo de largo alcance que usa su rugido espectral para debilitar a los jugadores y su toque oscuro para hacer daño a corta distancia. Mantente en movimiento constante para esquivar sus ataques y evita el área de su rugido. Es importante mantener la distancia para minimizar el daño del toque oscuro.",
+    "elite": "En su versión elite, el Rey Fantasma es más rápido y sus ataques son más devastadores. Su rugido y toque oscuro tienen mayor área de efecto, por lo que se requiere más atención a la movilidad y anticipación para esquivarlos.",
+    "nightmare": "La variante nightmare del Rey Fantasma es extremadamente difícil debido a la velocidad de sus ataques y la frecuencia de las sombras invocadas. Los jugadores deben estar en constante movimiento y anticipar cada ataque para sobrevivir. La clave es la anticipación y la capacidad de esquivar rápidamente."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/e/e2/Ghost_King.png/200px-Ghost_King.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Lich",
+  "name": "Liche",
+  "stats": {
+    "health": {
+      "normal": 2000,
+      "elite": 3000,
+      "nightmare": 4000
+    },
+    "run_state": 120,
+    "move_speed": {
+      "normal": 130,
+      "elite": 150,
+      "nightmare": 170
+    },
+    "defenses": {
+      "physical": "25%",
+      "magic": "50%",
+      "fire": "40%",
+      "ice": "30%",
+      "light": "90%",
+      "dark": "60%",
+      "projectile": "55%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Rayo Mortal",
+      "damage": "250.0 (normal) / 375.0 (elite) / 500.0 (nightmare)",
+      "type": "Mágico (Oscuro)",
+      "description": "El Liche lanza un rayo mortal que atraviesa a los enemigos en su línea de visión, infligiendo daño a todos los que toquen.",
+      "dodge_notes": {
+        "normal": "Este ataque es predecible y puede evitarse con un movimiento rápido lateral o un salto.",
+        "elite": "El rayo es más rápido y cubre una mayor distancia, lo que requiere un mayor tiempo de reacción.",
+        "nightmare": "El rayo se lanza mucho más rápido y puede atravesar todo el mapa, por lo que anticiparse es esencial."
+      }
+    },
+    {
+      "name": "Exhalación Necromántica",
+      "damage": "200.0 (normal) / 300.0 (elite) / 400.0 (nightmare)",
+      "type": "Mágico (Oscuro)",
+      "description": "El Liche exhala una neblina oscura que inflige daño en área a los jugadores cercanos y los deja con maldición durante un corto período.",
+      "dodge_notes": {
+        "normal": "Evita este ataque manteniendo la distancia o moviéndote lateralmente cuando se realiza la exhalación.",
+        "elite": "El área de efecto de la neblina es más grande, por lo que se recomienda moverse rápidamente fuera del área.",
+        "nightmare": "La neblina es extremadamente rápida y cubre un área masiva. Se debe esquivar o anticipar su dirección con rapidez."
+      }
+    },
+    {
+      "name": "Invocar Muertos",
+      "damage": "0 (invocación)",
+      "type": "Mágico (Oscuro)",
+      "description": "El Liche invoca una horda de muertos vivientes para que luchan a su lado, debilitando a los jugadores cercanos.",
+      "dodge_notes": {
+        "normal": "Este ataque no causa daño directo, pero los muertos vivientes pueden abrumar al jugador si no se les mata rápidamente.",
+        "elite": "Los muertos vivientes son más fuertes y requieren ser eliminados con rapidez, de lo contrario, sobrepasarán al jugador.",
+        "nightmare": "Los muertos vivientes son mucho más numerosos y más poderosos, lo que hace que este ataque sea una amenaza constante."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Liche tiene un ataque a distancia con su rayo mortal y un ataque en área con su exhalación necromántica. Mantente a distancia y esquiva su rayo, mientras que cuando utilice la exhalación, aléjate rápidamente. El ataque de invocar muertos no causa daño directo, pero los muertos vivientes pueden abrumarte si no los eliminas a tiempo.",
+    "elite": "En su versión elite, el Liche es más rápido y sus ataques son más devastadores. El rayo mortal cubre más distancia y la neblina necromántica tiene un área mayor. Asegúrate de eliminar a los muertos vivientes rápidamente para evitar ser sobrepasado.",
+    "nightmare": "La versión nightmare del Liche es extremadamente difícil. El rayo mortal es casi instantáneo, la neblina necromántica tiene un alcance gigantesco y los muertos vivientes son aún más peligrosos. Mantente en constante movimiento y elimina a los muertos rápidamente para sobrevivir."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/8/86/Lich.png/200px-Lich.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Skeleton_Warlord",
+  "name": "Señor de guerra esqueleto",
+  "stats": {
+    "health": {
+      "normal": 2200,
+      "elite": 3300,
+      "nightmare": 4200
+    },
+    "run_state": 150,
+    "move_speed": {
+      "normal": 110,
+      "elite": 130,
+      "nightmare": 150
+    },
+    "defenses": {
+      "physical": "35%",
+      "magic": "25%",
+      "fire": "20%",
+      "ice": "40%",
+      "light": "60%",
+      "dark": "70%",
+      "projectile": "50%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Corte Devastador",
+      "damage": "400.0 (normal) / 600.0 (elite) / 800.0 (nightmare)",
+      "type": "Físico",
+      "description": "El Señor de guerra esqueleto realiza un potente corte con su espada que inflige daño en un área frente a él.",
+      "dodge_notes": {
+        "normal": "Este ataque puede ser esquivado moviéndose lateralmente o saltando justo antes de que se realice el corte.",
+        "elite": "El ataque es más rápido y tiene mayor alcance, por lo que se recomienda esquivar en el momento justo.",
+        "nightmare": "Este corte es extremadamente rápido y tiene un alcance mayor, siendo muy difícil de esquivar sin anticipación."
+      }
+    },
+    {
+      "name": "Grito de Guerra",
+      "damage": "0 (no causa daño directo)",
+      "type": "Mágico",
+      "description": "El Señor de guerra esqueleto lanza un grito de guerra que aumenta la fuerza de los enemigos cercanos, infligiendo daño adicional con sus ataques durante un corto período.",
+      "dodge_notes": {
+        "normal": "Este ataque no causa daño directo, pero los enemigos cercanos ganan un aumento de fuerza, por lo que se recomienda eliminar rápidamente a estos enemigos.",
+        "elite": "El aumento de poder es considerablemente mayor, por lo que se debe priorizar eliminar a los enemigos afectados antes de que el daño se vuelva abrumador.",
+        "nightmare": "El aumento de poder es masivo, y los enemigos se vuelven extremadamente peligrosos, por lo que eliminar rápidamente a los enemigos cercanos es vital."
+      }
+    },
+    {
+      "name": "Golpe Aéreo",
+      "damage": "500.0 (normal) / 750.0 (elite) / 1000.0 (nightmare)",
+      "type": "Físico",
+      "description": "El Señor de guerra esqueleto salta y cae con un golpe devastador que inflige daño en área a los enemigos cercanos.",
+      "dodge_notes": {
+        "normal": "El golpe puede ser esquivado saltando o corriendo fuera del área de impacto.",
+        "elite": "El área de impacto es mayor, por lo que se debe saltar o moverse rápidamente hacia un lado en el momento adecuado.",
+        "nightmare": "La caída es mucho más rápida, por lo que la anticipación es clave para evitar el daño."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Señor de guerra esqueleto tiene tres ataques. El primero es el Corte Devastador, que puede ser esquivado con un movimiento lateral o salto. El segundo es el Grito de Guerra, que no causa daño directo pero aumenta la fuerza de los enemigos cercanos. El tercero es el Golpe Aéreo, que puede evitarse saltando o corriendo fuera del área de impacto.",
+    "elite": "En su versión elite, el Señor de guerra esqueleto es más rápido, el Corte Devastador tiene mayor alcance, y el Grito de Guerra aumenta significativamente el poder de los enemigos. El Golpe Aéreo cubre una mayor área, por lo que es más difícil evitarlo.",
+    "nightmare": "La versión nightmare es extremadamente difícil, con el Corte Devastador más rápido y mayor alcance. El Grito de Guerra aumenta mucho el poder de los enemigos, lo que requiere eliminar rápidamente a los enemigos cercanos. El Golpe Aéreo es mucho más rápido y tiene una zona de impacto mucho mayor."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/b/bb/Skeleton_Warlord.png/200px-Skeleton_Warlord.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+},
+{
+  "id": "Spectral_Knight",
+  "name": "Caballero espectral",
+  "stats": {
+    "health": {
+      "normal": 1500,
+      "elite": 2250,
+      "nightmare": 3000
+    },
+    "run_state": 200,
+    "move_speed": {
+      "normal": 120,
+      "elite": 140,
+      "nightmare": 160
+    },
+    "defenses": {
+      "physical": "30%",
+      "magic": "40%",
+      "fire": "25%",
+      "ice": "30%",
+      "light": "50%",
+      "dark": "70%",
+      "projectile": "40%"
+    }
+  },
+  "attacks": [
+    {
+      "name": "Espada espectral",
+      "damage": "300.0 (normal) / 450.0 (elite) / 600.0 (nightmare)",
+      "type": "Físico",
+      "description": "El Caballero espectral realiza un ataque rápido y preciso con su espada espectral, causando daño directo.",
+      "dodge_notes": {
+        "normal": "Esquiva con un salto o moviéndote lateralmente en el momento adecuado.",
+        "elite": "El ataque es más rápido y tiene un rango mayor, esquiva justo antes del impacto.",
+        "nightmare": "La velocidad y el rango son mucho mayores, requiere un buen momento para esquivar o saltar."
+      }
+    },
+    {
+      "name": "Escudo espectral",
+      "damage": "0 (no causa daño directo)",
+      "type": "Defensivo",
+      "description": "El Caballero espectral se protege con un escudo mágico que refleja daño físico durante un corto período de tiempo.",
+      "dodge_notes": {
+        "normal": "No es necesario esquivar, pero debes evitar atacar mientras el escudo está activo.",
+        "elite": "El escudo tiene una mayor duración, y refleja más daño, espera a que se agote antes de atacar.",
+        "nightmare": "El escudo es aún más resistente, por lo que debes esperar pacientemente para atacar después de su activación."
+      }
+    },
+    {
+      "name": "Lanza espectral",
+      "damage": "350.0 (normal) / 525.0 (elite) / 700.0 (nightmare)",
+      "type": "Mágico",
+      "description": "Lanza una lanza espectral a distancia que atraviesa a los enemigos y les inflige daño mágico a lo largo de su trayectoria.",
+      "dodge_notes": {
+        "normal": "Esquiva moviéndote rápidamente hacia un lado cuando la lanza sea lanzada.",
+        "elite": "La lanza se lanza más rápido y puede atravesar varias personas, esquiva de inmediato.",
+        "nightmare": "La lanza viaja a gran velocidad y tiene un alcance extendido, anticipación y movimiento rápido son clave para esquivarla."
+      }
+    }
+  ],
+  "strategies": {
+    "normal": "El Caballero espectral tiene tres ataques principales. El primero es un golpe directo con su espada espectral, que puede ser esquivado lateralmente. El segundo es un escudo espectral que refleja daño físico, por lo que es mejor esperar a que se agote antes de atacar. El tercero es una lanza espectral a distancia que puede ser evitada moviéndose rápidamente hacia un lado.",
+    "elite": "En su versión elite, el Caballero espectral es más rápido, el ataque con su espada es más amplio y el escudo refleja más daño. La lanza espectral también tiene un mayor alcance, por lo que es importante anticiparse.",
+    "nightmare": "La versión nightmare es extremadamente peligrosa. El Caballero espectral lanza su espada con una mayor velocidad, el escudo refleja más daño, y la lanza espectral viaja mucho más rápido. El tiempo de reacción y la estrategia de esquivar deben ser casi perfectos."
+  },
+  "image": "https://darkanddarker.wiki.spellsandguns.com/images/thumb/a/a9/Spectral_Knight.png/200px-Spectral_Knight.png",
+  "difficulty_scaling": {
+    "damage_multiplier": {
+      "elite": 1.3,
+      "nightmare": 1.6
+    },
+    "speed_multiplier": {
+      "elite": 1.2,
+      "nightmare": 1.5
+    }
+  }
+}
+
   ]
 }

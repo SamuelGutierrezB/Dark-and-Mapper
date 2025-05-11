@@ -145,6 +145,49 @@ export default function MerchantQuests() {
         contentContainerStyle={{ gap: 10 }}
       />
 
+<Text style={styles.title}>Fase 2</Text>
+      <View
+        style={{
+          height: 1,
+          backgroundColor: "#ccc",
+          width: "100%",
+          marginBottom: 20,
+        }}
+      />
+      <FlatList
+        data={merchant.missions.phase2}
+        keyExtractor={(item) => item.missionID.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.missionCard}>
+            <TouchableOpacity
+              style={{ flex: 1 }}
+              onPress={() =>
+                navigation.navigate("MissionDetails", {
+                  mission: item,
+                  merchant: merchant,
+                })
+              }
+            >
+              <Text style={styles.missionTitle}>
+                Misión {item.missionID}: {item.nombre}
+              </Text>
+              <Text style={styles.description}>{item.descripcion}</Text>
+            </TouchableOpacity>
+            <CheckBox
+              value={!!completedMissions[item.missionID]}
+              onValueChange={(newValue) => {
+                setCompletedMissions((prev) => ({
+                  ...prev,
+                  [item.missionID]: newValue,
+                }));
+              }}
+              style={{ width: 20, height: 20 }}
+            />
+          </View>
+        )}
+        contentContainerStyle={{ gap: 10 }}
+      />
+
       <TouchableOpacity
         style={{ marginTop: 30, alignSelf: "center" }}
         onPress={saveCompletedMissions}
