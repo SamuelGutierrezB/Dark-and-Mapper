@@ -1,10 +1,18 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Drawer } from "expo-router/drawer";
+import {
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from "@react-navigation/drawer";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useRouter } from "expo-router";
 import * as Font from "expo-font";
 import { useState, useEffect } from "react";
 
 export default function Layout() {
   const [fonstsLoaded, setFontsLoaded] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (!fonstsLoaded) {
@@ -13,12 +21,12 @@ export default function Layout() {
   });
 
   const loadFonts = async () => {
-    Font.loadAsync({
+    await Font.loadAsync({
       cormorantinfant: require("../../assets/fonts/CormorantInfant-Medium.ttf"),
     });
-
     setFontsLoaded(true);
   };
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Drawer
@@ -32,7 +40,6 @@ export default function Layout() {
           },
           headerTintColor: "#AE9D7F",
           headerShown: false,
-
           drawerStyle: {
             backgroundColor: "#1c1c1c",
             width: 240,
@@ -47,6 +54,23 @@ export default function Layout() {
             fontSize: 18,
           },
         }}
+        drawerContent={(props) => (
+          <DrawerContentScrollView {...props}>
+            <DrawerItemList {...props} />
+            <DrawerItem
+              label="Cerrar sesión"
+              labelStyle={{
+                fontFamily: "cormorantinfant",
+                fontSize: 18,
+                color: "#F58382",
+              }}
+              onPress={async () => {
+                await AsyncStorage.removeItem("user");
+                router.replace("/screens/authentication");
+              }}
+            />
+          </DrawerContentScrollView>
+        )}
       >
         <Drawer.Screen
           name="map"
