@@ -9,9 +9,11 @@ import {
 import { useRouter } from "expo-router";
 import { useState, useEffect } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "../../../firebase-config";
 import * as Font from "expo-font";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+import { firebaseConfig } from "../../../firebase-config";
+import { initializeApp } from "firebase/app";
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -39,15 +41,28 @@ export default function LoginScreen() {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  const handleSignIn = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        router.push("../screens/map");
-      })
-      .catch((error) => {
-        setError(true);
-      });
+  const handleSignIn = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      // Guarda datos en AsyncStorage
+      await AsyncStorage.setItem(
+        "user",
+        JSON.stringify({
+          uid: user.uid,
+          email: user.email,
+        })
+      );
+
+      router.push("../screens/map");
+    } catch (error) {
+      setError(true);
+    }
   };
 
   return (
@@ -62,13 +77,13 @@ export default function LoginScreen() {
       <Text style={styles.title}>Inicia sesión</Text>
 
       {error && (
-        <label style={styles.error}>Usuario o contraseña erroneos</label>
+        <label style={styles.error}>Correo o contraseña erroneos</label>
       )}
-      <Text style={styles.label}>USUARIO:</Text>
+      <Text style={styles.label}>Correo:</Text>
       <TextInput
         onChangeText={(text) => setEmail(text)}
         style={styles.input}
-        placeholder="Ingresa tu nombre de usuario"
+        placeholder="Ingresa tu correo"
         placeholderTextColor={"#AE9D7F"}
       />
 
