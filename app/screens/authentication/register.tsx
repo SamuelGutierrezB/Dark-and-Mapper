@@ -9,6 +9,8 @@ import {
 } from "react-native";
 import { BlurView } from "expo-blur";
 import { useState, useEffect } from "react";
+import AntDesign from "@expo/vector-icons/AntDesign";
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -18,11 +20,14 @@ import { useRouter } from "expo-router";
 import * as Font from "expo-font";
 
 import { initializeApp } from "firebase/app";
+import { useNavigation } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
 
 import { firebaseConfig } from "../../../firebase-config";
 
 export default function RegisterScreen() {
-  const router = useRouter();
+  const navigation = useNavigation();
+  const route = useRoute();
 
   const [fonstsLoaded, setFontsLoaded] = useState(false);
 
@@ -59,6 +64,12 @@ export default function RegisterScreen() {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <AntDesign name="back" size={24} color="#AE9D7F" />
+      </TouchableOpacity>
       <View style={{ alignItems: "center", marginBottom: 20 }}>
         <Image
           style={styles.image}
@@ -159,5 +170,11 @@ const styles = StyleSheet.create({
   image: {
     width: 170,
     height: 170,
+  },
+  backButton: {
+    marginTop: -10,
+    display: "flex",
+    flexDirection: "row-reverse",
+    marginBottom: 10,
   },
 });

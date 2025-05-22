@@ -43,7 +43,7 @@ export default function LoginScreen() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        router.push("../map");
+        router.push("../screens/map");
       })
       .catch((error) => {
         setError(true);

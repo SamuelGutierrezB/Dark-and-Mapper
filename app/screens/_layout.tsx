@@ -77,7 +77,7 @@ export default function Layout() {
           options={{
             title: "Login",
             drawerLabel: "Login",
-            headerShown: true,
+            headerShown: false,
             drawerItemStyle: { display: "none" },
           }}
         />
