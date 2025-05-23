@@ -54,18 +54,24 @@ export default function PrincipalMapScreen() {
     img6: require("../../../assets/images/Ruins.png"),
   };
 
+
+
+  //Parte de los filtros 
   const [imageSource, setImageSource] = useState(images.img1); // Establece img1 como imagen inicial
-  const [isBluePortalVisible, setIsBluePortalVisible] = useState(true); // Función para desactivar y activar el BluePortal
-  const [isBossesVisible, setIsBossesVisible] = useState(false);
+
+//--------------------------------------------------------------------->
+
+
+
 
   //RECORDATORIO DE CREAR UNA FUNCIÓN QUE CONTROLE TODOS LOS FILTROS PARA PODER ASIGNARLES FALSE Y SE BORREN AL SELECCIONAR OTRO MAPA
   return (
     <View style={styles.container}>
       <View className="maps-contanier" style={styles.mapcontainer}>
         <View className="maps-buttons" style={styles.mapsbuttons}>
-          <TouchableOpacity
+
+          <TouchableOpacity //boton que cambia la imagen del mapa a goblins
             onPress={() => setImageSource(images.img1)}
-            onPressIn={() => setIsBluePortalVisible(false)} //función para borrar el filtro al presionar, se tiene que cambiar proximamente a una función que tenga en conjunto todas las funciones
           >
             <Image
               source={require("../../../assets/images/ButtonGoblin.png")}
@@ -73,9 +79,9 @@ export default function PrincipalMapScreen() {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity
+
+          <TouchableOpacity //boton que cambia la imagen del mapa a crypts
             onPress={() => setImageSource(images.img2)}
-            onPressIn={() => setIsBluePortalVisible(false)}
           >
             <Image
               source={require("../../../assets/images/ButtonCrypts.png")}
@@ -83,9 +89,10 @@ export default function PrincipalMapScreen() {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity
+    
+
+          <TouchableOpacity //boton que cambia la imagen del mapa a ice abyss
             onPress={() => setImageSource(images.img3)}
-            onPressIn={() => setIsBluePortalVisible(false)}
           >
             <Image
               source={require("../../../assets/images/ButtonIceAbyss.png")}
@@ -93,9 +100,11 @@ export default function PrincipalMapScreen() {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity
+
+
+
+          <TouchableOpacity //boton que cambia la imagen del mapa a ice caver
             onPress={() => setImageSource(images.img4)}
-            onPressIn={() => setIsBluePortalVisible(false)}
           >
             <Image
               source={require("../../../assets/images/ButtonIceCaver.png")}
@@ -103,9 +112,10 @@ export default function PrincipalMapScreen() {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity
+
+
+          <TouchableOpacity //boton que cambia la imagen del mapa a infierno
             onPress={() => setImageSource(images.img5)}
-            onPressIn={() => setIsBluePortalVisible(false)}
           >
             <Image
               source={require("../../../assets/images/ButtonInfierno.png")}
@@ -113,18 +123,20 @@ export default function PrincipalMapScreen() {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity
+
+
+          <TouchableOpacity //boton que cambia la imagen del mapa a ruins
             onPress={() => setImageSource(images.img6)}
-            onPressIn={() => setIsBluePortalVisible(false)}
           >
             <Image
               source={require("../../../assets/images/ButtonRuins.png")}
               style={{ width: 60, height: 50 }}
             />
           </TouchableOpacity>
+
         </View>
 
-        <ScrollView
+        <ScrollView //ScrollView para el mapa vertical
           className="map"
           style={styles.map}
           showsVerticalScrollIndicator={false}
@@ -132,150 +144,40 @@ export default function PrincipalMapScreen() {
           minimumZoomScale={1}
           showsHorizontalScrollIndicator={false}
         >
-          <ScrollView horizontal>
+          <ScrollView horizontal //ScrollView horizontal para el mapa 
+          
+          >
             <View
+            //--------------------------------------------------------------------->
             //RECORDATORIO PARA EL MAPA DE GOBLINS QUE NO TIENE REDPORTALS, PARA PONER SOLO UN TOAST
             >
               <Image style={styles.goblin} source={imageSource} />
 
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 190, // Coordenada Y
-                    left: 20, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
 
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 250, // Coordenada Y
-                    left: 145, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 300, // Coordenada Y
-                    left: 267, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 490, // Coordenada Y
-                    left: 200, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 15, // Coordenada Y
-                    left: 190, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 90, // Coordenada Y
-                    left: 385, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 200, // Coordenada Y
-                    left: 390, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 245, // Coordenada Y
-                    left: 550, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-
-              {isBossesVisible && (
-                <Image
-                  source={require("../../../assets/images/BossesIcon.png")}
-                  style={{
-                    position: "absolute",
-                    top: 420, // Coordenada Y
-                    left: 390, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBossesVisible && (
-                <Image
-                  source={require("../../../assets/images/BossesIcon.png")}
-                  style={{
-                    position: "absolute",
-                    top: 175, // Coordenada Y
-                    left: 140, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
+              
             </View>
           </ScrollView>
         </ScrollView>
       </View>
 
-      <View className="filters-markers" style={styles.filters}>
-        <TouchableOpacity style={styles.buttonfilters}>
+
+
+
+
+      <View className="filters-markers" style={styles.filters} // parte de los filtros
+      
+      >
+        <TouchableOpacity style={styles.buttonfilters} //boton de los filtros de red portal
+        >
           <Image
             source={require("../../../assets/images/RedPortal.png")}
             style={{ width: 45, height: 45 }}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity
+
+        <TouchableOpacity //boton de los filtros de blue portal
           style={styles.buttonfilters}
-          onPress={() => setIsBluePortalVisible(!isBluePortalVisible)}
         >
           <Image
             source={require("../../../assets/images/BluePortal.png")}
@@ -283,9 +185,9 @@ export default function PrincipalMapScreen() {
           />
         </TouchableOpacity>
 
-        <TouchableOpacity
+
+        <TouchableOpacity //boton de los filtros de bosses
           style={styles.buttonfilters}
-          onPress={() => setIsBossesVisible(!isBossesVisible)}
         >
           <Image
             source={require("../../../assets/images/BossesIcon.png")}
@@ -293,7 +195,8 @@ export default function PrincipalMapScreen() {
           />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.buttonfilters}>
+        <TouchableOpacity style={styles.buttonfilters}//boton de los filtros de santuary
+        >
           <Image
             source={require("../../../assets/images/SantuaryIcon.png")}
             style={{ width: 42, height: 42 }}
@@ -302,7 +205,6 @@ export default function PrincipalMapScreen() {
       </View>
 
       <TouchableOpacity
-        onPress={() => router.push("/register")}
         style={styles.button}
       >
         <Text style={styles.textbutton}>Ruta recomendada</Text>
