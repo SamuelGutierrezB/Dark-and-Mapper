@@ -8,7 +8,7 @@ import {
   Alert,
   ScrollView,
   Dimensions,
-  ToastAndroid
+  ToastAndroid,
 } from "react-native";
 import { BlurView } from "expo-blur";
 import { useState, useEffect } from "react";
@@ -34,7 +34,7 @@ export default function PrincipalMapScreen() {
     blue_Portal: false,
     red_Portal: false,
     bosses: false,
-    sanctuary: false
+    sanctuary: false,
   });
 
   // Estado para el mapa actual
@@ -72,7 +72,7 @@ export default function PrincipalMapScreen() {
       blue_Portal: false,
       red_Portal: false,
       bosses: false,
-      sanctuary: false
+      sanctuary: false,
     });
   };
 
@@ -84,16 +84,19 @@ export default function PrincipalMapScreen() {
   // Alternar filtro
   const toggleFilter = (filterType: MarkerType) => {
     const currentMapData = getCurrentMapData();
-    if (!currentMapData[filterType] || currentMapData[filterType]?.length === 0) {
+    if (
+      !currentMapData[filterType] ||
+      currentMapData[filterType]?.length === 0
+    ) {
       ToastAndroid.show(
-        `Este mapa no tiene ${filterType.replace('_', ' ')}`, 
+        `Este mapa no tiene ${filterType.replace("_", " ")}`,
         ToastAndroid.SHORT
       );
       return;
     }
-    setActiveFilters(prev => ({
+    setActiveFilters((prev) => ({
       ...prev,
-      [filterType]: !prev[filterType]
+      [filterType]: !prev[filterType],
     }));
   };
 
@@ -102,21 +105,21 @@ export default function PrincipalMapScreen() {
     const markers = [];
     const currentData = getCurrentMapData();
 
-    (Object.keys(activeFilters) as MarkerType[]).forEach(type => {
+    (Object.keys(activeFilters) as MarkerType[]).forEach((type) => {
       if (activeFilters[type] && currentData[type]) {
         currentData[type]?.forEach((coord, index) => {
           let imageSource;
           switch (type) {
-            case 'blue_Portal':
+            case "blue_Portal":
               imageSource = require("../../../assets/images/BluePortal.png");
               break;
-            case 'red_Portal':
+            case "red_Portal":
               imageSource = require("../../../assets/images/RedPortal.png");
               break;
-            case 'bosses':
+            case "bosses":
               imageSource = require("../../../assets/images/BossesIcon.png");
               break;
-            case 'sanctuary':
+            case "sanctuary":
               imageSource = require("../../../assets/images/SantuaryIcon.png");
               break;
           }
@@ -143,12 +146,27 @@ export default function PrincipalMapScreen() {
 
   // Mapeo de botones a keys de mapa
   const mapButtons = [
-    { key: "goblin_cave", image: require("../../../assets/images/ButtonGoblin.png") },
-    { key: "crypts", image: require("../../../assets/images/ButtonCrypts.png") },
-    { key: "ice_abyss", image: require("../../../assets/images/ButtonIceAbyss.png") },
-    { key: "ice_caver", image: require("../../../assets/images/ButtonIceCaver.png") },
-    { key: "infierno", image: require("../../../assets/images/ButtonInfierno.png") },
-    { key: "ruins", image: require("../../../assets/images/ButtonRuins.png") }
+    {
+      key: "goblin_cave",
+      image: require("../../../assets/images/ButtonGoblin.png"),
+    },
+    {
+      key: "crypts",
+      image: require("../../../assets/images/ButtonCrypts.png"),
+    },
+    {
+      key: "ice_abyss",
+      image: require("../../../assets/images/ButtonIceAbyss.png"),
+    },
+    {
+      key: "ice_caver",
+      image: require("../../../assets/images/ButtonIceCaver.png"),
+    },
+    {
+      key: "infierno",
+      image: require("../../../assets/images/ButtonInfierno.png"),
+    },
+    { key: "ruins", image: require("../../../assets/images/ButtonRuins.png") },
   ];
 
   return (
@@ -160,10 +178,7 @@ export default function PrincipalMapScreen() {
               key={button.key}
               onPress={() => changeMap(button.key)}
             >
-              <Image
-                source={button.image}
-                style={{ width: 60, height: 50 }}
-              />
+              <Image source={button.image} style={{ width: 60, height: 50 }} />
             </TouchableOpacity>
           ))}
         </View>
@@ -178,9 +193,9 @@ export default function PrincipalMapScreen() {
         >
           <ScrollView horizontal>
             <View>
-              <Image 
-                style={styles.goblin} 
-                source={images[currentMap as keyof typeof images]} 
+              <Image
+                style={styles.goblin}
+                source={images[currentMap as keyof typeof images]}
               />
               {renderMarkers()}
             </View>
@@ -191,7 +206,7 @@ export default function PrincipalMapScreen() {
       <View className="filters-markers" style={styles.filters}>
         <TouchableOpacity
           style={styles.buttonfilters}
-          onPress={() => toggleFilter('red_Portal')}
+          onPress={() => toggleFilter("red_Portal")}
         >
           <Image
             source={require("../../../assets/images/RedPortal.png")}
@@ -201,7 +216,7 @@ export default function PrincipalMapScreen() {
 
         <TouchableOpacity
           style={styles.buttonfilters}
-          onPress={() => toggleFilter('blue_Portal')}
+          onPress={() => toggleFilter("blue_Portal")}
         >
           <Image
             source={require("../../../assets/images/BluePortal.png")}
@@ -211,7 +226,7 @@ export default function PrincipalMapScreen() {
 
         <TouchableOpacity
           style={styles.buttonfilters}
-          onPress={() => toggleFilter('bosses')}
+          onPress={() => toggleFilter("bosses")}
         >
           <Image
             source={require("../../../assets/images/BossesIcon.png")}
@@ -221,7 +236,7 @@ export default function PrincipalMapScreen() {
 
         <TouchableOpacity
           style={styles.buttonfilters}
-          onPress={() => toggleFilter('sanctuary')}
+          onPress={() => toggleFilter("sanctuary")}
         >
           <Image
             source={require("../../../assets/images/SantuaryIcon.png")}
@@ -236,7 +251,6 @@ export default function PrincipalMapScreen() {
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
