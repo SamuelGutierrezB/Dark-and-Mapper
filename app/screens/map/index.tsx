@@ -8,6 +8,7 @@ import {
   Alert,
   ScrollView,
   Dimensions,
+  ToastAndroid,
 } from "react-native";
 import { BlurView } from "expo-blur";
 import { useState, useEffect } from "react";
@@ -18,110 +19,168 @@ import {
 } from "firebase/auth";
 import { useRouter } from "expo-router";
 import * as Font from "expo-font";
-
 import { initializeApp } from "firebase/app";
-
 import { firebaseConfig } from "../../../firebase-config";
+import { MarkerType } from "./mapTypes"; // Importa el tipo MarkerType
+import mapFilters from "../../../assets/data/filters.json"; // Importa el archivo JSON
+import { blue } from "react-native-reanimated/lib/typescript/Colors";
 
 export default function PrincipalMapScreen() {
   const router = useRouter();
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
-  const [fonstsLoaded, setFontsLoaded] = useState(false);
-
-  useEffect(() => {
-    if (!fonstsLoaded) {
-      loadFonts();
-    }
+  // Estados para los filtros
+  const [activeFilters, setActiveFilters] = useState({
+    blue_Portal: false,
+    red_Portal: false,
+    bosses: false,
+    sanctuary: false,
   });
 
+  // Estado para el mapa actual
+  const [currentMap, setCurrentMap] = useState("goblin_cave");
+
+  // Imágenes de los mapas
+  const images = {
+    goblin_cave: require("../../../assets/images/GoblinCave.png"),
+    crypts: require("../../../assets/images/Crypts.png"),
+    ice_abyss: require("../../../assets/images/IceAbyss.png"),
+    ice_caver: require("../../../assets/images/IceCaver.png"),
+    infierno: require("../../../assets/images/Infierno.png"),
+    ruins: require("../../../assets/images/Ruins.png"),
+  };
+
+  // Cargar fuentes
+  useEffect(() => {
+    if (!fontsLoaded) {
+      loadFonts();
+    }
+  }, []);
+
   const loadFonts = async () => {
-    Font.loadAsync({
+    await Font.loadAsync({
       cormorantinfant: require("../../../assets/fonts/CormorantInfant-Medium.ttf"),
     });
-
     setFontsLoaded(true);
   };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  const images = {
-    img1: require("../../../assets/images/GoblinCave.png"),
-    img2: require("../../../assets/images/Crypts.png"),
-    img3: require("../../../assets/images/IceAbyss.png"),
-    img4: require("../../../assets/images/IceCaver.png"),
-    img5: require("../../../assets/images/Infierno.png"),
-    img6: require("../../../assets/images/Ruins.png"),
+  // Cambiar mapa
+  const changeMap = (mapKey: string) => {
+    setCurrentMap(mapKey);
+    // Resetear todos los filtros al cambiar de mapa
+    setActiveFilters({
+      blue_Portal: false,
+      red_Portal: false,
+      bosses: false,
+      sanctuary: false,
+    });
   };
 
-  const [imageSource, setImageSource] = useState(images.img1); // Establece img1 como imagen inicial
-  const [isBluePortalVisible, setIsBluePortalVisible] = useState(true); // Función para desactivar y activar el BluePortal
-  const [isBossesVisible, setIsBossesVisible] = useState(false);
+  // Obtener datos del mapa actual
+  const getCurrentMapData = () => {
+    return mapFilters.maps[currentMap] || {};
+  };
 
-  //RECORDATORIO DE CREAR UNA FUNCIÓN QUE CONTROLE TODOS LOS FILTROS PARA PODER ASIGNARLES FALSE Y SE BORREN AL SELECCIONAR OTRO MAPA
+  // Alternar filtro
+  const toggleFilter = (filterType: MarkerType) => {
+    const currentMapData = getCurrentMapData();
+    if (
+      !currentMapData[filterType] ||
+      currentMapData[filterType]?.length === 0
+    ) {
+      ToastAndroid.show(
+        `Este mapa no tiene ${filterType.replace("_", " ")}`,
+        ToastAndroid.SHORT
+      );
+      return;
+    }
+    setActiveFilters((prev) => ({
+      ...prev,
+      [filterType]: !prev[filterType],
+    }));
+  };
+
+  // Renderizar marcadores
+  const renderMarkers = () => {
+    const markers = [];
+    const currentData = getCurrentMapData();
+
+    (Object.keys(activeFilters) as MarkerType[]).forEach((type) => {
+      if (activeFilters[type] && currentData[type]) {
+        currentData[type]?.forEach((coord, index) => {
+          let imageSource;
+          switch (type) {
+            case "blue_Portal":
+              imageSource = require("../../../assets/images/BluePortal.png");
+              break;
+            case "red_Portal":
+              imageSource = require("../../../assets/images/RedPortal.png");
+              break;
+            case "bosses":
+              imageSource = require("../../../assets/images/BossesIcon.png");
+              break;
+            case "sanctuary":
+              imageSource = require("../../../assets/images/SantuaryIcon.png");
+              break;
+          }
+
+          markers.push(
+            <Image
+              key={`${type}-${index}`}
+              source={imageSource}
+              style={{
+                position: "absolute",
+                top: coord[0],
+                left: coord[1],
+                width: 50,
+                height: 50,
+              }}
+            />
+          );
+        });
+      }
+    });
+
+    return markers;
+  };
+
+  // Mapeo de botones a keys de mapa
+  const mapButtons = [
+    {
+      key: "goblin_cave",
+      image: require("../../../assets/images/ButtonGoblin.png"),
+    },
+    {
+      key: "crypts",
+      image: require("../../../assets/images/ButtonCrypts.png"),
+    },
+    {
+      key: "ice_abyss",
+      image: require("../../../assets/images/ButtonIceAbyss.png"),
+    },
+    {
+      key: "ice_caver",
+      image: require("../../../assets/images/ButtonIceCaver.png"),
+    },
+    {
+      key: "infierno",
+      image: require("../../../assets/images/ButtonInfierno.png"),
+    },
+    { key: "ruins", image: require("../../../assets/images/ButtonRuins.png") },
+  ];
+
   return (
     <View style={styles.container}>
       <View className="maps-contanier" style={styles.mapcontainer}>
         <View className="maps-buttons" style={styles.mapsbuttons}>
-          <TouchableOpacity
-            onPress={() => setImageSource(images.img1)}
-            onPressIn={() => setIsBluePortalVisible(false)} //función para borrar el filtro al presionar, se tiene que cambiar proximamente a una función que tenga en conjunto todas las funciones
-          >
-            <Image
-              source={require("../../../assets/images/ButtonGoblin.png")}
-              style={{ width: 60, height: 50 }}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => setImageSource(images.img2)}
-            onPressIn={() => setIsBluePortalVisible(false)}
-          >
-            <Image
-              source={require("../../../assets/images/ButtonCrypts.png")}
-              style={{ width: 60, height: 50 }}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => setImageSource(images.img3)}
-            onPressIn={() => setIsBluePortalVisible(false)}
-          >
-            <Image
-              source={require("../../../assets/images/ButtonIceAbyss.png")}
-              style={{ width: 60, height: 50 }}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => setImageSource(images.img4)}
-            onPressIn={() => setIsBluePortalVisible(false)}
-          >
-            <Image
-              source={require("../../../assets/images/ButtonIceCaver.png")}
-              style={{ width: 60, height: 50 }}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => setImageSource(images.img5)}
-            onPressIn={() => setIsBluePortalVisible(false)}
-          >
-            <Image
-              source={require("../../../assets/images/ButtonInfierno.png")}
-              style={{ width: 60, height: 50 }}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => setImageSource(images.img6)}
-            onPressIn={() => setIsBluePortalVisible(false)}
-          >
-            <Image
-              source={require("../../../assets/images/ButtonRuins.png")}
-              style={{ width: 60, height: 50 }}
-            />
-          </TouchableOpacity>
+          {mapButtons.map((button) => (
+            <TouchableOpacity
+              key={button.key}
+              onPress={() => changeMap(button.key)}
+            >
+              <Image source={button.image} style={{ width: 60, height: 50 }} />
+            </TouchableOpacity>
+          ))}
         </View>
 
         <ScrollView
@@ -133,140 +192,22 @@ export default function PrincipalMapScreen() {
           showsHorizontalScrollIndicator={false}
         >
           <ScrollView horizontal>
-            <View
-            //RECORDATORIO PARA EL MAPA DE GOBLINS QUE NO TIENE REDPORTALS, PARA PONER SOLO UN TOAST
-            >
-              <Image style={styles.goblin} source={imageSource} />
-
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 190, // Coordenada Y
-                    left: 20, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 250, // Coordenada Y
-                    left: 145, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 300, // Coordenada Y
-                    left: 267, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 490, // Coordenada Y
-                    left: 200, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 15, // Coordenada Y
-                    left: 190, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 90, // Coordenada Y
-                    left: 385, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 200, // Coordenada Y
-                    left: 390, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBluePortalVisible && (
-                <Image
-                  source={require("../../../assets/images/BluePortal.png")}
-                  style={{
-                    position: "absolute",
-                    top: 245, // Coordenada Y
-                    left: 550, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-
-              {isBossesVisible && (
-                <Image
-                  source={require("../../../assets/images/BossesIcon.png")}
-                  style={{
-                    position: "absolute",
-                    top: 420, // Coordenada Y
-                    left: 390, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
-              {isBossesVisible && (
-                <Image
-                  source={require("../../../assets/images/BossesIcon.png")}
-                  style={{
-                    position: "absolute",
-                    top: 175, // Coordenada Y
-                    left: 140, // Coordenada X
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              )}
+            <View>
+              <Image
+                style={styles.goblin}
+                source={images[currentMap as keyof typeof images]}
+              />
+              {renderMarkers()}
             </View>
           </ScrollView>
         </ScrollView>
       </View>
 
       <View className="filters-markers" style={styles.filters}>
-        <TouchableOpacity style={styles.buttonfilters}>
+        <TouchableOpacity
+          style={styles.buttonfilters}
+          onPress={() => toggleFilter("red_Portal")}
+        >
           <Image
             source={require("../../../assets/images/RedPortal.png")}
             style={{ width: 45, height: 45 }}
@@ -275,7 +216,7 @@ export default function PrincipalMapScreen() {
 
         <TouchableOpacity
           style={styles.buttonfilters}
-          onPress={() => setIsBluePortalVisible(!isBluePortalVisible)}
+          onPress={() => toggleFilter("blue_Portal")}
         >
           <Image
             source={require("../../../assets/images/BluePortal.png")}
@@ -285,15 +226,18 @@ export default function PrincipalMapScreen() {
 
         <TouchableOpacity
           style={styles.buttonfilters}
-          onPress={() => setIsBossesVisible(!isBossesVisible)}
+          onPress={() => toggleFilter("bosses")}
         >
           <Image
             source={require("../../../assets/images/BossesIcon.png")}
-            style={{ width: 47, height: 47 }}
+            style={{ width: 49, height: 49, marginTop: 4 }}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.buttonfilters}>
+        <TouchableOpacity
+          style={styles.buttonfilters}
+          onPress={() => toggleFilter("sanctuary")}
+        >
           <Image
             source={require("../../../assets/images/SantuaryIcon.png")}
             style={{ width: 42, height: 42 }}
@@ -301,10 +245,7 @@ export default function PrincipalMapScreen() {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity
-        onPress={() => router.push("/register")}
-        style={styles.button}
-      >
+      <TouchableOpacity style={styles.button}>
         <Text style={styles.textbutton}>Ruta recomendada</Text>
       </TouchableOpacity>
     </View>
