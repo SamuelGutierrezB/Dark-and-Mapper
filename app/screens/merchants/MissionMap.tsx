@@ -186,8 +186,6 @@ export default function PrincipalMapScreen() {
         <AntDesign name="back" size={24} color="#AE9D7F" />
       </TouchableOpacity>
       <View className="maps-contanier" style={styles.mapcontainer}>
-        <View className="maps-buttons" style={styles.mapsbuttons}></View>
-
         <ScrollView
           className="map"
           style={styles.map}
