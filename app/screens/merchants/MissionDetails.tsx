@@ -59,6 +59,27 @@ export default function MissionDetails() {
           {r.cantidad}x {r.nombreDeItem}
         </Text>
       ))}
+
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("MissionMap", {
+            fromMission: true,
+            recommendedFilters: mission.filtros || [],
+            recommendedMap: mission.mapa || "goblin_cave",
+          })
+        }
+        style={{
+          backgroundColor: "#2A2A2A",
+          padding: 15,
+          borderRadius: 15,
+          alignItems: "center",
+          marginTop: 30,
+        }}
+      >
+        <Text style={{ color: "#AE9D7F", fontSize: 18, fontWeight: "bold" }}>
+          Ver ruta recomendada en el mapa
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }

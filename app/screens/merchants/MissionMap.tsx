@@ -1,33 +1,28 @@
 import {
   Image,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
   Text,
   View,
-  Alert,
   ScrollView,
-  Dimensions,
   ToastAndroid,
 } from "react-native";
-import { BlurView } from "expo-blur";
 import { useState, useEffect } from "react";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { useRouter } from "expo-router";
 import * as Font from "expo-font";
-import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "../../../firebase-config";
 import { MarkerType } from "./mapTypes"; // Importa el tipo MarkerType
 import mapFilters from "../../../assets/data/filters.json"; // Importa el archivo JSON
-import { blue } from "react-native-reanimated/lib/typescript/Colors";
+import { useRoute } from "@react-navigation/native";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import { useNavigation } from "@react-navigation/native";
 
 export default function PrincipalMapScreen() {
-  const router = useRouter();
+  const navigation = useNavigation();
+
   const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  const route = useRoute();
+  const { fromMission, recommendedFilters, recommendedMap } =
+    route.params || {};
 
   // Estados para los filtros
   const [activeFilters, setActiveFilters] = useState({
@@ -35,7 +30,11 @@ export default function PrincipalMapScreen() {
     red_Portal: false,
     bosses: false,
     sanctuary: false,
+    mission: false, // Añadido el estado para el filtro de misión
   });
+
+  // Estado para las coordenadas de misión
+  const [missionCoords, setMissionCoords] = useState<[number, number][]>([]);
 
   // Estado para el mapa actual
   const [currentMap, setCurrentMap] = useState("goblin_cave");
@@ -49,6 +48,26 @@ export default function PrincipalMapScreen() {
     infierno: require("../../../assets/images/Infierno.png"),
     ruins: require("../../../assets/images/Ruins.png"),
   };
+
+  useEffect(() => {
+    if (fromMission && recommendedMap) {
+      setCurrentMap(recommendedMap);
+    }
+
+    if (fromMission && recommendedFilters) {
+      // Convertir recommendedFilters a un array de coordenadas
+      const coords = recommendedFilters.map(
+        (filter: number[]) => [filter[0], filter[1]] as [number, number]
+      );
+      setMissionCoords(coords);
+
+      // Activar el filtro de misión
+      setActiveFilters((prev) => ({
+        ...prev,
+        mission: true,
+      }));
+    }
+  }, [fromMission, recommendedMap, recommendedFilters]);
 
   // Cargar fuentes
   useEffect(() => {
@@ -64,18 +83,6 @@ export default function PrincipalMapScreen() {
     setFontsLoaded(true);
   };
 
-  // Cambiar mapa
-  const changeMap = (mapKey: string) => {
-    setCurrentMap(mapKey);
-    // Resetear todos los filtros al cambiar de mapa
-    setActiveFilters({
-      blue_Portal: false,
-      red_Portal: false,
-      bosses: false,
-      sanctuary: false,
-    });
-  };
-
   // Obtener datos del mapa actual
   const getCurrentMapData = () => {
     return mapFilters.maps[currentMap] || {};
@@ -83,6 +90,15 @@ export default function PrincipalMapScreen() {
 
   // Alternar filtro
   const toggleFilter = (filterType: MarkerType) => {
+    if (filterType === "mission") {
+      // Para el filtro de misión, usamos las coordenadas de missionCoords
+      setActiveFilters((prev) => ({
+        ...prev,
+        [filterType]: !prev[filterType],
+      }));
+      return;
+    }
+
     const currentMapData = getCurrentMapData();
     if (
       !currentMapData[filterType] ||
@@ -106,8 +122,16 @@ export default function PrincipalMapScreen() {
     const currentData = getCurrentMapData();
 
     (Object.keys(activeFilters) as MarkerType[]).forEach((type) => {
-      if (activeFilters[type] && currentData[type]) {
-        currentData[type]?.forEach((coord, index) => {
+      if (activeFilters[type]) {
+        let coordsToRender: [number, number][] = [];
+
+        if (type === "mission") {
+          coordsToRender = missionCoords;
+        } else {
+          coordsToRender = currentData[type] || [];
+        }
+
+        if (coordsToRender.length > 0) {
           let imageSource;
           switch (type) {
             case "blue_Portal":
@@ -122,66 +146,47 @@ export default function PrincipalMapScreen() {
             case "sanctuary":
               imageSource = require("../../../assets/images/SantuaryIcon.png");
               break;
+            case "mission":
+              imageSource = require("../../../assets/images/flagMission.png");
+              break;
           }
 
-          markers.push(
-            <Image
-              key={`${type}-${index}`}
-              source={imageSource}
-              style={{
-                position: "absolute",
-                top: coord[0],
-                left: coord[1],
-                width: 50,
-                height: 50,
-              }}
-            />
-          );
-        });
+          coordsToRender.forEach((coord, index) => {
+            markers.push(
+              <Image
+                key={`${type}-${index}`}
+                source={imageSource}
+                style={{
+                  position: "absolute",
+                  top: coord[0],
+                  left: coord[1],
+                  width: 50,
+                  height: 50,
+                }}
+              />
+            );
+          });
+        }
       }
     });
 
     return markers;
   };
 
-  // Mapeo de botones a keys de mapa
-  const mapButtons = [
-    {
-      key: "goblin_cave",
-      image: require("../../../assets/images/ButtonGoblin.png"),
-    },
-    {
-      key: "crypts",
-      image: require("../../../assets/images/ButtonCrypts.png"),
-    },
-    {
-      key: "ice_abyss",
-      image: require("../../../assets/images/ButtonIceAbyss.png"),
-    },
-    {
-      key: "ice_caver",
-      image: require("../../../assets/images/ButtonIceCaver.png"),
-    },
-    {
-      key: "infierno",
-      image: require("../../../assets/images/ButtonInfierno.png"),
-    },
-    { key: "ruins", image: require("../../../assets/images/ButtonRuins.png") },
-  ];
-
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        style={{
+          marginTop: -10,
+          display: "flex",
+          flexDirection: "row-reverse",
+        }}
+        onPress={() => navigation.goBack()}
+      >
+        <AntDesign name="back" size={24} color="#AE9D7F" />
+      </TouchableOpacity>
       <View className="maps-contanier" style={styles.mapcontainer}>
-        <View className="maps-buttons" style={styles.mapsbuttons}>
-          {mapButtons.map((button) => (
-            <TouchableOpacity
-              key={button.key}
-              onPress={() => changeMap(button.key)}
-            >
-              <Image source={button.image} style={{ width: 60, height: 50 }} />
-            </TouchableOpacity>
-          ))}
-        </View>
+        <View className="maps-buttons" style={styles.mapsbuttons}></View>
 
         <ScrollView
           className="map"
@@ -241,6 +246,17 @@ export default function PrincipalMapScreen() {
           <Image
             source={require("../../../assets/images/SantuaryIcon.png")}
             style={{ width: 42, height: 42 }}
+          />
+        </TouchableOpacity>
+
+        {/* Botón para el filtro de misión */}
+        <TouchableOpacity
+          style={styles.buttonfilters}
+          onPress={() => toggleFilter("mission")}
+        >
+          <Image
+            source={require("../../../assets/images/flagMission.png")}
+            style={{ width: 45, height: 45 }}
           />
         </TouchableOpacity>
       </View>

@@ -27,7 +27,13 @@
               "nombreDeItem": "Afinidad",
               "cantidad": 25
             }
-          ]
+          ],
+          "filtros": [
+            [80, 20],
+            [20, 20],
+            [10, 30]
+          ],
+          "mapa": "crypts"
         },
         {
           "missionID": 2,
@@ -414,7 +420,7 @@
               "cantidad": 50
             }
           ]
-        },        
+        },
         {
           "missionID": 3,
           "nombre": "Escabullirse",
@@ -481,7 +487,7 @@
               "cantidad": 200
             }
           ]
-        },        
+        },
         {
           "missionID": 6,
           "nombre": "Algo sobrenatural",
@@ -552,7 +558,7 @@
               "cantidad": 350
             }
           ]
-        },        
+        },
         {
           "missionID": 9,
           "nombre": "Caballero de la Muerte",
@@ -623,7 +629,7 @@
               "cantidad": 350
             }
           ]
-        },        
+        },
         {
           "missionID": 12,
           "nombre": "Profundización de la sospecha",
@@ -698,7 +704,7 @@
               "cantidad": 25
             }
           ]
-        },        
+        },
         {
           "missionID": 3,
           "nombre": "Voces de los muertos",
@@ -765,7 +771,7 @@
               "cantidad": 125
             }
           ]
-        },        
+        },
         {
           "missionID": 6,
           "nombre": "Sangre por la verdad",
@@ -832,7 +838,7 @@
               "cantidad": 200
             }
           ]
-        },        
+        },
         {
           "missionID": 9,
           "nombre": "Ese es Batty",
@@ -903,7 +909,7 @@
               "cantidad": 350
             }
           ]
-        },        
+        },
         {
           "missionID": 12,
           "nombre": "Fortuna helada",
@@ -970,7 +976,7 @@
               "cantidad": 350
             }
           ]
-        },        
+        },
         {
           "missionID": 15,
           "nombre": "Fuente del mal",
@@ -1041,7 +1047,7 @@
               "cantidad": 25
             }
           ]
-        },        
+        },
         {
           "missionID": 3,
           "nombre": "El orgullo de un duende",
@@ -1108,7 +1114,7 @@
               "cantidad": 50
             }
           ]
-        },        
+        },
         {
           "missionID": 6,
           "nombre": "La salida",
@@ -1179,7 +1185,7 @@
               "cantidad": 175
             }
           ]
-        },        
+        },
         {
           "missionID": 9,
           "nombre": "Pelea de gobos",
@@ -1250,7 +1256,7 @@
               "cantidad": 350
             }
           ]
-        },        
+        },
         {
           "missionID": 12,
           "nombre": "Enemigo tuerto",
@@ -1317,7 +1323,7 @@
               "cantidad": 350
             }
           ]
-        },        
+        },
         {
           "missionID": 15,
           "nombre": "Sacudiendo la desgracia",
@@ -1396,7 +1402,7 @@
               "cantidad": 50
             }
           ]
-        },        
+        },
         {
           "missionID": 3,
           "nombre": "Cuentos de fogata",
@@ -1459,7 +1465,7 @@
               "cantidad": 200
             }
           ]
-        },        
+        },
         {
           "missionID": 6,
           "nombre": "Hacia el abismo",
@@ -1526,7 +1532,7 @@
               "cantidad": 350
             }
           ]
-        },        
+        },
         {
           "missionID": 9,
           "nombre": "La perdición del señor de la guerra",
@@ -1593,7 +1599,7 @@
               "cantidad": 300
             }
           ]
-        },        
+        },
         {
           "missionID": 12,
           "nombre": "La sombra del sueño",
@@ -1625,7 +1631,7 @@
             }
           ]
         }
-      ]    
+      ]
     }
   },
   {
@@ -1676,7 +1682,7 @@
               "cantidad": 25
             }
           ]
-        },        
+        },
         {
           "missionID": 3,
           "nombre": "Susurros del pasado",
@@ -1747,7 +1753,7 @@
               "cantidad": 125
             }
           ]
-        },        
+        },
         {
           "missionID": 6,
           "nombre": "Preparado para lo inesperado",
@@ -1814,7 +1820,7 @@
               "cantidad": 200
             }
           ]
-        },        
+        },
         {
           "missionID": 9,
           "nombre": "Preciso como el hielo",
@@ -1881,7 +1887,7 @@
               "cantidad": 350
             }
           ]
-        },        
+        },
         {
           "missionID": 12,
           "nombre": "Piedra y huesos",
@@ -1905,9 +1911,9 @@
             }
           ]
         }
-      ]    
+      ]
     }
-  },  
+  },
   {
     "id": "Tailer",
     "name": "Sastre",
@@ -1960,7 +1966,7 @@
               "cantidad": 75
             }
           ]
-        },        
+        },
         {
           "missionID": 3,
           "nombre": "Sangre en el altar",
@@ -2027,7 +2033,7 @@
               "cantidad": 175
             }
           ]
-        },        
+        },
         {
           "missionID": 6,
           "nombre": "En ruinas",
@@ -2094,7 +2100,7 @@
               "cantidad": 300
             }
           ]
-        },        
+        },
         {
           "missionID": 9,
           "nombre": "Infiltrándose con accesorios",
@@ -2173,7 +2179,7 @@
               "cantidad": 500
             }
           ]
-        },        
+        },
         {
           "missionID": 12,
           "nombre": "Fantasía y realidad",
@@ -2201,9 +2207,9 @@
             }
           ]
         }
-      ]    
+      ]
     }
-  }, 
+  },
   {
     "id": "Tavern",
     "name": "Maestro de taberna",
@@ -2256,7 +2262,7 @@
               "cantidad": 25
             }
           ]
-        },        
+        },
         {
           "missionID": 3,
           "nombre": "Papel y tinta",
@@ -2327,7 +2333,7 @@
               "cantidad": 50
             }
           ]
-        },        
+        },
         {
           "missionID": 6,
           "nombre": "Sin moza",
@@ -2402,7 +2408,7 @@
               "cantidad": 75
             }
           ]
-        },        
+        },
         {
           "missionID": 9,
           "nombre": "Un problema gigante",
@@ -2465,7 +2471,7 @@
               "cantidad": 175
             }
           ]
-        },        
+        },
         {
           "missionID": 12,
           "nombre": "Asesor oscuro",
@@ -2536,7 +2542,7 @@
               "cantidad": 350
             }
           ]
-        },        
+        },
         {
           "missionID": 15,
           "nombre": "Enfrentando la oscuridad",
@@ -2607,7 +2613,7 @@
               "cantidad": 300
             }
           ]
-        },        
+        },
         {
           "missionID": 18,
           "nombre": "Terror congelado",
@@ -2631,7 +2637,7 @@
             }
           ]
         }
-      ]    
+      ]
     }
   }
 ]
