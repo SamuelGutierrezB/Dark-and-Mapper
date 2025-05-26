@@ -4,4 +4,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   slug: "Dark-and-Mapper",
   name: "Dark-and-Mapper",
+  android: {
+    package: "com.samuelgutierrezb.darkandmapper",
+  },
 });
