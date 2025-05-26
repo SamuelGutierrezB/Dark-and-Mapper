@@ -5,9 +5,10 @@ import {
   FlatList,
   TouchableOpacity,
   Image,
-  CheckBox,
   ScrollView,
 } from "react-native";
+
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 import React, { useState, useEffect } from "react";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
@@ -75,6 +76,8 @@ export default function MerchantQuests() {
     }
   };
 
+  console.log("completedMissions:", completedMissions);
+
   return (
     <View
       style={{
@@ -134,9 +137,9 @@ export default function MerchantQuests() {
                 </Text>
                 <Text style={styles.description}>{item.descripcion}</Text>
               </TouchableOpacity>
-              <CheckBox
-                value={!!completedMissions[item.missionID]}
-                onValueChange={(newValue) => {
+              <BouncyCheckbox
+                isChecked={!!completedMissions[item.missionID]}
+                onPress={(newValue) => {
                   setCompletedMissions((prev) => ({
                     ...prev,
                     [item.missionID]: newValue,
@@ -177,8 +180,8 @@ export default function MerchantQuests() {
                 </Text>
                 <Text style={styles.description}>{item.descripcion}</Text>
               </TouchableOpacity>
-              <CheckBox
-                value={!!completedMissions[item.missionID]}
+              <BouncyCheckbox
+                isChecked={!!completedMissions[item.missionID]}
                 onValueChange={(newValue) => {
                   setCompletedMissions((prev) => ({
                     ...prev,
@@ -220,7 +223,7 @@ export default function MerchantQuests() {
                 </Text>
                 <Text style={styles.description}>{item.descripcion}</Text>
               </TouchableOpacity>
-              <CheckBox
+              <BouncyCheckbox
                 value={!!completedMissions[item.missionID]}
                 onValueChange={(newValue) => {
                   setCompletedMissions((prev) => ({
