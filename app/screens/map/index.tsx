@@ -279,7 +279,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flex: 1,
     marginRight: 50,
-    marginLeft: 110,
     minWidth: 159,
     flexDirection: "row",
     justifyContent: "space-around",
