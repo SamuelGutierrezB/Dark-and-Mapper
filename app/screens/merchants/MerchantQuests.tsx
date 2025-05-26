@@ -76,8 +76,6 @@ export default function MerchantQuests() {
     }
   };
 
-  console.log("completedMissions:", completedMissions);
-
   return (
     <View
       style={{
@@ -182,7 +180,7 @@ export default function MerchantQuests() {
               </TouchableOpacity>
               <BouncyCheckbox
                 isChecked={!!completedMissions[item.missionID]}
-                onValueChange={(newValue) => {
+                onPress={(newValue) => {
                   setCompletedMissions((prev) => ({
                     ...prev,
                     [item.missionID]: newValue,
@@ -224,8 +222,8 @@ export default function MerchantQuests() {
                 <Text style={styles.description}>{item.descripcion}</Text>
               </TouchableOpacity>
               <BouncyCheckbox
-                value={!!completedMissions[item.missionID]}
-                onValueChange={(newValue) => {
+                isChecked={!!completedMissions[item.missionID]}
+                onPress={(newValue) => {
                   setCompletedMissions((prev) => ({
                     ...prev,
                     [item.missionID]: newValue,
