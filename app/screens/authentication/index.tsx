@@ -42,7 +42,13 @@ export default function LoginScreen() {
   const auth = getAuth(app);
 
   const handleSignIn = async () => {
+    if (!email || !password) {
+      setError(true);
+      return;
+    }
+    setError(false);
     try {
+      console.log("Iniciando sesión");
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
@@ -76,9 +82,7 @@ export default function LoginScreen() {
 
       <Text style={styles.title}>Inicia sesión</Text>
 
-      {error && (
-        <label style={styles.error}>Correo o contraseña erroneos</label>
-      )}
+      {error && <Text style={styles.error}>Correo o contraseña erroneos</Text>}
       <Text style={styles.label}>Correo:</Text>
       <TextInput
         onChangeText={(text) => setEmail(text)}

@@ -78,9 +78,9 @@ export default function RegisterScreen() {
       </View>
       <Text style={styles.title}>Crear cuenta</Text>
       {error && (
-        <label style={styles.error}>
+        <Text style={styles.error}>
           Correo o contraseña no validos para el registro
-        </label>
+        </Text>
       )}
       <Text style={styles.label}>Correo:</Text>
       <TextInput
