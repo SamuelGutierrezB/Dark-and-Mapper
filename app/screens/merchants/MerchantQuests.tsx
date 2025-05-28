@@ -5,7 +5,7 @@ import {
   FlatList,
   TouchableOpacity,
   Image,
-  ScrollView,
+  SectionList,
 } from "react-native";
 
 import BouncyCheckbox from "react-native-bouncy-checkbox";
@@ -76,6 +76,12 @@ export default function MerchantQuests() {
     }
   };
 
+  const sections = [
+    { title: "Fase 1", data: merchant.missions.phase1 },
+    { title: "Fase 2", data: merchant.missions.phase2 },
+    { title: "Fase 3", data: merchant.missions.phase3 },
+  ];
+
   return (
     <View
       style={{
@@ -106,136 +112,52 @@ export default function MerchantQuests() {
       </View>
 
       {/*     Phases       */}
-      <ScrollView style={styles.contentScroll}>
-        <Text style={styles.title}>Fase 1</Text>
-        <View
-          style={{
-            height: 1,
-            backgroundColor: "#ccc",
-            width: "100%",
-            marginBottom: 20,
-          }}
-        />
-        <FlatList
-          data={merchant.missions.phase1}
-          keyExtractor={(item) => item.missionID.toString()}
-          renderItem={({ item }) => (
-            <View style={styles.missionCard}>
-              <TouchableOpacity
-                style={{ flex: 1 }}
-                onPress={() =>
-                  navigation.navigate("MissionDetails", {
-                    mission: item,
-                    merchant: merchant,
-                  })
-                }
-              >
-                <Text style={styles.missionTitle}>
-                  Misión {item.missionID}: {item.nombre}
-                </Text>
-                <Text style={styles.description}>{item.descripcion}</Text>
-              </TouchableOpacity>
-              <BouncyCheckbox
-                isChecked={!!completedMissions[item.missionID]}
-                onPress={(newValue) => {
-                  setCompletedMissions((prev) => ({
-                    ...prev,
-                    [item.missionID]: newValue,
-                  }));
-                }}
-                style={{ width: 20, height: 20 }}
-              />
-            </View>
-          )}
-          contentContainerStyle={{ gap: 10 }}
-        />
-
-        <Text style={styles.title}>Fase 2</Text>
-        <View
-          style={{
-            height: 1,
-            backgroundColor: "#ccc",
-            width: "100%",
-            marginBottom: 20,
-          }}
-        />
-        <FlatList
-          data={merchant.missions.phase2}
-          keyExtractor={(item) => item.missionID.toString()}
-          renderItem={({ item }) => (
-            <View style={styles.missionCard}>
-              <TouchableOpacity
-                style={{ flex: 1 }}
-                onPress={() =>
-                  navigation.navigate("MissionDetails", {
-                    mission: item,
-                    merchant: merchant,
-                  })
-                }
-              >
-                <Text style={styles.missionTitle}>
-                  Misión {item.missionID}: {item.nombre}
-                </Text>
-                <Text style={styles.description}>{item.descripcion}</Text>
-              </TouchableOpacity>
-              <BouncyCheckbox
-                isChecked={!!completedMissions[item.missionID]}
-                onPress={(newValue) => {
-                  setCompletedMissions((prev) => ({
-                    ...prev,
-                    [item.missionID]: newValue,
-                  }));
-                }}
-                style={{ width: 20, height: 20 }}
-              />
-            </View>
-          )}
-          contentContainerStyle={{ gap: 10 }}
-        />
-
-        <Text style={styles.title}>Fase 3</Text>
-        <View
-          style={{
-            height: 1,
-            backgroundColor: "#ccc",
-            width: "100%",
-            marginBottom: 20,
-          }}
-        />
-        <FlatList
-          data={merchant.missions.phase3}
-          keyExtractor={(item) => item.missionID.toString()}
-          renderItem={({ item }) => (
-            <View style={styles.missionCard}>
-              <TouchableOpacity
-                style={{ flex: 1 }}
-                onPress={() =>
-                  navigation.navigate("MissionDetails", {
-                    mission: item,
-                    merchant: merchant,
-                  })
-                }
-              >
-                <Text style={styles.missionTitle}>
-                  Misión {item.missionID}: {item.nombre}
-                </Text>
-                <Text style={styles.description}>{item.descripcion}</Text>
-              </TouchableOpacity>
-              <BouncyCheckbox
-                isChecked={!!completedMissions[item.missionID]}
-                onPress={(newValue) => {
-                  setCompletedMissions((prev) => ({
-                    ...prev,
-                    [item.missionID]: newValue,
-                  }));
-                }}
-                style={{ width: 20, height: 20 }}
-              />
-            </View>
-          )}
-          contentContainerStyle={{ gap: 10 }}
-        />
-      </ScrollView>
+      <SectionList
+        sections={sections}
+        keyExtractor={(item) => item.missionID.toString()}
+        renderSectionHeader={({ section }) => (
+          <>
+            <Text style={styles.title}>{section.title}</Text>
+            <View
+              style={{
+                height: 1,
+                backgroundColor: "#ccc",
+                width: "100%",
+                marginBottom: 20,
+              }}
+            />
+          </>
+        )}
+        renderItem={({ item }) => (
+          <View style={styles.missionCard}>
+            <TouchableOpacity
+              style={{ flex: 1 }}
+              onPress={() =>
+                navigation.navigate("MissionDetails", {
+                  mission: item,
+                  merchant: merchant,
+                })
+              }
+            >
+              <Text style={styles.missionTitle}>
+                Misión {item.missionID}: {item.nombre}
+              </Text>
+              <Text style={styles.description}>{item.descripcion}</Text>
+            </TouchableOpacity>
+            <BouncyCheckbox
+              isChecked={!!completedMissions[item.missionID]}
+              onPress={(newValue) => {
+                setCompletedMissions((prev) => ({
+                  ...prev,
+                  [item.missionID]: newValue,
+                }));
+              }}
+              style={{ width: 20, height: 20 }}
+            />
+          </View>
+        )}
+        contentContainerStyle={{ gap: 10 }}
+      />
       {/*     Phases       */}
 
       <TouchableOpacity
