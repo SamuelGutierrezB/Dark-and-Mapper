@@ -25,7 +25,7 @@ export default function MonsterDetails() {
         style={styles.backButton}
         onPress={() => navigation.goBack()}
       >
-        <AntDesign name="back" size={24} color="#AE9D7F" />
+        <AntDesign name="back" size={35} color="#AE9D7F" />
       </TouchableOpacity>
 
       {/* Encabezado con imagen y nombre */}

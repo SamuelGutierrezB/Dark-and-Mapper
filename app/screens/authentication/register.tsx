@@ -76,7 +76,7 @@ export default function RegisterScreen() {
         style={styles.backButton}
         onPress={() => navigation.goBack()}
       >
-        <AntDesign name="back" size={24} color="#AE9D7F" />
+        <AntDesign name="back" size={35} color="#AE9D7F" />
       </TouchableOpacity>
       <View style={{ alignItems: "center", marginBottom: 20 }}>
         <Image
@@ -114,7 +114,7 @@ export default function RegisterScreen() {
         >
           <Icon
             name={isSecure ? "eye-off-outline" : "eye-outline"}
-            size={24}
+            size={35}
             color="#AE9D7F"
           />
         </TouchableOpacity>

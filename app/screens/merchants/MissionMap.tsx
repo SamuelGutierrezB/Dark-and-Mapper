@@ -183,7 +183,7 @@ export default function PrincipalMapScreen() {
         }}
         onPress={() => navigation.goBack()}
       >
-        <AntDesign name="back" size={24} color="#AE9D7F" />
+        <AntDesign name="back" size={35} color="#AE9D7F" />
       </TouchableOpacity>
       <View className="maps-contanier" style={styles.mapcontainer}>
         <ScrollView

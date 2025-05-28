@@ -109,7 +109,7 @@ export default function LoginScreen() {
         >
           <Icon
             name={isSecure ? "eye-off-outline" : "eye-outline"}
-            size={24}
+            size={35}
             color="#AE9D7F"
           />
         </TouchableOpacity>
