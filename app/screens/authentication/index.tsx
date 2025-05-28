@@ -50,7 +50,6 @@ export default function LoginScreen() {
     }
     setError(false);
     try {
-      console.log("Iniciando sesión");
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,

@@ -17,8 +17,6 @@ export default function MonsterDetails() {
   const route = useRoute();
   const { monster } = route.params;
 
-  console.log("Monster Details:", monster);
-
   return (
     <View style={styles.container}>
       <TouchableOpacity
