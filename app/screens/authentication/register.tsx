@@ -18,16 +18,15 @@ import {
 } from "firebase/auth";
 import { useRouter } from "expo-router";
 import * as Font from "expo-font";
-
 import { initializeApp } from "firebase/app";
 import { useNavigation } from "@react-navigation/native";
-import { useRoute } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { firebaseConfig } from "../../../firebase-config";
 
 export default function RegisterScreen() {
   const navigation = useNavigation();
-  const route = useRoute();
+  const route = useRouter();
 
   const [fonstsLoaded, setFontsLoaded] = useState(false);
 
@@ -51,11 +50,19 @@ export default function RegisterScreen() {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  const handleCreateAccount = () => {
+  const handleCreateAccount = async () => {
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         const user = userCredential.user;
-        router.push("/screens/map");
+
+        await AsyncStorage.setItem(
+          "user",
+          JSON.stringify({
+            uid: user.uid,
+            email: user.email,
+          })
+        );
+        route.push("/screens/map");
       })
       .catch((error) => {
         setError(true);
