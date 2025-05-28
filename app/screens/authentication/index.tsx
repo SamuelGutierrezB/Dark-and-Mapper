@@ -14,6 +14,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { firebaseConfig } from "../../../firebase-config";
 import { initializeApp } from "firebase/app";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -37,6 +38,7 @@ export default function LoginScreen() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
+  const [isSecure, setIsSecure] = useState(true);
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
@@ -92,13 +94,26 @@ export default function LoginScreen() {
       />
 
       <Text style={styles.label}>CONTRASEÑA:</Text>
-      <TextInput
-        onChangeText={(text) => setPassword(text)}
-        style={styles.input}
-        placeholder="Ingresa tu contraseña"
-        placeholderTextColor="#AE9D7F"
-        secureTextEntry
-      />
+      <View style={styles.passContainer}>
+        <TextInput
+          value={password}
+          onChangeText={setPassword}
+          style={styles.input}
+          placeholder="Ingresa tu contraseña"
+          placeholderTextColor="#AE9D7F"
+          secureTextEntry={isSecure}
+        />
+        <TouchableOpacity
+          onPress={() => setIsSecure(!isSecure)}
+          style={styles.icon}
+        >
+          <Icon
+            name={isSecure ? "eye-off-outline" : "eye-outline"}
+            size={24}
+            color="#AE9D7F"
+          />
+        </TouchableOpacity>
+      </View>
 
       <TouchableOpacity onPress={handleSignIn} style={styles.button}>
         <Text style={styles.buttonText}>Ingresar</Text>
@@ -115,6 +130,26 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
+  passContainer: {
+    position: "relative",
+    justifyContent: "center",
+  },
+  input: {
+    paddingRight: 40, // espacio para el ícono
+    borderWidth: 1,
+    borderColor: "#AE9D7F",
+    borderRadius: 8,
+    padding: 10,
+    color: "#000",
+  },
+  icon: {
+    marginTop: "-17px",
+    marginRight: "10px",
+    position: "absolute",
+    right: 10,
+    height: "100%",
+    justifyContent: "center",
+  },
   container: {
     flex: 1,
     justifyContent: "center",
