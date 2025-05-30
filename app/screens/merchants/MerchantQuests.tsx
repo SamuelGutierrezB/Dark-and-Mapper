@@ -99,7 +99,7 @@ export default function MerchantQuests() {
           display: "flex",
           flexDirection: "row-reverse",
         }}
-        onPress={() => navigation.navigate("index")}
+        onPress={() => navigation.goBack()}
       >
         <AntDesign name="back" size={35} color="#AE9D7F" />
       </TouchableOpacity>
