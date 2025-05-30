@@ -21,12 +21,13 @@ import * as Font from "expo-font";
 import { initializeApp } from "firebase/app";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Icon from "react-native-vector-icons/Ionicons";
 
 import { firebaseConfig } from "../../../firebase-config";
 
 export default function RegisterScreen() {
   const navigation = useNavigation();
-  const route = useRouter();
+  const router = useRouter();
 
   const [fonstsLoaded, setFontsLoaded] = useState(false);
 
