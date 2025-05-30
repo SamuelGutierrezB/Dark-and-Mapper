@@ -64,7 +64,7 @@ export default function RegisterScreen() {
             email: user.email,
           })
         );
-        route.push("/screens/map");
+        router.push("/screens/map");
       })
       .catch((error) => {
         setError(true);
