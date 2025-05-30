@@ -2,12 +2,11 @@ import {
   View,
   Text,
   StyleSheet,
-  FlatList,
   TouchableOpacity,
   Image,
   SectionList,
+  Platform,
 } from "react-native";
-
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import React, { useState, useEffect } from "react";
 import { RouteProp, useRoute } from "@react-navigation/native";
@@ -16,6 +15,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../../firebase-config";
 import Toast from "react-native-toast-message";
+import * as Notifications from "expo-notifications";
 
 export default function MerchantQuests() {
   const navigation = useNavigation();
@@ -28,6 +28,19 @@ export default function MerchantQuests() {
 
   const merchants = require("../../../assets/data/merchants.json");
   const merchant = merchants.find((m: any) => m.id === merchantId);
+
+  // Configurar las notificaciones al cargar el componente
+  useEffect(() => {
+    const setupNotifications = async () => {
+      if (Platform.OS === 'web') return;
+      
+      const { status } = await Notifications.requestPermissionsAsync();
+      if (status !== 'granted') {
+        console.log('Permisos de notificación no otorgados');
+      }
+    };
+    setupNotifications();
+  }, []);
 
   // Cargar misiones completadas
   useEffect(() => {
@@ -45,11 +58,67 @@ export default function MerchantQuests() {
         }
       } catch (error) {
         console.error("Error al cargar misiones:", error);
+        Toast.show({
+          type: "error",
+          text1: "Error al cargar misiones",
+          position: "bottom",
+        });
       }
     };
 
     loadCompletedMissions();
   }, [merchantId]);
+
+  // Retorna el número de fase completada o null si ninguna se completó
+  const checkCompletedPhases = (): number | null => {
+    const phases = {
+      1: merchant.missions.phase1,
+      2: merchant.missions.phase2,
+      3: merchant.missions.phase3,
+    };
+
+    for (const [phaseNumber, missions] of Object.entries(phases)) {
+      const allCompleted = missions.every(mission => 
+        completedMissions[mission.missionID]
+      );
+      
+      if (allCompleted) {
+        return parseInt(phaseNumber);
+      }
+    }
+    return null;
+  };
+
+  const showPhaseCompletedNotification = async (phaseNumber: number) => {
+    if (Platform.OS === 'web') {
+      Toast.show({
+        type: 'info',
+        text1: `¡Fase ${phaseNumber} completada! 🎉`,
+        text2: '¡Enhorabuena aventurero!',
+        position: 'bottom',
+        visibilityTime: 3000,
+      });
+      return;
+    }
+
+    try {
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: "¡Fase completada! 🎉",
+          body: `¡Enhorabuena aventurero! Has completado la fase ${phaseNumber}`,
+          data: { screen: "MerchantQuest" },
+        },
+        trigger: { seconds: 1 },
+      });
+    } catch (error) {
+      console.error('Error mostrando notificación:', error);
+      Toast.show({
+        type: 'info',
+        text1: `¡Fase ${phaseNumber} completada! 🎉`,
+        position: 'bottom',
+      });
+    }
+  };
 
   const saveCompletedMissions = async () => {
     try {
@@ -61,6 +130,14 @@ export default function MerchantQuests() {
         },
         { merge: true }
       );
+
+      // Verificar fases completadas después de guardar
+      const completedPhase = checkCompletedPhases();
+      
+      if (completedPhase) {
+        await showPhaseCompletedNotification(completedPhase);
+      }
+
       Toast.show({
         type: "success",
         text1: "Progreso guardado",
@@ -72,6 +149,7 @@ export default function MerchantQuests() {
       Toast.show({
         type: "error",
         text1: "Error al guardar",
+        position: "bottom",
       });
     }
   };
@@ -111,7 +189,6 @@ export default function MerchantQuests() {
         </View>
       </View>
 
-      {/*     Phases       */}
       <SectionList
         sections={sections}
         keyExtractor={(item) => item.missionID.toString()}
@@ -153,12 +230,12 @@ export default function MerchantQuests() {
                 }));
               }}
               style={{ width: 20, height: 20 }}
+              fillColor="#AE9D7F"
             />
           </View>
         )}
         contentContainerStyle={{ gap: 10 }}
       />
-      {/*     Phases       */}
 
       <TouchableOpacity
         style={{ marginTop: 30, alignSelf: "center" }}
@@ -196,6 +273,27 @@ export default function MerchantQuests() {
               }}
             >
               <Text style={{ color: "red", fontSize: 16 }}>{props.text1}</Text>
+            </View>
+          ),
+          info: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "#4A90E2",
+              }}
+            >
+              <Text style={{ color: "#4A90E2", fontSize: 16 }}>
+                {props.text1}
+              </Text>
+              {props.text2 && (
+                <Text style={{ color: "#AE9D7F", fontSize: 14 }}>
+                  {props.text2}
+                </Text>
+              )}
             </View>
           ),
         }}
