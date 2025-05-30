@@ -32,11 +32,11 @@ export default function MerchantQuests() {
   // Configurar las notificaciones al cargar el componente
   useEffect(() => {
     const setupNotifications = async () => {
-      if (Platform.OS === 'web') return;
-      
+      if (Platform.OS === "web") return;
+
       const { status } = await Notifications.requestPermissionsAsync();
-      if (status !== 'granted') {
-        console.log('Permisos de notificación no otorgados');
+      if (status !== "granted") {
+        console.log("Permisos de notificación no otorgados");
       }
     };
     setupNotifications();
@@ -77,45 +77,39 @@ export default function MerchantQuests() {
       3: merchant.missions.phase3,
     };
 
+    let highestCompletedPhase: number | null = null;
+
     for (const [phaseNumber, missions] of Object.entries(phases)) {
-      const allCompleted = missions.every(mission => 
-        completedMissions[mission.missionID]
+      const allCompleted = missions.every(
+        (mission) => completedMissions[mission.missionID]
       );
-      
+
       if (allCompleted) {
-        return parseInt(phaseNumber);
+        highestCompletedPhase = parseInt(phaseNumber);
       }
     }
-    return null;
+
+    return highestCompletedPhase;
   };
 
   const showPhaseCompletedNotification = async (phaseNumber: number) => {
-    if (Platform.OS === 'web') {
-      Toast.show({
-        type: 'info',
-        text1: `¡Fase ${phaseNumber} completada! 🎉`,
-        text2: '¡Enhorabuena aventurero!',
-        position: 'bottom',
-        visibilityTime: 3000,
-      });
-      return;
-    }
-
     try {
+      if (Platform.OS === "web") return;
+
       await Notifications.scheduleNotificationAsync({
         content: {
           title: "¡Fase completada! 🎉",
-          body: `¡Enhorabuena aventurero! Has completado la fase ${phaseNumber}`,
+          body: `¡Enhorabuena aventurero! Has completado la fase ${phaseNumber} del comerciante ${merchant.name}.`,
           data: { screen: "MerchantQuest" },
         },
         trigger: { seconds: 1 },
       });
     } catch (error) {
-      console.error('Error mostrando notificación:', error);
+      console.error("Error mostrando notificación:", error);
       Toast.show({
-        type: 'info',
+        type: "info",
         text1: `¡Fase ${phaseNumber} completada! 🎉`,
-        position: 'bottom',
+        position: "bottom",
       });
     }
   };
@@ -133,17 +127,29 @@ export default function MerchantQuests() {
 
       // Verificar fases completadas después de guardar
       const completedPhase = checkCompletedPhases();
-      
+
       if (completedPhase) {
         await showPhaseCompletedNotification(completedPhase);
       }
-
       Toast.show({
         type: "success",
         text1: "Progreso guardado",
         position: "bottom",
         visibilityTime: 2000,
       });
+
+      if (Platform.OS === "web")
+        if (completedPhase) {
+          setTimeout(() => {
+            Toast.show({
+              type: "info",
+              text1: "¡Fase completada!🎉",
+              text2: `¡Enhorabuena aventurero! Has completado la fase ${completedPhase} del comerciante ${merchant.name}.`,
+              position: "top",
+              visibilityTime: 4000,
+            });
+          }, 1000);
+        }
     } catch (error) {
       console.error("Error al guardar:", error);
       Toast.show({

@@ -9,6 +9,7 @@ export default function Index() {
   useEffect(() => {
     const checkSession = async () => {
       const storedUser = await AsyncStorage.getItem("user");
+      console.log("Stored user:", storedUser);
       if (storedUser) {
         router.replace("../screens/map"); // o donde quieras mandar al usuario si ya está logueado
       }

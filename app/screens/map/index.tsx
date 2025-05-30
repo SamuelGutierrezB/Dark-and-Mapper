@@ -24,6 +24,7 @@ import { firebaseConfig } from "../../../firebase-config";
 import { MarkerType } from "./mapTypes"; // Importa el tipo MarkerType
 import mapFilters from "../../../assets/data/filters.json"; // Importa el archivo JSON
 import { blue } from "react-native-reanimated/lib/typescript/Colors";
+import Toast from "react-native-toast-message";
 
 export default function PrincipalMapScreen() {
   const router = useRouter();
@@ -171,6 +172,61 @@ export default function PrincipalMapScreen() {
 
   return (
     <View style={styles.container}>
+      <Toast
+        config={{
+          success: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "#AE9D7F",
+              }}
+            >
+              <Text style={{ color: "#AE9D7F", fontSize: 16 }}>
+                {props.text1}
+              </Text>
+            </View>
+          ),
+          error: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "red",
+              }}
+            >
+              <Text style={{ color: "red", fontSize: 16 }}>{props.text1}</Text>
+            </View>
+          ),
+          info: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "#4A90E2",
+              }}
+            >
+              <Text style={{ color: "#4A90E2", fontSize: 16 }}>
+                {props.text1}
+              </Text>
+              {props.text2 && (
+                <Text style={{ color: "#AE9D7F", fontSize: 14 }}>
+                  {props.text2}
+                </Text>
+              )}
+            </View>
+          ),
+        }}
+      />
       <View className="maps-contanier" style={styles.mapcontainer}>
         <View className="maps-buttons" style={styles.mapsbuttons}>
           {mapButtons.map((button) => (

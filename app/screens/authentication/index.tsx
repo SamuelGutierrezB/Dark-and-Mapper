@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Text,
   View,
+  Platform,
 } from "react-native";
 import { useRouter } from "expo-router";
 import { useState, useEffect } from "react";
@@ -18,8 +19,20 @@ import * as Notifications from "expo-notifications";
 import { firebaseConfig } from "../../../firebase-config";
 import { initializeApp } from "firebase/app";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Toast from "react-native-toast-message";
 
 export default function LoginScreen() {
+  useEffect(() => {
+    const checkSession = async () => {
+      const storedUser = await AsyncStorage.getItem("user");
+      console.log("Stored user:", storedUser);
+      if (storedUser) {
+        router.replace("../screens/map"); // o donde quieras mandar al usuario si ya está logueado
+      }
+    };
+
+    checkSession();
+  }, []);
   const router = useRouter();
 
   //NOTIFICATIONS-------------------------
@@ -83,6 +96,7 @@ export default function LoginScreen() {
         email,
         password
       );
+      console.log("Usuario autenticado:", userCredential.user);
       const user = userCredential.user;
 
       // Guarda datos en AsyncStorage
@@ -95,24 +109,94 @@ export default function LoginScreen() {
       );
       //NOTIFICATIONS-------------------------
       // Mostrar notificación de bienvenida
-      await Notifications.scheduleNotificationAsync({
-        content: {
-          title: "¡Bienvenido a Dark & Mapper! 🗺️",
-          body: `Hola ${user.email}, has iniciado sesión correctamente.`,
-          data: { screen: "map" }, // Datos adicionales que puedes usar
-        },
-        trigger: { seconds: 1 }, // Se mostrará después de 1 segundo
-      });
+      if (Platform.OS === "web") {
+        Toast.show({
+          type: "info",
+          text1: `¡Bienvenido a Dark & Mapper! 🗺️`,
+          text2: `Hola ${user.email}, has iniciado sesión correctamente.`,
+          position: "top",
+          visibilityTime: 4000,
+        });
+        setTimeout(() => {
+          router.push("/screens/map"); // Redirigir al mapa después de mostrar la notificación
+        }, 2000); // Espera 4 segundos antes de redirigir
+      }
+      if (Platform.OS !== "web") {
+        await Notifications.scheduleNotificationAsync({
+          content: {
+            title: "¡Bienvenido a Dark & Mapper! 🗺️",
+            body: `Hola ${user.email}, has iniciado sesión correctamente.`,
+            data: { screen: "map" }, // Datos adicionales que puedes usar
+          },
+          trigger: { seconds: 1 }, // Se mostrará después de 1 segundo
+        });
+        router.push("/screens/map");
+      }
       //NOTIFICATIONS-------------------------
-
-      router.push("../screens/map");
     } catch (error) {
+      console.log("Usuario no autenticado:", error);
+
       setError(true);
     }
   };
 
   return (
     <View style={styles.container}>
+      <Toast
+        config={{
+          success: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "#AE9D7F",
+              }}
+            >
+              <Text style={{ color: "#AE9D7F", fontSize: 16 }}>
+                {props.text1}
+              </Text>
+            </View>
+          ),
+          error: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "red",
+              }}
+            >
+              <Text style={{ color: "red", fontSize: 16 }}>{props.text1}</Text>
+            </View>
+          ),
+          info: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "#4A90E2",
+              }}
+            >
+              <Text style={{ color: "#4A90E2", fontSize: 16 }}>
+                {props.text1}
+              </Text>
+              {props.text2 && (
+                <Text style={{ color: "#AE9D7F", fontSize: 14 }}>
+                  {props.text2}
+                </Text>
+              )}
+            </View>
+          ),
+        }}
+      />
       <View style={{ alignItems: "center", marginBottom: 20 }}>
         <Image
           style={styles.image}

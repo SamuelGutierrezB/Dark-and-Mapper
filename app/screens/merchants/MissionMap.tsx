@@ -14,6 +14,7 @@ import mapFilters from "../../../assets/data/filters.json"; // Importa el archiv
 import { useRoute } from "@react-navigation/native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
+import Toast from "react-native-toast-message";
 
 export default function PrincipalMapScreen() {
   const navigation = useNavigation();
@@ -50,6 +51,14 @@ export default function PrincipalMapScreen() {
   };
 
   useEffect(() => {
+    if (recommendedFilters.length > 0) {
+      Toast.show({
+        type: "info",
+        text1: `Mostrando ubicaciones de la mision`,
+        position: "top",
+        visibilityTime: 4000,
+      });
+    }
     if (fromMission && recommendedMap) {
       setCurrentMap(recommendedMap);
     }
@@ -258,6 +267,61 @@ export default function PrincipalMapScreen() {
           />
         </TouchableOpacity>
       </View>
+      <Toast
+        config={{
+          success: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "#AE9D7F",
+              }}
+            >
+              <Text style={{ color: "#AE9D7F", fontSize: 16 }}>
+                {props.text1}
+              </Text>
+            </View>
+          ),
+          error: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "red",
+              }}
+            >
+              <Text style={{ color: "red", fontSize: 16 }}>{props.text1}</Text>
+            </View>
+          ),
+          info: (props) => (
+            <View
+              style={{
+                backgroundColor: "#2A2A2A",
+                borderRadius: 15,
+                padding: 15,
+                marginBottom: 40,
+                borderWidth: 1,
+                borderColor: "#4A90E2",
+              }}
+            >
+              <Text style={{ color: "#4A90E2", fontSize: 16 }}>
+                {props.text1}
+              </Text>
+              {props.text2 && (
+                <Text style={{ color: "#AE9D7F", fontSize: 14 }}>
+                  {props.text2}
+                </Text>
+              )}
+            </View>
+          ),
+        }}
+      />
     </View>
   );
 }
