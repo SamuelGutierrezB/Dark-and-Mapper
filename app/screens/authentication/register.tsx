@@ -27,7 +27,7 @@ import { firebaseConfig } from "../../../firebase-config";
 
 export default function RegisterScreen() {
   const navigation = useNavigation();
-  const route = useRouter();
+  const router = useRouter();
 
   const [fonstsLoaded, setFontsLoaded] = useState(false);
 
