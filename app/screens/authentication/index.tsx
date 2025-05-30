@@ -11,6 +11,9 @@ import { useState, useEffect } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import * as Font from "expo-font";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+//NOTIFICATIONS-------------------------
+import * as Notifications from "expo-notifications";
+//NOTIFICATIONS-------------------------
 
 import { firebaseConfig } from "../../../firebase-config";
 import { initializeApp } from "firebase/app";
@@ -18,6 +21,31 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function LoginScreen() {
   const router = useRouter();
+
+  //NOTIFICATIONS-------------------------
+  // Configurar el manejador de notificaciones al cargar el componente
+  useEffect(() => {
+    const setupNotifications = async () => {
+      // Configurar cómo se manejan las notificaciones cuando llegan
+      Notifications.setNotificationHandler({
+        handleNotification: async () => ({
+          shouldShowAlert: true,
+          shouldPlaySound: true,
+          shouldSetBadge: true,
+        }),
+      });
+
+      // Pedir permisos (necesario para iOS)
+      const { status } = await Notifications.getPermissionsAsync();
+      if (status !== "granted") {
+        await Notifications.requestPermissionsAsync();
+      }
+    };
+
+    setupNotifications();
+  }, []);
+
+  //NOTIFICATIONS-------------------------
 
   const [fonstsLoaded, setFontsLoaded] = useState(false);
 
@@ -65,6 +93,17 @@ export default function LoginScreen() {
           email: user.email,
         })
       );
+      //NOTIFICATIONS-------------------------
+      // Mostrar notificación de bienvenida
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: "¡Bienvenido a Dark & Mapper! 🗺️",
+          body: `Hola ${user.email}, has iniciado sesión correctamente.`,
+          data: { screen: "map" }, // Datos adicionales que puedes usar
+        },
+        trigger: { seconds: 1 }, // Se mostrará después de 1 segundo
+      });
+      //NOTIFICATIONS-------------------------
 
       router.push("../screens/map");
     } catch (error) {
