@@ -29,7 +29,7 @@ export default function MissionDetails() {
         }}
         onPress={() => navigation.goBack()}
       >
-        <AntDesign name="back" size={24} color="#AE9D7F" />
+        <AntDesign name="back" size={35} color="#AE9D7F" />
       </TouchableOpacity>
       <View style={styles.merchantItem}>
         <Image source={{ uri: merchant.imageUrl }} style={styles.image} />

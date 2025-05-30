@@ -17,15 +17,13 @@ export default function MonsterDetails() {
   const route = useRoute();
   const { monster } = route.params;
 
-  console.log("Monster Details:", monster);
-
   return (
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.backButton}
         onPress={() => navigation.goBack()}
       >
-        <AntDesign name="back" size={24} color="#AE9D7F" />
+        <AntDesign name="back" size={35} color="#AE9D7F" />
       </TouchableOpacity>
 
       {/* Encabezado con imagen y nombre */}
