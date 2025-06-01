@@ -15,7 +15,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
 import Toast from "react-native-toast-message";
 import { Animated } from "react-native";
-import Marker from "./Marker";
+import Marker from "../../common/MissionMarker";
 
 export default function PrincipalMapScreen() {
   const navigation = useNavigation();

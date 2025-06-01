@@ -8,15 +8,15 @@ type MarkerProps = {
   visible: boolean;
 };
 
-const markerImages = {
-  blue_Portal: require("../../../assets/images/BluePortal.png"),
-  red_Portal: require("../../../assets/images/RedPortal.png"),
-  bosses: require("../../../assets/images/BossesIcon.png"),
-  sanctuary: require("../../../assets/images/SantuaryIcon.png"),
-  mission: require("../../../assets/images/flagMission.png"),
+const markerImages: Record<MarkerType, any> = {
+  blue_Portal: require("../../assets/images/BluePortal.png"),
+  red_Portal: require("../../assets/images/RedPortal.png"),
+  bosses: require("../../assets/images/BossesIcon.png"),
+  sanctuary: require("../../assets/images/SantuaryIcon.png"),
+  mission: require("../../assets/images/flagMission.png"),
 };
 
-export default function Marker({ type, coord, visible }: MarkerProps) {
+export default function MissionMarker({ type, coord, visible }: MarkerProps) {
   const opacity = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
