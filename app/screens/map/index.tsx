@@ -348,7 +348,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#121212",
     marginTop: 20,
     flex: 1,
-    marginRight: 50,
     minWidth: 159,
     flexDirection: "row",
     justifyContent: "space-around",

@@ -222,50 +222,50 @@ export default function PrincipalMapScreen() {
           </ScrollView>
         </ScrollView>
       </View>
+      <View className="filters-markers" style={styles.filters}>
+        <TouchableOpacity
+          style={styles.buttonfilters}
+          onPress={() => toggleFilter("red_Portal")}
+        >
+          <Image
+            source={require("../../../assets/images/RedPortal.png")}
+            style={{ width: 45, height: 45 }}
+          />
+        </TouchableOpacity>
 
-      {recommendedFilters.length > 0 && (
-        <View className="filters-markers" style={styles.filters}>
-          <TouchableOpacity
-            style={styles.buttonfilters}
-            onPress={() => toggleFilter("red_Portal")}
-          >
-            <Image
-              source={require("../../../assets/images/RedPortal.png")}
-              style={{ width: 45, height: 45 }}
-            />
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonfilters}
+          onPress={() => toggleFilter("blue_Portal")}
+        >
+          <Image
+            source={require("../../../assets/images/BluePortal.png")}
+            style={{ width: 45, height: 45 }}
+          />
+        </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.buttonfilters}
-            onPress={() => toggleFilter("blue_Portal")}
-          >
-            <Image
-              source={require("../../../assets/images/BluePortal.png")}
-              style={{ width: 45, height: 45 }}
-            />
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonfilters}
+          onPress={() => toggleFilter("bosses")}
+        >
+          <Image
+            source={require("../../../assets/images/BossesIcon.png")}
+            style={{ width: 49, height: 49, marginTop: 4 }}
+          />
+        </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.buttonfilters}
-            onPress={() => toggleFilter("bosses")}
-          >
-            <Image
-              source={require("../../../assets/images/BossesIcon.png")}
-              style={{ width: 49, height: 49, marginTop: 4 }}
-            />
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonfilters}
+          onPress={() => toggleFilter("sanctuary")}
+        >
+          <Image
+            source={require("../../../assets/images/SantuaryIcon.png")}
+            style={{ width: 42, height: 42 }}
+          />
+        </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.buttonfilters}
-            onPress={() => toggleFilter("sanctuary")}
-          >
-            <Image
-              source={require("../../../assets/images/SantuaryIcon.png")}
-              style={{ width: 42, height: 42 }}
-            />
-          </TouchableOpacity>
+        {/* Botón para el filtro de misión */}
 
-          {/* Botón para el filtro de misión */}
+        {recommendedFilters.length > 0 && (
           <TouchableOpacity
             style={styles.buttonfilters}
             onPress={() => toggleFilter("mission")}
@@ -275,8 +275,8 @@ export default function PrincipalMapScreen() {
               style={{ width: 45, height: 45 }}
             />
           </TouchableOpacity>
-        </View>
-      )}
+        )}
+      </View>
       <Toast
         config={{
           success: (props) => (
@@ -366,7 +366,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#121212",
     marginTop: 20,
     flex: 1,
-    marginRight: 50,
+
     minWidth: 159,
     flexDirection: "row",
     justifyContent: "space-around",
