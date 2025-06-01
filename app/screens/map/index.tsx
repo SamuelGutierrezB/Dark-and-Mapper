@@ -1,34 +1,25 @@
 import {
   Image,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
   Text,
   View,
-  Alert,
   ScrollView,
-  Dimensions,
   ToastAndroid,
 } from "react-native";
-import { BlurView } from "expo-blur";
 import { useState, useEffect } from "react";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
 import { useRouter } from "expo-router";
 import * as Font from "expo-font";
-import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "../../../firebase-config";
 import { MarkerType } from "./mapTypes"; // Importa el tipo MarkerType
-import mapFilters from "../../../assets/data/filters.json"; // Importa el archivo JSON
-import { blue } from "react-native-reanimated/lib/typescript/Colors";
+import { Animated } from "react-native";
 import Toast from "react-native-toast-message";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import mapFilters from "../../../assets/data/filters.json"; // Importa el archivo JSON
+
 export default function PrincipalMapScreen() {
-  const router = useRouter();
+  const mapOpacity = useState(new Animated.Value(1))[0];
+
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   // Estados para los filtros
@@ -68,13 +59,26 @@ export default function PrincipalMapScreen() {
 
   // Cambiar mapa
   const changeMap = (mapKey: string) => {
-    setCurrentMap(mapKey);
-    // Resetear todos los filtros al cambiar de mapa
-    setActiveFilters({
-      blue_Portal: false,
-      red_Portal: false,
-      bosses: false,
-      sanctuary: false,
+    // Fade out
+    Animated.timing(mapOpacity, {
+      toValue: 0,
+      duration: 200,
+      useNativeDriver: true,
+    }).start(() => {
+      setCurrentMap(mapKey);
+      setActiveFilters({
+        blue_Portal: false,
+        red_Portal: false,
+        bosses: false,
+        sanctuary: false,
+      });
+
+      // Fade in
+      Animated.timing(mapOpacity, {
+        toValue: 1,
+        duration: 200,
+        useNativeDriver: true,
+      }).start();
     });
   };
 
@@ -142,46 +146,17 @@ export default function PrincipalMapScreen() {
 
   // Renderizar marcadores
   const renderMarkers = () => {
-    const markers = [];
     const currentData = getCurrentMapData();
-
-    (Object.keys(activeFilters) as MarkerType[]).forEach((type) => {
-      if (activeFilters[type] && currentData[type]) {
-        currentData[type]?.forEach((coord, index) => {
-          let imageSource;
-          switch (type) {
-            case "blue_Portal":
-              imageSource = require("../../../assets/images/BluePortal.png");
-              break;
-            case "red_Portal":
-              imageSource = require("../../../assets/images/RedPortal.png");
-              break;
-            case "bosses":
-              imageSource = require("../../../assets/images/BossesIcon.png");
-              break;
-            case "sanctuary":
-              imageSource = require("../../../assets/images/SantuaryIcon.png");
-              break;
-          }
-
-          markers.push(
-            <Image
-              key={`${type}-${index}`}
-              source={imageSource}
-              style={{
-                position: "absolute",
-                top: coord[0],
-                left: coord[1],
-                width: 50,
-                height: 50,
-              }}
-            />
-          );
-        });
-      }
+    return (Object.keys(currentData) as MarkerType[]).flatMap((type) => {
+      return currentData[type].map((coord, index) => (
+        <Marker
+          key={`${type}-${index}`}
+          type={type}
+          coord={coord}
+          visible={activeFilters[type]}
+        />
+      ));
     });
-
-    return markers;
   };
 
   // Mapeo de botones a keys de mapa
@@ -288,8 +263,8 @@ export default function PrincipalMapScreen() {
         >
           <ScrollView horizontal>
             <View>
-              <Image
-                style={styles.goblin}
+              <Animated.Image
+                style={[styles.goblin, { opacity: mapOpacity }]}
                 source={images[currentMap as keyof typeof images]}
               />
               {renderMarkers()}
@@ -412,3 +387,55 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
+
+const Marker = ({
+  type,
+  coord,
+  visible,
+}: {
+  type: MarkerType;
+  coord: number[];
+  visible: boolean;
+}) => {
+  const [opacity] = useState(new Animated.Value(0));
+
+  useEffect(() => {
+    Animated.timing(opacity, {
+      toValue: visible ? 1 : 0,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+  }, [visible]);
+
+  if (!visible && opacity.__getValue() === 0) return null; // no lo montes si está oculto y su animación ya terminó
+
+  let imageSource;
+  switch (type) {
+    case "blue_Portal":
+      imageSource = require("../../../assets/images/BluePortal.png");
+      break;
+    case "red_Portal":
+      imageSource = require("../../../assets/images/RedPortal.png");
+      break;
+    case "bosses":
+      imageSource = require("../../../assets/images/BossesIcon.png");
+      break;
+    case "sanctuary":
+      imageSource = require("../../../assets/images/SantuaryIcon.png");
+      break;
+  }
+
+  return (
+    <Animated.Image
+      source={imageSource}
+      style={{
+        position: "absolute",
+        left: coord[0],
+        top: coord[1],
+        width: 50,
+        height: 50,
+        opacity,
+      }}
+    />
+  );
+};
