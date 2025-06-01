@@ -16,6 +16,7 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../../firebase-config";
 import Toast from "react-native-toast-message";
 import * as Notifications from "expo-notifications";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function MerchantQuests() {
   const navigation = useNavigation();
@@ -45,9 +46,12 @@ export default function MerchantQuests() {
   // Cargar misiones completadas
   useEffect(() => {
     const loadCompletedMissions = async () => {
+      const storedUser = await AsyncStorage.getItem("user");
+      const { uid } = JSON.parse(storedUser || "{}");
+
       try {
         const userId = "usuario123";
-        const docRef = doc(db, "missionsCompleted", userId);
+        const docRef = doc(db, "missionsCompleted", uid);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
@@ -115,10 +119,11 @@ export default function MerchantQuests() {
   };
 
   const saveCompletedMissions = async () => {
+    const storedUser = await AsyncStorage.getItem("user");
+    const { uid } = JSON.parse(storedUser || "{}");
     try {
-      const userId = "usuario123";
       await setDoc(
-        doc(db, "missionsCompleted", userId),
+        doc(db, "missionsCompleted", uid),
         {
           [merchantId]: completedMissions,
         },
