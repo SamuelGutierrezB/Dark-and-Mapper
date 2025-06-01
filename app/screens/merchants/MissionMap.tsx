@@ -9,12 +9,13 @@ import {
 } from "react-native";
 import { useState, useEffect } from "react";
 import * as Font from "expo-font";
-import { MarkerType } from "./mapTypes"; // Importa el tipo MarkerType
 import mapFilters from "../../../assets/data/filters.json"; // Importa el archivo JSON
 import { useRoute } from "@react-navigation/native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
 import Toast from "react-native-toast-message";
+import { Animated } from "react-native";
+import Marker from "./Marker";
 
 export default function PrincipalMapScreen() {
   const navigation = useNavigation();
@@ -106,7 +107,7 @@ export default function PrincipalMapScreen() {
   };
 
   // Alternar filtro
-  const toggleFilter = (filterType: MarkerType) => {
+  const toggleFilter = (filterType) => {
     if (filterType === "mission") {
       // Para el filtro de misión, usamos las coordenadas de missionCoords
       setActiveFilters((prev) => ({
@@ -133,61 +134,35 @@ export default function PrincipalMapScreen() {
     }));
   };
 
-  // Renderizar marcadores
   const renderMarkers = () => {
-    const markers = [];
     const currentData = getCurrentMapData();
 
-    (Object.keys(activeFilters) as MarkerType[]).forEach((type) => {
-      if (activeFilters[type]) {
-        let coordsToRender: [number, number][] = [];
+    const missionMarkers =
+      activeFilters["mission"] && missionCoords.length > 0
+        ? missionCoords.map((coord, index) => (
+            <Marker
+              key={`mission-${index}`}
+              type="mission"
+              coord={coord}
+              visible={true}
+            />
+          ))
+        : [];
 
-        if (type === "mission") {
-          coordsToRender = missionCoords;
-        } else {
-          coordsToRender = currentData[type] || [];
-        }
+    const otherMarkers = Object.keys(currentData).flatMap((type) =>
+      activeFilters[type]
+        ? currentData[type].map((coord, index) => (
+            <Marker
+              key={`${type}-${index}`}
+              type={type}
+              coord={coord}
+              visible={true}
+            />
+          ))
+        : []
+    );
 
-        if (coordsToRender.length > 0) {
-          let imageSource;
-          switch (type) {
-            case "blue_Portal":
-              imageSource = require("../../../assets/images/BluePortal.png");
-              break;
-            case "red_Portal":
-              imageSource = require("../../../assets/images/RedPortal.png");
-              break;
-            case "bosses":
-              imageSource = require("../../../assets/images/BossesIcon.png");
-              break;
-            case "sanctuary":
-              imageSource = require("../../../assets/images/SantuaryIcon.png");
-              break;
-            case "mission":
-              imageSource = require("../../../assets/images/flagMission.png");
-              break;
-          }
-
-          coordsToRender.forEach((coord, index) => {
-            markers.push(
-              <Image
-                key={`${type}-${index}`}
-                source={imageSource}
-                style={{
-                  position: "absolute",
-                  top: coord[0],
-                  left: coord[1],
-                  width: 50,
-                  height: 50,
-                }}
-              />
-            );
-          });
-        }
-      }
-    });
-
-    return markers;
+    return [...missionMarkers, ...otherMarkers];
   };
 
   return (
