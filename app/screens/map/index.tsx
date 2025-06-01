@@ -25,6 +25,7 @@ import { MarkerType } from "./mapTypes"; // Importa el tipo MarkerType
 import mapFilters from "../../../assets/data/filters.json"; // Importa el archivo JSON
 import { blue } from "react-native-reanimated/lib/typescript/Colors";
 import Toast from "react-native-toast-message";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function PrincipalMapScreen() {
   const router = useRouter();
@@ -95,11 +96,49 @@ export default function PrincipalMapScreen() {
       );
       return;
     }
-    setActiveFilters((prev) => ({
-      ...prev,
-      [filterType]: !prev[filterType],
-    }));
+
+    const updatedFilters = {
+      ...activeFilters,
+      [filterType]: !activeFilters[filterType],
+    };
+
+    setActiveFilters(updatedFilters);
+    saveFiltersToStorage(updatedFilters, currentMap); // <- Guarda en AsyncStorage
   };
+  const saveFiltersToStorage = async (
+    filters: typeof activeFilters,
+    mapKey: string
+  ) => {
+    try {
+      await AsyncStorage.setItem(`filters_${mapKey}`, JSON.stringify(filters));
+    } catch (error) {
+      console.error("Error saving filters:", error);
+    }
+  };
+
+  useEffect(() => {
+    const loadFiltersFromStorage = async () => {
+      try {
+        const storedFilters = await AsyncStorage.getItem(
+          `filters_${currentMap}`
+        );
+        if (storedFilters) {
+          setActiveFilters(JSON.parse(storedFilters));
+        } else {
+          setActiveFilters({
+            blue_Portal: false,
+            red_Portal: false,
+            bosses: false,
+            sanctuary: false,
+          });
+        }
+      } catch (error) {
+        console.error("Error loading filters:", error);
+      }
+    };
+
+    loadFiltersFromStorage();
+  }, [currentMap]);
 
   // Renderizar marcadores
   const renderMarkers = () => {
