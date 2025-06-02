@@ -80,65 +80,85 @@ export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
   const [isSecure, setIsSecure] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  const handleSignIn = async () => {
-    if (!email || !password) {
-      setError(true);
-      return;
-    }
-    setError(false);
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log("Usuario autenticado:", userCredential.user);
-      const user = userCredential.user;
+const handleSignIn = async () => {
+  // Validación de campos vacíos
+  if (!email || !password) {
+    setErrorMessage("Por favor ingresa correo y contraseña.");
+    setError(true);
+    return;
+  }
 
-      // Guarda datos en AsyncStorage
-      await AsyncStorage.setItem(
-        "user",
-        JSON.stringify({
-          uid: user.uid,
-          email: user.email,
-        })
-      );
-      //NOTIFICATIONS-------------------------
-      // Mostrar notificación de bienvenida
-      if (Platform.OS === "web") {
-        Toast.show({
-          type: "info",
-          text1: `¡Bienvenido a Dark & Mapper! 🗺️`,
-          text2: `Hola ${user.email}, has iniciado sesión correctamente.`,
-          position: "top",
-          visibilityTime: 4000,
-        });
-        setTimeout(() => {
-          router.push("/screens/map"); // Redirigir al mapa después de mostrar la notificación
-        }, 2000); // Espera 4 segundos antes de redirigir
-      }
-      if (Platform.OS !== "web") {
-        await Notifications.scheduleNotificationAsync({
-          content: {
-            title: "¡Bienvenido a Dark & Mapper! 🗺️",
-            body: `Hola ${user.email}, has iniciado sesión correctamente.`,
-            data: { screen: "map" }, // Datos adicionales que puedes usar
-          },
-          trigger: { seconds: 1 }, // Se mostrará después de 1 segundo
-        });
+  // Validación de formato de correo
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    setErrorMessage("El correo no tiene un formato válido.");
+    setError(true);
+    return;
+  }
+
+  // Validación de longitud de contraseña
+  if (password.length < 6) {
+    setErrorMessage("La contraseña debe tener al menos 6 caracteres.");
+    setError(true);
+    return;
+  }
+
+  setError(false);
+  setErrorMessage("");
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    console.log("Usuario autenticado:", userCredential.user);
+    const user = userCredential.user;
+
+    // Guarda datos en AsyncStorage
+    await AsyncStorage.setItem(
+      "user",
+      JSON.stringify({
+        uid: user.uid,
+        email: user.email,
+      })
+    );
+    
+    //NOTIFICATIONS-------------------------
+    // Mostrar notificación de bienvenida
+    if (Platform.OS === "web") {
+      Toast.show({
+        type: "info",
+        text1: `¡Bienvenido a Dark & Mapper! 🗺️`,
+        text2: `Hola ${user.email}, has iniciado sesión correctamente.`,
+        position: "top",
+        visibilityTime: 4000,
+      });
+      setTimeout(() => {
         router.push("/screens/map");
-      }
-      //NOTIFICATIONS-------------------------
-    } catch (error) {
-      console.log("Usuario no autenticado:", error);
-
-      setError(true);
+      }, 2000);
     }
-  };
+    if (Platform.OS !== "web") {
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: "¡Bienvenido a Dark & Mapper! 🗺️",
+          body: `Hola ${user.email}, has iniciado sesión correctamente.`,
+          data: { screen: "map" },
+        },
+        trigger: { seconds: 1, type: "timeInterval" },
+      });
+      router.push("/screens/map");
+    }
+    //NOTIFICATIONS-------------------------
+  } catch (error) {
+    setErrorMessage("Correo o contraseña incorrectos");
+    setError(true);
+  }
+};
 
   return (
     <View style={styles.container}>
@@ -206,7 +226,7 @@ export default function LoginScreen() {
 
       <Text style={styles.title}>Inicia sesión</Text>
 
-      {error && <Text style={styles.error}>Correo o contraseña erroneos</Text>}
+      {error && <Text style={styles.error}>{errorMessage}</Text>}
       <Text style={styles.label}>Correo:</Text>
       <TextInput
         onChangeText={(text) => setEmail(text)}
@@ -265,12 +285,12 @@ const styles = StyleSheet.create({
     color: "#000",
   },
   icon: {
-    marginTop: "-17px",
-    marginRight: "10px",
     position: "absolute",
-    right: 10,
+    right: 25,
+    top: 0,
     height: "100%",
     justifyContent: "center",
+    alignItems: "center",
   },
   container: {
     flex: 1,

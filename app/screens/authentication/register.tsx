@@ -56,7 +56,12 @@ export default function RegisterScreen() {
     createUserWithEmailAndPassword(auth, email, password)
       .then(async (userCredential) => {
         const user = userCredential.user;
-
+  // Validación de longitud de contraseña
+  if (password.length < 6) {
+    setErrorMessage("La contraseña debe tener al menos 6 caracteres.");
+    setError(true);
+    return;
+  }
         await AsyncStorage.setItem(
           "user",
           JSON.stringify({
@@ -142,12 +147,12 @@ const styles = StyleSheet.create({
     color: "#000",
   },
   icon: {
-    marginTop: "-17px",
-    marginRight: "10px",
     position: "absolute",
-
+    right: 25,
+    top: 0,
     height: "100%",
     justifyContent: "center",
+    alignItems: "center",
   },
   container: {
     flex: 1,
@@ -220,3 +225,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 });
+function setErrorMessage(arg0: string) {
+  throw new Error("Function not implemented.");
+}
+
